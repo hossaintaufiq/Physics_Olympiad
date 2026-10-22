@@ -29,13 +29,13 @@ export default function CategoriesPage() {
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 text-blue-900 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 shadow-xs backdrop-blur-xs">
               <Layers className="w-3.5 h-3.5 text-blue-700" />
-              <span>Academic Competition Tracks</span>
+              <span>একাডেমিক প্রতিযোগিতা বিভাগসমূহ</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
-              Categories & <span className="text-blue-900">Eligibility Guidelines</span>
+              ক্যাটাগরি ও <span className="text-blue-900">অংশগ্রহণের যোগ্যতা</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              BdPhO organizes competitions across four distinct academic tiers, ensuring every student faces rigorous challenges calibrated to their grade level.
+              বিডিএফও চারটি পৃথক স্তরে প্রতিযোগিতা আয়োজন করে—যাতে প্রতিটি শিক্ষার্থী তাদের শ্রেণি উপযোগী কঠিন ও আকর্ষণীয় তাত্ত্বিক চ্যালেঞ্জের মুখোমুখি হতে পারে।
             </p>
           </div>
         </section>
@@ -51,19 +51,19 @@ export default function CategoriesPage() {
               <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
                 <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-blue-700">
                   <Calculator className="w-4 h-4 text-blue-600" />
-                  <span>Official Calculator Policy</span>
+                  <span>ক্যালকুলেটর ব্যবহারের নীতিমালা</span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">
-                  Which Calculators Are Permitted?
+                  কোন ক্যালকুলেটর অনুমোদিত?
                 </h3>
                 <div className="space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
                   <div className="p-3.5 rounded-xl bg-white border border-slate-200">
-                    <strong className="text-slate-900 block mb-0.5">Category A & Category B:</strong>
-                    Calculators are <strong>strictly prohibited</strong> to foster mental estimation, dimensional analysis, and algebraic intuition.
+                    <strong className="text-slate-900 block mb-0.5">ক্যাটাগরি A এবং ক্যাটাগরি B:</strong>
+                    ক্যালকুলেটর ব্যবহার <strong>সম্পূর্ণ নিষিদ্ধ</strong>। এর উদ্দেশ্য মানসিক গাণিতিক হিসাব ও শারীরিক অনুমান ক্ষমতা বৃদ্ধি করা।
                   </div>
                   <div className="p-3.5 rounded-xl bg-white border border-slate-200">
-                    <strong className="text-slate-900 block mb-0.5">Category C & Category D:</strong>
-                    Non-programmable scientific calculators (up to Casio fx-991ES Plus, fx-991EX, or equivalent) are allowed. Programmable, graphic, or wireless calculators are strictly barred.
+                    <strong className="text-slate-900 block mb-0.5">ক্যাটাগরি C এবং ক্যাটাগরি D:</strong>
+                    সাধারণ নন-প্রোগ্রামেবল সায়েন্টিফিক ক্যালকুলেটর (Casio fx-991ES Plus, fx-991EX বা সমমানের) ব্যবহারের অনুমতি রয়েছে। গ্রাফিং বা প্রোগ্রামিংযোগ্য ক্যালকুলেটর সম্পূর্ণ নিষিদ্ধ।
                   </div>
                 </div>
               </div>
@@ -72,16 +72,16 @@ export default function CategoriesPage() {
               <div className="p-8 rounded-3xl bg-amber-50/60 border border-amber-200 space-y-4">
                 <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-amber-800">
                   <AlertCircle className="w-4 h-4 text-amber-700" />
-                  <span>Language of Examination</span>
+                  <span>পরীক্ষার ভাষা ও মাধ্যমের নিয়ম</span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">
-                  Bilingual Question Papers
+                  দ্বিভাষিক প্রশ্নপদ্ধতি (বাংলা ও ইংরেজি)
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                  All question papers across Categories A, B, C, and D are printed in both <strong>Bengali (বাংলা)</strong> and <strong>English</strong>. Students are free to write their solutions and numerical steps in either language.
+                  ক্যাটাগরি A, B, C এবং D-এর সকল প্রশ্নপত্র <strong>বাংলা</strong> এবং <strong>ইংরেজি</strong> উভয় ভাষায় মুদ্রিত হয়। শিক্ষার্থীরা যেকোনো একটি ভাষায় তাদের সমাধান লিখতে পারে।
                 </p>
                 <div className="p-3.5 rounded-xl bg-white border border-amber-200 text-xs text-amber-900 leading-relaxed font-medium">
-                  <strong>Academic Directive:</strong> In the event of any linguistic divergence or typographical disparity between the two texts, the <strong>Bengali version</strong> remains the authoritative reference.
+                  <strong>একাডেমিক নির্দেশনা:</strong> প্রশ্নপত্রের দুই ভাষার মধ্যে কোনো বিভ্রান্তি বা অনুবাদগত অস্পষ্টতা পরিলক্ষিত হলে <strong>বাংলা সংস্করণই চূড়ান্ত ও প্রামাণ্য</strong> হিসেবে গণ্য হবে।
                 </div>
               </div>
             </div>
@@ -93,13 +93,13 @@ export default function CategoriesPage() {
                 className="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 transition shadow-sm"
               >
                 <FileText className="w-4 h-4" />
-                Browse Past Papers by Category
+                ক্যাটাগরিভিত্তিক বিগত প্রশ্ন দেখুন
               </Link>
               <Link
                 href="/syllabus"
                 className="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition border border-slate-200"
               >
-                <span>View Full Olympiad Syllabus</span>
+                <span>সম্পূর্ণ অফিসিয়াল সিলেবাস দেখুন</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

@@ -25,7 +25,7 @@ export interface Notice {
   title: string;
   banglaTitle?: string;
   date: string;
-  category: 'Registration' | 'Regional Round' | 'National Round' | 'Admit Card' | 'Camp & IPhO' | 'General';
+  category: string;
   isUrgent?: boolean;
   isPinned?: boolean;
   summary: string;
@@ -100,7 +100,7 @@ export interface CommitteeMember {
 export interface GalleryPhoto {
   id: string;
   title: string;
-  category: 'National Round' | 'Regional Round' | 'Training Camp' | 'International IPhO';
+  category: string;
   caption: string;
   year: string;
   imageUrl: string;
@@ -111,5 +111,5 @@ export interface FAQItem {
   id: string;
   question: string;
   answer: string;
-  category: 'General' | 'Eligibility' | 'Exams & Rules' | 'Admit Cards & Portal';
+  category: string;
 }

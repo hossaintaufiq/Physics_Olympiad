@@ -6,7 +6,7 @@ import { FAQS } from '@/data/bdphoData';
 
 export const FaqSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>('faq-1');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>('সব');
   const [searchQuery, setSearchQuery] = useState('');
 
   const toggleAccordion = (id: string) => {
@@ -15,7 +15,7 @@ export const FaqSection: React.FC = () => {
 
   const filteredFaqs = FAQS.filter((faq) => {
     const matchesCategory =
-      selectedCategory === 'All' || faq.category === selectedCategory;
+      selectedCategory === 'সব' || faq.category === selectedCategory;
     const q = searchQuery.toLowerCase().trim();
     const matchesQuery =
       !q ||
@@ -31,13 +31,13 @@ export const FaqSection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
             <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
-            <span>Got Questions?</span>
+            <span>কোনো প্রশ্ন আছে?</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Frequently Asked Questions.
+            সচরাচর জিজ্ঞাসিত প্রশ্নাবলী।
           </h2>
           <p className="text-slate-600 text-base">
-            Everything you need to know about eligibility, bilingual question rules, calculators, syllabus limits, and international pathways.
+            যোগ্যতা, দ্বিভাষিক প্রশ্নপত্র, ক্যালকুলেটর ব্যবহারের নিয়মাবলী, সিলেবাসের পরিধি এবং আন্তর্জাতিক দল নির্বাচন সম্পর্কিত সাধারণ প্রশ্নের উত্তর।
           </p>
         </div>
 
@@ -49,13 +49,13 @@ export const FaqSection: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search questions (e.g. calculator, language, admit card, eligibility)..."
+              placeholder="প্রশ্ন অনুসন্ধান করুন (যেমন: ক্যালকুলেটর, ভাষা, প্রবেশপত্র, যোগ্যতা)..."
               className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500 text-slate-900 placeholder-slate-400 text-xs sm:text-sm outline-none transition shadow-2xs"
             />
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-1.5">
-            {['All', 'General', 'Eligibility', 'Exams & Rules', 'Admit Cards & Portal'].map((cat) => (
+            {['সব', 'সাধারণ', 'যোগ্যতা', 'পরীক্ষা ও নিয়ম', 'প্রবেশপত্র ও পোর্টাল'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -85,7 +85,7 @@ export const FaqSection: React.FC = () => {
                     onClick={() => toggleAccordion(faq.id)}
                     className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition"
                   >
-                    <span className="text-sm sm:text-base font-bold text-slate-900">
+                    <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                       {faq.question}
                     </span>
                     <span className="p-1.5 rounded-lg bg-slate-100 text-blue-600 shrink-0">
@@ -107,7 +107,7 @@ export const FaqSection: React.FC = () => {
             })
           ) : (
             <div className="p-8 text-center text-slate-500 bg-white border border-slate-200 rounded-2xl">
-              No matching questions found for "{searchQuery}".
+              "{searchQuery}" সম্পর্কিত কোনো প্রশ্ন পাওয়া যায়নি।
             </div>
           )}
         </div>

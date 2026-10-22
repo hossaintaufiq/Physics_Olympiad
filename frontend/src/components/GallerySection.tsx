@@ -22,27 +22,26 @@ export const GallerySection: React.FC = () => {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
               <Camera className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Memories & Milestones</span>
+              <span>স্মৃতি ও অনুপ্রেরণার মুহূর্ত</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-              Moments That Inspire. <br />
+              অনুপ্রেরণাদায়ী মুহূর্ত। <br />
               <span className="text-blue-900">
-                From the Olympiad Archives.
+                বিডিএফও আর্কাইভের স্থিরচিত্র।
               </span>
             </h2>
             <p className="text-slate-600 text-base">
-              A photo wall celebrating laboratory investigations, nationwide exam halls, award ceremonies, and international expeditions. Click any photo to expand.
+              পরীক্ষাগারের অনুসন্ধান, দেশব্যাপী উৎসবের হলরুম, জমকালো পদক প্রদান ও আন্তর্জাতিক অভিযানের স্মরণীয় স্থিরচিত্র। বড় করে দেখতে যেকোনো ছবিতে ক্লিক করুন।
             </p>
           </div>
 
           {/* Category Filter Tabs */}
           <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-white border border-slate-200 self-start md:self-auto shadow-2xs">
             {[
-              { label: 'All Moments', value: 'all' },
-              { label: 'National Round', value: 'National' },
-              { label: 'Training Camp', value: 'Camp' },
-              { label: 'International IPhO', value: 'International' },
-              { label: 'Regional Round', value: 'Regional' },
+              { label: 'সকল মুহূর্ত', value: 'all' },
+              { label: 'জাতীয় পর্ব', value: 'জাতীয়' },
+              { label: 'প্রশিক্ষণ ক্যাম্প', value: 'ক্যাম্প' },
+              { label: 'আন্তর্জাতিক IPhO', value: 'IPhO' },
             ].map((f) => (
               <button
                 key={f.value}
@@ -102,8 +101,8 @@ export const GallerySection: React.FC = () => {
                     <MapPin className="w-3 h-3 text-amber-400" />
                     {photo.location}
                   </span>
-                  <span className="text-sky-300 flex items-center gap-1 font-semibold group-hover:translate-x-0.5 transition-transform">
-                    Enlarge <Maximize2 className="w-3 h-3" />
+                  <span className="flex items-center gap-1 text-sky-400">
+                    <Maximize2 className="w-3 h-3" /> বড় করুন
                   </span>
                 </div>
               </div>
@@ -111,48 +110,54 @@ export const GallerySection: React.FC = () => {
           ))}
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Modal Fullscreen Preview */}
         {selectedPhoto && (
           <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn"
             onClick={() => setSelectedPhoto(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm animate-fadeIn"
           >
             <div
-              onClick={(e) => e.stopPropagation()}
               className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition"
-                aria-label="Close image preview"
+                className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/80 transition"
+                aria-label="Close photo view"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
-              <div className="relative max-h-[70vh] bg-black flex items-center justify-center overflow-hidden">
+              <div className="relative aspect-[16/10] w-full bg-slate-900">
                 <img
                   src={selectedPhoto.imageUrl}
                   alt={selectedPhoto.title}
-                  className="max-h-[70vh] w-auto object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
-              <div className="p-6 bg-white border-t border-slate-200 space-y-2">
-                <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-                  <span className="px-2.5 py-1 rounded-md bg-blue-100 text-blue-800 font-bold uppercase tracking-wider">
-                    {selectedPhoto.category} • {selectedPhoto.year}
+              <div className="p-6 sm:p-8 space-y-3 bg-white">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-800 font-bold border border-blue-200">
+                    {selectedPhoto.category}
                   </span>
-                  <span className="flex items-center gap-1 text-slate-500">
-                    <MapPin className="w-3.5 h-3.5 text-amber-600" />
-                    {selectedPhoto.location}
+                  <span className="font-mono text-slate-500 font-semibold">
+                    বছর: {selectedPhoto.year}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900">
+
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                   {selectedPhoto.title}
                 </h3>
+
                 <p className="text-sm text-slate-600 leading-relaxed">
                   {selectedPhoto.caption}
                 </p>
+
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500 font-medium">
+                  <MapPin className="w-4 h-4 text-amber-600" />
+                  <span>স্থান: {selectedPhoto.location}</span>
+                </div>
               </div>
             </div>
           </div>

@@ -5,10 +5,10 @@ import { Bell, ExternalLink, Pin, Calendar } from 'lucide-react';
 import { NOTICES } from '@/data/bdphoData';
 
 export const NoticesSection: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState<string>('All');
+  const [selectedFilter, setSelectedFilter] = useState<string>('সব');
 
   const filteredNotices = NOTICES.filter((n) => {
-    if (selectedFilter === 'All') return true;
+    if (selectedFilter === 'সব') return true;
     return n.category === selectedFilter;
   });
 
@@ -20,22 +20,22 @@ export const NoticesSection: React.FC = () => {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
               <Bell className="w-3.5 h-3.5 text-amber-600" />
-              <span>Official Circulars & Directives</span>
+              <span>অফিসিয়াল সার্কুলার ও দিকনির্দেশনা</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-              Latest Notices & <br />
+              সাম্প্রতিক নোটিশ ও <br />
               <span className="text-blue-900">
-                Administrative Circulars.
+                প্রশাসনিক প্রজ্ঞাপনসমূহ।
               </span>
             </h2>
             <p className="text-slate-600 text-base">
-              Stay informed with official circulars regarding exam schedules, admit card updates, category guidelines, and regional center allocations.
+              পরীক্ষার সময়সূচি, প্রবেশপত্রের হালনাগাদ, ক্যাটাগরি নির্দেশিকা ও আঞ্চলিক ভেন্যু সম্পর্কিত সর্বশেষ তথ্যের সাথে অবগত থাকুন।
             </p>
           </div>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-slate-100 border border-slate-200 self-start md:self-auto">
-            {['All', 'Admit Card', 'Registration', 'Regional Round', 'General'].map((cat) => (
+            {['সব', 'প্রবেশপত্র', 'নিবন্ধন', 'আঞ্চলিক পর্ব', 'সাধারণ'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedFilter(cat)}
@@ -70,24 +70,18 @@ export const NoticesSection: React.FC = () => {
                     </span>
                     {notice.isPinned && (
                       <span className="flex items-center gap-1 text-[10px] font-bold text-amber-700 px-2 py-0.5 rounded bg-amber-100 border border-amber-200">
-                        <Pin className="w-2.5 h-2.5" /> Pinned
+                        <Pin className="w-2.5 h-2.5" /> পিনযুক্ত
                       </span>
                     )}
                   </div>
-                  <span className="text-[11px] text-slate-400 flex items-center gap-1">
+                  <span className="text-[11px] text-slate-500 flex items-center gap-1">
                     <Calendar className="w-3 h-3" /> {notice.date}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition mb-1">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition mb-2 leading-snug">
                   {notice.title}
                 </h3>
-
-                {notice.banglaTitle && (
-                  <p className="text-xs text-amber-800 mb-3 font-sans font-medium">
-                    {notice.banglaTitle}
-                  </p>
-                )}
 
                 <p className="text-xs text-slate-600 leading-relaxed mb-4">
                   {notice.summary}
@@ -97,10 +91,10 @@ export const NoticesSection: React.FC = () => {
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                 {notice.officialRef ? (
                   <span className="font-mono text-[10px] text-slate-400">
-                    Ref: {notice.officialRef}
+                    স্মারক: {notice.officialRef}
                   </span>
                 ) : (
-                  <span className="text-[10px] text-slate-400">National Council</span>
+                  <span className="text-[10px] text-slate-400">জাতীয় সচিবালয়</span>
                 )}
 
                 {notice.linkUrl && (
@@ -110,7 +104,7 @@ export const NoticesSection: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-1 transition"
                   >
-                    {notice.linkText || 'Details'} <ExternalLink className="w-3 h-3" />
+                    {notice.linkText || 'বিস্তারিত'} <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>

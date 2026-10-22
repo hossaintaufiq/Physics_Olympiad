@@ -63,17 +63,15 @@ export default function Home() {
               <div className="lg:col-span-7 space-y-6 text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-600" />
-                  <span>Official National Academic Platform • 17th Edition 2026</span>
+                  <span>অফিসিয়াল জাতীয় প্ল্যাটফর্ম • ১৭তম আসর ২০২৬</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.14]">
-                  Bangladesh Physics Olympiad
+                  বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
-                  The official national competition selecting and training Bangladesh delegates for the{' '}
-                  <strong className="text-slate-950 font-semibold">International Physics Olympiad (IPhO)</strong> and{' '}
-                  <strong className="text-slate-950 font-semibold">Asian Physics Olympiad (APhO)</strong>. Empowering young scientists from Class 5 to Class 12 across all 64 districts.
+                  আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াড (<strong className="text-slate-950 font-semibold">IPhO</strong>) এবং এশিয়ান পদার্থবিজ্ঞান অলিম্পিয়াড (<strong className="text-slate-950 font-semibold">APhO</strong>)-এ বাংলাদেশের প্রতিনিধি নির্বাচন ও নিবিড় প্রশিক্ষণের জাতীয় একাডেমি। দেশের ৬৪ জেলার ৫ম থেকে ১২শ শ্রেণির তরুণ বিজ্ঞানীদের মেধা বিকাশের উন্মুক্ত মঞ্চ।
                 </p>
 
                 {/* Primary Action Buttons */}
@@ -84,7 +82,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-sm"
                   >
-                    <span>Online Registration 2026</span>
+                    <span>অনলাইন নিবন্ধন ২০২৬</span>
                     <ExternalLink className="w-3.5 h-3.5 text-blue-200" />
                   </a>
 
@@ -93,7 +91,7 @@ export default function Home() {
                     className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-2xs"
                   >
                     <Download className="w-4 h-4 text-blue-700" />
-                    <span>Download Admit Card</span>
+                    <span>প্রবেশপত্র ডাউনলোড</span>
                   </Link>
 
                   <Link
@@ -101,27 +99,27 @@ export default function Home() {
                     className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-2xs"
                   >
                     <BookOpen className="w-4 h-4 text-slate-500" />
-                    <span>Past Papers Archive</span>
+                    <span>বিগত প্রশ্ন আর্কাইভ</span>
                   </Link>
                 </div>
 
                 {/* Key Statistics Bar */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-200">
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">64</span>
-                    <span className="text-[11px] text-slate-600 font-medium">Districts Covered</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">৬৪ জেলা</span>
+                    <span className="text-[11px] text-slate-600 font-medium">দেশব্যাপী আঞ্চলিক পর্ব</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-blue-700 font-mono">100k+</span>
-                    <span className="text-[11px] text-slate-600 font-medium">Annual Students</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-blue-700 font-mono">১ লাখ+</span>
+                    <span className="text-[11px] text-slate-600 font-medium">অংশগ্রহণকারী শিক্ষার্থী</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">4 Tiers</span>
-                    <span className="text-[11px] text-slate-600 font-medium">Class 5 to 12</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">৪ ক্যাটাগরি</span>
+                    <span className="text-[11px] text-slate-600 font-medium">৫ম থেকে ১২শ শ্রেণি</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono">48+</span>
-                    <span className="text-[11px] text-slate-600 font-medium">IPhO/APhO Honors</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono">৪৮+ পদক</span>
+                    <span className="text-[11px] text-slate-600 font-medium">আন্তর্জাতিক সম্মাননা</span>
                   </div>
                 </div>
               </div>
@@ -131,10 +129,10 @@ export default function Home() {
                 <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-xs border border-slate-200 hover:border-slate-300 shadow-lg shadow-slate-200/50 space-y-5 transition-all">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                     <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                      17th National Finals Schedule
+                      ১৭তম জাতীয় ফাইনালের সময়সূচি
                     </span>
                     <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200">
-                      March 15, 2026
+                      ১৫ মার্চ, ২০২৬
                     </span>
                   </div>
 
@@ -144,25 +142,25 @@ export default function Home() {
                       <span className="block text-xl sm:text-3xl font-extrabold text-blue-700 font-mono">
                         {String(timeLeft.days).padStart(2, '0')}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-500 uppercase">Days</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase">দিন</span>
                     </div>
                     <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="block text-xl sm:text-3xl font-extrabold text-blue-700 font-mono">
                         {String(timeLeft.hours).padStart(2, '0')}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-500 uppercase">Hours</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase">ঘণ্টা</span>
                     </div>
                     <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="block text-xl sm:text-3xl font-extrabold text-blue-700 font-mono">
                         {String(timeLeft.minutes).padStart(2, '0')}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-500 uppercase">Mins</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase">মিনিট</span>
                     </div>
                     <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 shadow-2xs">
                       <span className="block text-xl sm:text-3xl font-extrabold text-amber-700 font-mono">
                         {String(timeLeft.seconds).padStart(2, '0')}
                       </span>
-                      <span className="text-[10px] font-bold text-amber-800 uppercase">Secs</span>
+                      <span className="text-[10px] font-bold text-amber-800 uppercase">সেকেন্ড</span>
                     </div>
                   </div>
 
@@ -174,7 +172,7 @@ export default function Home() {
                     >
                       <span className="flex items-center gap-2">
                         <Download className="w-4 h-4 text-blue-600" />
-                        Admit Card Download Portal
+                        প্রবেশপত্র ডাউনলোড পোর্টাল
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                     </Link>
@@ -185,7 +183,7 @@ export default function Home() {
                     >
                       <span className="flex items-center gap-2">
                         <School className="w-4 h-4 text-indigo-600" />
-                        Official Student Marksheet Portal
+                        শিক্ষার্থী মার্কশিট ও ফলাফল পোর্টাল
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                     </Link>
@@ -199,17 +197,17 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-blue-700 font-mono">
-                    National Excellence In Action
+                    জাতীয় উৎকর্ষের অগ্রযাত্রা
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
-                    From Classrooms to the World Stage
+                    শ্রেণিকক্ষ থেকে বিশ্বমঞ্চের দিগন্তে
                   </h2>
                 </div>
                 <Link
                   href="/gallery"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 transition group"
                 >
-                  <span>Browse Full Photo Wall</span>
+                  <span>পূর্ণাঙ্গ ফটো গ্যালারি দেখুন</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -227,13 +225,13 @@ export default function Home() {
                   </div>
                   <div className="absolute bottom-0 inset-x-0 p-6 text-white">
                     <span className="inline-block px-2.5 py-1 rounded-full bg-blue-600/90 text-white text-[10px] font-bold uppercase tracking-wider mb-2 backdrop-blur-xs">
-                      National Physics Training Camp
+                      জাতীয় পদার্থবিজ্ঞান ক্যাম্প
                     </span>
                     <h3 className="text-lg sm:text-xl font-bold leading-snug mb-1 text-white">
-                      Experimental Optics & Laser Refraction at University Laboratories
+                      বিশ্ববিদ্যালয় গবেষণাগারে প্রায়োগিক আলোকবিজ্ঞান ও লেজার পরীক্ষা
                     </h3>
                     <p className="text-xs text-slate-200 line-clamp-2">
-                      Top national qualifiers undergo rigorous experimental training on precision optical benches and advanced electronic interferometers under university faculty supervision.
+                      জাতীয় পর্যায়ের শীর্ষ শিক্ষার্থীরা ঢাকা বিশ্ববিদ্যালয় ও বুয়েটের গবেষণাগারে আধুনিক অপটিক্যাল বেঞ্চ ও ইলেকট্রনিক ইন্টারফেরোমিটার ব্যবহারে উচ্চতর প্রশিক্ষণ লাভ করে।
                     </p>
                   </div>
                 </div>
@@ -252,13 +250,13 @@ export default function Home() {
                     </div>
                     <div className="absolute bottom-0 inset-x-0 p-5 text-white">
                       <span className="inline-block px-2.5 py-1 rounded-full bg-amber-500/90 text-white text-[10px] font-bold uppercase tracking-wider mb-1.5 backdrop-blur-xs">
-                        Global Representation
+                        বিশ্বমঞ্চে প্রতিনিধিত্ব
                       </span>
                       <h3 className="text-sm sm:text-base font-bold leading-tight text-white mb-0.5">
-                        Team Bangladesh at the International Physics Olympiad (IPhO)
+                        আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াডে (IPhO) বাংলাদেশ জাতীয় দল
                       </h3>
                       <p className="text-[11px] text-slate-300 line-clamp-1">
-                        Representing 170 million citizens on international Olympic podiums worldwide.
+                        ১৭ কোটি মানুষের স্বপ্ন বুকে নিয়ে বৈশ্বিক অলিম্পিক আসরে লাল-সবুজের প্রতিনিধিরা।
                       </p>
                     </div>
                   </div>
@@ -275,13 +273,13 @@ export default function Home() {
                     </div>
                     <div className="absolute bottom-0 inset-x-0 p-5 text-white">
                       <span className="inline-block px-2.5 py-1 rounded-full bg-emerald-600/90 text-white text-[10px] font-bold uppercase tracking-wider mb-1.5 backdrop-blur-xs">
-                        National Recognition
+                        জাতীয় সম্মাননা
                       </span>
                       <h3 className="text-sm sm:text-base font-bold leading-tight text-white mb-0.5">
-                        Annual National Finals & Gold Medal Conferment
+                        বার্ষিক জাতীয় ফাইনাল ও পদক বিতরণ অনুষ্ঠান
                       </h3>
                       <p className="text-[11px] text-slate-300 line-clamp-1">
-                        Prof. Dr. Muhammed Zafar Iqbal and academic leaders honoring national champions.
+                        অধ্যাপক ড. মুহম্মদ জাফর ইকবাল ও জাতীয় শিক্ষকমণ্ডলী বিজয়ীদের হাতে মেডেল তুলে দিচ্ছেন।
                       </p>
                     </div>
                   </div>
@@ -300,17 +298,17 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-blue-700 font-mono">
-                  Official Bulletin
+                  অফিসিয়াল বুলেটিন
                 </span>
                 <h2 className="text-2xl font-bold text-slate-900">
-                  Current Circulars & Academic Directives
+                  সর্বশেষ বিজ্ঞপ্তি ও প্রশাসনিক সার্কুলার
                 </h2>
               </div>
               <Link
                 href="/notices"
                 className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 hover:text-blue-800 transition"
               >
-                <span>View All Official Circulars</span>
+                <span>সকল অফিসিয়াল সার্কুলার দেখুন</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -329,7 +327,7 @@ export default function Home() {
                       <span>{notice.date}</span>
                     </div>
                     <h3 className="text-sm font-bold text-slate-900 leading-snug">
-                      {notice.title}
+                      {notice.banglaTitle || notice.title}
                     </h3>
                     <p className="text-xs text-slate-600 line-clamp-2">
                       {notice.summary}
@@ -337,9 +335,9 @@ export default function Home() {
                   </div>
 
                   <div className="pt-3 border-t border-slate-100 mt-3 flex items-center justify-between text-xs">
-                    <span className="text-[10px] text-slate-400 font-mono">{notice.officialRef || 'National'}</span>
+                    <span className="text-[10px] text-slate-400 font-mono">{notice.officialRef || 'জাতীয় সার্কুলার'}</span>
                     <Link href="/notices" className="text-blue-700 font-bold hover:underline">
-                      Read Circular →
+                      সার্কুলার পড়ুন →
                     </Link>
                   </div>
                 </div>
@@ -354,13 +352,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-blue-700 font-mono">
-                  Competition Structure
+                  প্রতিযোগিতার কাঠামো
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                  Four Competition Categories (A, B, C, D)
+                  চারটি প্রতিযোগিতা ক্যাটাগরি (ক্যাটাগরি A, B, C, D)
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mt-1">
-                  Calibrated precisely by school grade, from observational and descriptive science in primary school to rigorous calculus-based derivations in higher secondary.
+                  প্রাথমিক বিদ্যালয়ের পর্যবেক্ষণমূলক আনন্দ ও কৌতূহল থেকে শুরু করে উচ্চমাধ্যমিকের ক্যালকুলাস-ভিত্তিক কঠিন বিশ্লেষণ—শিক্ষার্থীদের মেধার গভীরতা বিকাশে স্তরভিত্তিক প্রশ্ন বিন্যাস।
                 </p>
               </div>
 
@@ -368,7 +366,7 @@ export default function Home() {
                 href="/categories"
                 className="px-4 py-2 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-bold transition shrink-0 inline-flex items-center gap-1 border border-blue-200"
               >
-                <span>Category Guidelines & Sample Problems</span>
+                <span>ক্যাটাগরি নির্দেশিকা ও নমুনা প্রশ্ন</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -382,24 +380,30 @@ export default function Home() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-2xl font-extrabold text-blue-700 font-mono">
-                        Category {cat.id}
+                        ক্যাটাগরি {cat.id}
                       </span>
                       <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                        {cat.id === 'A' ? 'Classes 5-6' : cat.id === 'B' ? 'Classes 7-8' : cat.id === 'C' ? 'Classes 9-10' : 'Classes 11-12'}
+                        {cat.id === 'A' ? '৫ম – ৬ষ্ঠ শ্রেণি' : cat.id === 'B' ? '৭ম – ৮ম শ্রেণি' : cat.id === 'C' ? '৯ম – ১০ম শ্রেণি' : '১১শ – ১২শ শ্রেণি'}
                       </span>
                     </div>
 
                     <h3 className="text-sm font-bold text-slate-900">
-                      {cat.name.split('·')[1]}
+                      {cat.id === 'A' ? 'প্রাইমারি / প্রাক-জুনিয়র' : cat.id === 'B' ? 'জুনিয়র সেকেন্ডারি' : cat.id === 'C' ? 'সেকেন্ডারি (এসএসসি / ও-লেভেল)' : 'হায়ার সেকেন্ডারি (এইচএসসি / এ-লেভেল)'}
                     </h3>
 
                     <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                      {cat.tagline}
+                      {cat.id === 'A'
+                        ? 'ভৌত পরিমাপের কৌতূহল, সরল যন্ত্র, আলো ও ছায়ার ধর্ম এবং দৈনন্দিন প্রাকৃতিক নিয়মের সহজ বিশ্লেষণ।'
+                        : cat.id === 'B'
+                        ? 'বল ও গতি, প্রাথমিক বিদ্যুৎ ও বর্তনী, আলো ও তরঙ্গ এবং যুক্তিনির্ভর গাণিতিক অনুসন্ধান।'
+                        : cat.id === 'C'
+                        ? 'নিউটনিয়ান বলবিদ্যা, তাপগতিবিদ্যা, জ্যামিতিক আলোকবিজ্ঞান ও উচ্চতর সমস্যা সমাধান।'
+                        : 'ক্যালকুলাস-ভিত্তিক বলবিদ্যা, তড়িচ্চৌম্বকীয় তত্ত্ব, কোয়ান্টাম ভিত্তি ও আইপিএইচও প্রস্তুতি।'}
                     </p>
 
                     <div className="text-[11px] text-slate-500 pt-2 space-y-1 border-t border-slate-100">
-                      <div><strong className="text-slate-700">Duration:</strong> {cat.examDuration}</div>
-                      <div><strong className="text-slate-700">Pattern:</strong> {cat.questionPattern.split('(')[0]}</div>
+                      <div><strong className="text-slate-700">সময়সীমা:</strong> {cat.examDuration === '1 Hour 30 Minutes' ? '১ ঘণ্টা ৩০ মিনিট' : cat.examDuration === '2 Hours' ? '২ ঘণ্টা' : '২ ঘণ্টা ৩০ মিনিট'}</div>
+                      <div><strong className="text-slate-700">প্রশ্নপদ্ধতি:</strong> {cat.id === 'A' ? '২০টি বহুনির্বাচনী ও সংক্ষিপ্ত সংখ্যাগত প্রশ্ন' : 'বিশ্লেষণাত্মক ও গাণিতিক সমস্যা'}</div>
                     </div>
                   </div>
 
@@ -408,7 +412,7 @@ export default function Home() {
                       href="/categories"
                       className="text-xs font-bold text-blue-700 hover:text-blue-800 transition flex items-center justify-between"
                     >
-                      <span>Explore Category {cat.id}</span>
+                      <span>ক্যাটাগরি {cat.id} বিস্তারিত দেখুন</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -424,32 +428,32 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 font-mono">
-                  The Olympic Pathway
+                  অলিম্পিয়াড পরিক্রমা
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                  How a Student Reaches the International Physics Olympiad
+                  একজন শিক্ষার্থী যেভাবে আন্তর্জাতিক অলিম্পিয়াডে পৌঁছায়
                 </h2>
               </div>
               <Link
                 href="/about"
                 className="text-xs font-bold text-blue-700 hover:text-blue-800 inline-flex items-center gap-1"
               >
-                <span>Read Full History & Governance</span>
+                <span>ইতিহাস ও গভর্ন্যান্স জানুন</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
               {[
-                { step: '01', title: 'School Registration', desc: 'Online signup across 64 districts' },
-                { step: '02', title: 'Regional Round', desc: '16 Regional university clusters' },
-                { step: '03', title: 'National Finals', desc: '1,200 qualifiers at Curzon Hall DU' },
-                { step: '04', title: 'Training Camp', desc: '3-week intensive BUET theory & lab' },
-                { step: '05', title: 'Selection Tests', desc: 'IPhO & APhO qualification exams' },
-                { step: '06', title: 'World Stage', desc: 'Representing Bangladesh globally' },
+                { step: '০১', title: 'স্কুল ও অনলাইন নিবন্ধন', desc: '৬৪ জেলায় উন্মুক্ত রেজিস্ট্রেশন' },
+                { step: '০২', title: 'আঞ্চলিক পর্ব পরীক্ষা', desc: '১৬টি আঞ্চলিক বিশ্ববিদ্যালয় ভেন্যু' },
+                { step: '০৩', title: 'জাতীয় ফাইনাল', desc: 'কার্জন হলে ১,২০০ বিজয়ীর মহোৎসব' },
+                { step: '০৪', title: 'নিবিড় প্রশিক্ষণ ক্যাম্প', desc: 'বুয়েট ও ঢাবিতে ৩ সপ্তাহের ল্যাব' },
+                { step: '০৫', title: 'চূড়ান্ত দল নির্বাচন', desc: 'IPhO ও APhO বাছাই পরীক্ষা' },
+                { step: '০৬', title: 'বিশ্বমঞ্চের পোডিয়াম', desc: 'আন্তর্জাতিক অঙ্গনে পদক বিজয়' },
               ].map((s, idx) => (
                 <div key={idx} className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
-                  <div className="text-xs font-mono font-bold text-blue-700">Stage {s.step}</div>
+                  <div className="text-xs font-mono font-bold text-blue-700">ধাপ {s.step}</div>
                   <div className="text-xs font-bold text-slate-900">{s.title}</div>
                   <div className="text-[11px] text-slate-500 leading-tight">{s.desc}</div>
                 </div>
@@ -468,26 +472,26 @@ export default function Home() {
               </div>
               <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-center max-w-2xl text-white">
                 <span className="inline-block px-3 py-1 rounded-full bg-blue-600/90 text-white text-[11px] font-bold uppercase tracking-wider mb-2 backdrop-blur-xs w-max">
-                  Stage 03 • National Finals Atmosphere
+                  ধাপ ০৩ • জাতীয় ফাইনালের রোমাঞ্চ
                 </span>
                 <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight mb-2">
-                  Where 1,200 of the Nation&apos;s Best Young Physicists Meet
+                  যেখানে দেশের সেরা ১,২০০ তরুণ পদার্থবিজ্ঞানীর মিলনমেলা বসে
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-200 mb-4 max-w-xl">
-                  Every year, regional qualifiers from 64 districts gather in Dhaka for the official 3-hour theoretical competition, testing problem-solving elegance, physical insight, and calculus rigor.
+                  প্রতি বছর ৬৪ জেলার আঞ্চলিক বিজয়ীরা ঢাকা বিশ্ববিদ্যালয়ের কার্জন হলে ৩ ঘণ্টার তাত্ত্বিক পরীক্ষায় অবতীর্ণ হয়—যা তাদের চিন্তার মৌলিকতা, গাণিতিক নৈপুণ্য ও যুক্তিবোধ পরীক্ষা করে।
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/past-papers"
                     className="px-4 py-2 rounded-xl bg-white text-slate-900 font-bold text-xs hover:bg-slate-100 transition shadow-sm"
                   >
-                    View National Question Papers ↗
+                    জাতীয় প্রশ্নপত্র দেখুন ↗
                   </Link>
                   <Link
                     href="/gallery"
                     className="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs backdrop-blur-xs transition"
                   >
-                    See Event Photo Gallery
+                    অনুষ্ঠানের ফটো গ্যালারি
                   </Link>
                 </div>
               </div>
@@ -507,11 +511,11 @@ export default function Home() {
             >
               <FileText className="w-6 h-6 text-blue-700 mb-3" />
               <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-700 transition flex items-center justify-between">
-                <span>Past Question Papers</span>
+                <span>বিগত প্রশ্ন ও মডেল সমাধান</span>
                 <ArrowRight className="w-4 h-4" />
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                Filter past examination question sets from the 1st through 16th editions with verified solutions.
+                ১ম থেকে ১৬তম আসরের আঞ্চলিক ও জাতীয় পরীক্ষার প্রশ্নপত্র এবং অনুমোদিত সমাধান ডাউনলোড করুন।
               </p>
             </Link>
 
@@ -521,11 +525,11 @@ export default function Home() {
             >
               <BookOpen className="w-6 h-6 text-purple-700 mb-3" />
               <h3 className="text-base font-bold text-slate-900 group-hover:text-purple-700 transition flex items-center justify-between">
-                <span>Official Olympiad Syllabus</span>
+                <span>অফিসিয়াল সিলেবাস নির্দেশিকা</span>
                 <ArrowRight className="w-4 h-4" />
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                Explore topic boundaries, governing equations, and international reading lists for all tiers.
+                আন্তর্জাতিক মানসম্পন্ন টপিক বিন্যাস, সমীকরণ ও সহায়ক আন্তর্জাতিক পাঠ্যবই তালিকা পর্যালোচনা করুন।
               </p>
             </Link>
 
@@ -535,11 +539,11 @@ export default function Home() {
             >
               <Trophy className="w-6 h-6 text-amber-600 mb-3" />
               <h3 className="text-base font-bold text-slate-900 group-hover:text-amber-700 transition flex items-center justify-between">
-                <span>International Hall of Fame</span>
+                <span>আন্তর্জাতিক হল অব ফেম</span>
                 <ArrowRight className="w-4 h-4" />
               </h3>
               <p className="text-xs text-slate-600 mt-1">
-                Meet Bangladesh’s bronze and silver medalists from IPhO Tokyo, Isfahan, Lisbon, and Zurich.
+                টোকিও, ইস্পাহান, লিসবন ও জুরিখের পোডিয়ামে দেশের পতাকা ওড়ানো পদকজয়ী তরুণদের পরিচিতি।
               </p>
             </Link>
           </div>

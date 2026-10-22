@@ -31,7 +31,7 @@ export const ProblemOfTheWeek: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-semibold uppercase tracking-wider mb-2">
                 <HelpCircle className="w-3.5 h-3.5 text-blue-700" />
-                Problem of the Week • Olympiad Theoretical Challenge
+                সাপ্তাহিক সমস্যা • অলিম্পিয়াড তাত্ত্বিক চ্যালেঞ্জ
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                 {PROBLEM_OF_THE_WEEK.title}
@@ -48,7 +48,7 @@ export const ProblemOfTheWeek: React.FC = () => {
               {PROBLEM_OF_THE_WEEK.problemStatement}
             </p>
             <div className="pt-2 text-xs font-mono text-slate-500 border-t border-slate-200">
-              <span className="text-amber-700 font-semibold font-sans">Given Constants:</span>{' '}
+              <span className="text-amber-700 font-semibold font-sans">প্রদত্ত ধ্রুবক:</span>{' '}
               {PROBLEM_OF_THE_WEEK.constants}
             </div>
           </div>
@@ -58,7 +58,7 @@ export const ProblemOfTheWeek: React.FC = () => {
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                 <Lightbulb className="w-4 h-4 text-amber-600" />
-                Progressive Socratic Hints ({hintLevel} of 3 revealed)
+                ক্রমবর্ধমান ইঙ্গিত ({hintLevel}/৩টি উন্মোচিত)
               </span>
               {hintLevel < 3 && (
                 <button
@@ -66,26 +66,26 @@ export const ProblemOfTheWeek: React.FC = () => {
                   onClick={() => setHintLevel((prev) => Math.min(3, prev + 1))}
                   className="text-xs font-semibold text-blue-600 hover:text-blue-700 underline transition"
                 >
-                  Unlock Next Hint (+1)
+                  পরবর্তী ইঙ্গিত দেখুন (+১)
                 </button>
               )}
             </div>
 
             {hintLevel >= 1 && (
               <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900 animate-fadeIn">
-                <strong className="text-blue-700 block mb-0.5">Hint 1:</strong>
+                <strong className="text-blue-700 block mb-0.5">১ম ইঙ্গিত:</strong>
                 {PROBLEM_OF_THE_WEEK.hint1}
               </div>
             )}
             {hintLevel >= 2 && (
               <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900 animate-fadeIn">
-                <strong className="text-blue-700 block mb-0.5">Hint 2:</strong>
+                <strong className="text-blue-700 block mb-0.5">২য় ইঙ্গিত:</strong>
                 {PROBLEM_OF_THE_WEEK.hint2}
               </div>
             )}
             {hintLevel >= 3 && (
               <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 animate-fadeIn">
-                <strong className="text-amber-800 block mb-0.5">Hint 3 (Final Clue):</strong>
+                <strong className="text-amber-800 block mb-0.5">৩য় ইঙ্গিত (চূড়ান্ত সূত্র):</strong>
                 {PROBLEM_OF_THE_WEEK.hint3}
               </div>
             )}
@@ -94,7 +94,7 @@ export const ProblemOfTheWeek: React.FC = () => {
           {/* Interactive Answer Verification Form */}
           <form onSubmit={checkAnswer} className="p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
             <label htmlFor="userGuessInputLight" className="block text-xs font-semibold text-slate-700 mb-2">
-              Test Your Coefficient (e.g. enter numeric multiplier for (m0 c)/(e B) or write 2*sqrt(2)):
+              আপনার উত্তরের গুণক পরীক্ষা করুন (যেমন: 2.828 অথবা 2*sqrt(2) লিখুন):
             </label>
             <div className="flex flex-col sm:flex-row gap-2.5">
               <input
@@ -102,31 +102,31 @@ export const ProblemOfTheWeek: React.FC = () => {
                 type="text"
                 value={userGuess}
                 onChange={(e) => setUserGuess(e.target.value)}
-                placeholder="e.g. 2.828 or 2*sqrt(2)"
+                placeholder="উদাঃ 2.828 অথবা 2*sqrt(2)"
                 className="flex-1 px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 text-sm outline-none focus:border-amber-500 transition shadow-2xs"
               />
               <button
                 type="submit"
                 className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs uppercase tracking-wider transition shadow-sm"
               >
-                Submit Check
+                যাচাই করুন
               </button>
             </div>
 
             {guessFeedback === 'correct' && (
               <div className="mt-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2 animate-fadeIn font-semibold">
                 <Check className="w-4 h-4 text-emerald-600" />
-                Brilliant! Exactly correct: R = 2√2 (m0 c) / (e B) ≈ 2.828 (m0 c)/(e B).
+                চমৎকার! আপনার উত্তর সম্পূর্ণ সঠিক: R = 2√2 (m0 c) / (e B) ≈ 2.828 (m0 c)/(e B)।
               </div>
             )}
             {guessFeedback === 'close' && (
               <div className="mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs animate-fadeIn font-medium">
-                You are very close! Check your calculation of (3² - 1) under the square root.
+                আপনি উত্তরের খুব কাছাকাছি! বর্গমূলের ভেতরে (3² - 1) হিসাবটি পুনরায় যাচাই করুন।
               </div>
             )}
             {guessFeedback === 'try-again' && (
               <div className="mt-3 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs animate-fadeIn font-medium">
-                Not quite. Remember that Kinetic Energy K = 2 m0 c², so total energy E = K + m0 c² = 3 m0 c². Unlock the hints above!
+                সঠিক হয়নি। মনে রাখবেন গতিশক্তি K = 2 m0 c², সুতরাং মোট শক্তি E = K + m0 c² = 3 m0 c²। উপরের ইঙ্গিতগুলো পড়ুন!
               </div>
             )}
           </form>
@@ -140,7 +140,7 @@ export const ProblemOfTheWeek: React.FC = () => {
             >
               <span className="flex items-center gap-2">
                 <Eye className="w-4 h-4 text-blue-600" />
-                {showFullSolution ? 'Hide Complete Mathematical Derivation' : 'Reveal Complete Step-by-Step Derivation'}
+                {showFullSolution ? 'গাণিতিক প্রতিপাদন লুকান' : 'সম্পূর্ণ ধাপে ধাপে গাণিতিক প্রতিপাদন দেখুন'}
               </span>
               <ChevronDown className={`w-4 h-4 transition-transform ${showFullSolution ? 'rotate-180' : ''}`} />
             </button>
@@ -148,7 +148,7 @@ export const ProblemOfTheWeek: React.FC = () => {
             {showFullSolution && (
               <div className="mt-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs font-mono text-slate-800 animate-fadeIn">
                 <div className="text-amber-800 font-bold uppercase tracking-wider mb-2 font-sans">
-                  Rigorous Olympiad Derivation:
+                  অলিম্পিয়াড প্রতিপাদন ধাপ:
                 </div>
                 {PROBLEM_OF_THE_WEEK.solutionSteps.map((step, idx) => (
                   <div key={idx} className="p-2.5 rounded-lg bg-white border border-slate-200">
@@ -156,7 +156,7 @@ export const ProblemOfTheWeek: React.FC = () => {
                   </div>
                 ))}
                 <div className="pt-3 text-sm font-bold text-emerald-700 font-sans">
-                  Final Analytical Invariant: {PROBLEM_OF_THE_WEEK.numericalAnswer}
+                  চূড়ান্ত গাণিতিক ফলাফল: {PROBLEM_OF_THE_WEEK.numericalAnswer}
                 </div>
               </div>
             )}

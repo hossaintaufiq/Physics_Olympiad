@@ -9,99 +9,99 @@ export const RoadmapSection: React.FC = () => {
 
   const steps = [
     {
-      step: '01',
-      title: 'School Registration & Category Selection',
-      subtitle: 'Open to Class 5 through Class 12 nationwide',
+      step: '০১',
+      title: 'স্কুল ও কলেজ পর্যায়ের প্রাথমিক নিবন্ধন',
+      subtitle: 'দেশব্যাপী ৫ম থেকে ১২শ শ্রেণির শিক্ষার্থীদের জন্য উন্মুক্ত',
       icon: School,
       color: 'text-blue-600',
       borderColor: 'border-blue-200',
       bgColor: 'bg-blue-50',
       description:
-        'Students register independently or via their educational institutions. Choose your category (A, B, C, or D) based on your current school class. Access official past papers and study the syllabus guidelines.',
+        'শিক্ষার্থীরা প্রাতিষ্ঠানিকভাবে কিংবা স্বতন্ত্রভাবে অনলাইনে নিবন্ধন করে। নিজের শ্রেণি অনুযায়ী উপযুক্ত ক্যাটাগরি (এ, বি, সি বা ডি) নির্বাচন করে এবং অফিসিয়াল বিগত প্রশ্নপত্র ও সিলেবাস নির্দেশিকা সংগ্রহ করে।',
       keyMilestones: [
-        'Select Category (A: 5-6, B: 7-8, C: 9-10, D: 11-12)',
-        'Receive unique Registration ID and verify student credentials',
-        'Download Admit Card before the Regional Round date',
+        'ক্যাটাগরি নির্বাচন (এ: ৫ম-৬ষ্ঠ, বি: ৭ম-৮ম, সি: ৯ম-১০ম, ডি: ১১শ-১২শ)',
+        'ইউনিক রেজিস্ট্রেশন নম্বর গ্রহণ ও তথ্য যাচাইকরণ',
+        'আঞ্চলিক পরীক্ষার পূর্বে অফিশিয়াল প্রবেশপত্র ডাউনলোড',
       ],
     },
     {
-      step: '02',
-      title: 'Regional Round Festivals',
-      subtitle: '16 Regional Hubs across 64 Districts',
+      step: '০২',
+      title: 'আঞ্চলিক অলিম্পিয়াড উৎসব',
+      subtitle: '৬৪ জেলার সমন্বয়ে ১৬টি আঞ্চলিক হাব ও বিশ্ববিদ্যালয়',
       icon: Compass,
       color: 'text-cyan-600',
       borderColor: 'border-cyan-200',
       bgColor: 'bg-cyan-50',
       description:
-        'Conducted simultaneously at leading universities across Bangladesh (Dhaka, Chittagong, Rajshahi, Khulna, Sylhet, Barisal, Rangpur, Mymensingh, etc.). Includes physics problem solving, science shows, and Q&A sessions with professors.',
+        'দেশের শীর্ষস্থানীয় বিশ্ববিদ্যালয়সমূহে (ঢাকা, চট্টগ্রাম, রাজশাহী, খুলনা, সিলেট, বরিশাল, রংপুর, ময়মনসিংহ প্রভৃতি) একই সাথে অনুষ্ঠিত হয়। এতে থাকে লিখিত পদার্থবিজ্ঞান পরীক্ষা, বিজ্ঞান প্রদর্শনী এবং অধ্যাপকদের প্রশ্নোত্তর পর্ব।',
       keyMilestones: [
-        'Written problem-solving test (90 to 180 mins depending on category)',
-        'Bilingual papers with Bengali and English text',
-        'Top ~15% qualifiers advance to the National Round in Dhaka',
+        'লিখিত সমস্যা সমাধান পরীক্ষা (ক্যাটাগরিভেদে ৯০ থেকে ১৮০ মিনিট)',
+        'বাংলা ও ইংরেজি উভয় ভাষার দ্বিভাষিক প্রশ্নপত্র',
+        'শীর্ষ প্রায় ১৫% উত্তীর্ণ শিক্ষার্থী ঢাকায় জাতীয় ফাইনালের জন্য নির্বাচিত',
       ],
     },
     {
-      step: '03',
-      title: 'National Finals in Dhaka',
-      subtitle: 'Curzon Hall, University of Dhaka & BUET',
+      step: '০৩',
+      title: 'ঢাকায় জাতীয় ফাইনাল পরীক্ষা',
+      subtitle: 'কার্জন হল, ঢাকা বিশ্ববিদ্যালয় ও বুয়েট প্রাঙ্গণ',
       icon: BookOpen,
       color: 'text-amber-600',
       borderColor: 'border-amber-200',
       bgColor: 'bg-amber-50',
       description:
-        'Over 1,200 of the nation’s sharpest young problem solvers assemble for the high-stakes National Examination. The problems test profound conceptual depth, mathematical creativity, and dimensional analysis.',
+        'সারাদেশ থেকে উত্তীর্ণ ১,২০০ জনেরও বেশি সেরা সমস্যা-সমাধানকারী একত্রিত হয় মর্যাদাপূর্ণ জাতীয় পরীক্ষার জন্য। এতে থাকে গভীর তাত্ত্বিক বিশ্লেষণ, মাত্রার যাচাই ও গাণিতিক সৃজনশীলতার পরীক্ষা।',
       keyMilestones: [
-        'National theoretical examination under Bas-academic guidelines',
-        'Technology Fair project presentations and judging',
-        'National closing ceremony, crests, certificates, and book prizes',
+        'বিজ্ঞান একাডেমির মানদণ্ডে জাতীয় তাত্ত্বিক পরীক্ষা',
+        'প্রযুক্তি মেলা ও উদ্ভাবনী হার্ডওয়্যার প্রদর্শনী',
+        'জাতীয় সমাপনী উৎসব, মেডেল, ট্রফি, সনদপত্র ও বই উপহার',
       ],
     },
     {
-      step: '04',
-      title: 'National Physics Training Camp',
-      subtitle: 'Residential intensive theory & laboratory experiments',
+      step: '০৪',
+      title: 'জাতীয় পদার্থবিজ্ঞান প্রশিক্ষণ ক্যাম্প',
+      subtitle: 'বুয়েট ও ঢাবিতে আবাসিক নিবিড় তত্ত্ব ও ল্যাবরেটরি পরীক্ষণ',
       icon: Microscope,
       color: 'text-purple-600',
       borderColor: 'border-purple-200',
       bgColor: 'bg-purple-50',
       description:
-        'The top 30 to 40 national finalists from Category C and D are invited to an intensive 2-to-3 week residential training camp hosted at BUET and Dhaka University. Focuses heavily on experimental apparatus, error analysis, and university-level mechanics and electrodynamics.',
+        'ক্যাটাগরি সি ও ডি-এর জাতীয় চূড়ান্ত পর্বে উত্তীর্ণ সেরা ৩০ থেকে ৪০ জন শিক্ষার্থীকে বুয়েট ও ঢাকা বিশ্ববিদ্যালয়ে ২ থেকে ৩ সপ্তাহের আবাসিক প্রশিক্ষণ ক্যাম্পে আমন্ত্রণ জানানো হয়। এখানে বিশ্ববিদ্যালয়ের বলবিদ্যা, অপটিক্স ও আধুনিক পদার্থবিজ্ঞানের সাথে সরাসরি ল্যাবরেটরি এক্সপেরিমেন্টেশন করানো হয়।',
       keyMilestones: [
-        'Hands-on experimental physics: Interferometry, circuits, thermodynamics',
-        'Advanced problem sessions based on IPhO syllabi & David Morin / Irodov',
-        'Lectures by eminent national physicists and international Olympiad coaches',
+        'হাতে-কলমে ল্যাবরেটরি পদার্থবিজ্ঞান: ইন্টারফেরোমেট্রি, আরএলসি সার্কিট ও ত্রুটি বিশ্লেষণ',
+        'IPhO সিলেবাস, ডেভিড মরিন ও ইরোদভের উন্নত সমস্যা সমাধানের ক্লাস',
+        'আন্তর্জাতিক অলিম্পিয়াড প্রশিক্ষক ও খ্যাতনামা অধ্যাপকদের নিবিড় বক্তৃতা',
       ],
     },
     {
-      step: '05',
-      title: 'Team Selection Tests (TST)',
-      subtitle: 'Selecting the Final National Delegates',
+      step: '০৫',
+      title: 'টিম সিলেকশন টেস্ট (TST)',
+      subtitle: 'আন্তর্জাতিক দলের জন্য চূড়ান্ত প্রতিনিধি নির্বাচন',
       icon: Award,
       color: 'text-emerald-600',
       borderColor: 'border-emerald-200',
       bgColor: 'bg-emerald-50',
       description:
-        'Camp participants undergo multiple 5-hour theoretical and 5-hour experimental examinations adhering strictly to the International Physics Olympiad regulations. The scores determine the national squad.',
+        'ক্যাম্পের শিক্ষার্থীরা আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াডের কঠোর নীতিমালায় একাধিক ৫ ঘণ্টার তাত্ত্বিক এবং ৫ ঘণ্টার ব্যবহারিক ল্যাব পরীক্ষায় অংশ নেয়। এই পরীক্ষার ফলের ভিত্তিতে জাতীয় স্কোয়াড চূড়ান্ত হয়।',
       keyMilestones: [
-        'Top 5 students selected as the official Bangladesh IPhO Delegation',
-        'Next 8 top students selected for the Asian Physics Olympiad (APhO)',
-        'Intensive pre-departure mentorship and specialized problem sets',
+        'শীর্ষ ৫ জন শিক্ষার্থী বাংলাদেশ IPhO জাতীয় দলের প্রতিনিধি হিসেবে নির্বাচিত',
+        'পরবর্তী শীর্ষ ৮ জন এশিয়ান ফিজিক্স অলিম্পিয়াডের (APhO) জন্য নির্বাচিত',
+        'দেশত্যাগের পূর্বে নিবিড় মেন্টরশিপ ও বিশেষায়িত প্রবলেম সলভিং',
       ],
     },
     {
-      step: '06',
-      title: 'The World Stage: IPhO & APhO',
-      subtitle: 'Competing with 85+ Nations Globally',
+      step: '০৬',
+      title: 'বিশ্বমঞ্চ: IPhO ও APhO প্রতিযোগিতা',
+      subtitle: 'বিশ্বের ৮৫+ দেশের সাথে প্রতিদ্বন্দ্বিতা',
       icon: Globe,
       color: 'text-amber-600',
       borderColor: 'border-amber-300',
       bgColor: 'bg-amber-50',
       description:
-        'Representing the red and green flag on the global stage. Bangladesh delegates test their skills against the best young physicists worldwide in historic university cities across Europe, Asia, and the Americas.',
+        'আন্তর্জাতিক মঞ্চে লাল-সবুজের পতাকাবাহী হয়ে লড়াই। ইউরোপ, এশিয়া এবং আমেরিকার ঐতিহাসিক বিশ্ববিদ্যালয় শহরে বিশ্বের সেরা তরুণদের সাথে প্রতিযোগিতা করে সম্মান বয়ে আনা।',
       keyMilestones: [
-        'Gold, Silver, Bronze Medals & Honorable Mentions',
-        'Global academic recognition and admissions to top world universities',
-        'Lifelong membership in the international physics community',
+        'স্বর্ণ, রৌপ্য, ব্রোঞ্জ পদক ও সম্মাননা (Honorable Mention)',
+        'বিশ্বের শীর্ষস্থানীয় বিশ্ববিদ্যালয়ে উচ্চশিক্ষার সুবর্ণ সুযোগ',
+        'আন্তর্জাতিক বিজ্ঞানী ও গবেষক সম্প্রদায়ের সাথে আজীবন সংযোগ',
       ],
     },
   ];
@@ -113,16 +113,16 @@ export const RoadmapSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
             <Flag className="w-3.5 h-3.5 text-emerald-600" />
-            <span>The Olympic Pathway</span>
+            <span>অলিম্পিয়াড পরিক্রমা</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-            From the Classroom <br />
+            শ্রেণিকক্ষ থেকে শুরু করে <br />
             <span className="text-blue-900">
-              to the Global Podium.
+              আন্তর্জাতিক পোডিয়াম পর্যন্ত।
             </span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Understand how each phase of the Bangladesh Physics Olympiad systematically trains and elevates students to international excellence.
+            বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াডের প্রতিটি স্তর শিক্ষার্থীদের কীভাবে ধাপে ধাপে গড়ে তোলে ও বৈশ্বিক মানে উন্নীত করে তা জেনে নিন।
           </p>
         </div>
 
@@ -143,12 +143,12 @@ export const RoadmapSection: React.FC = () => {
               >
                 <div className="flex items-center justify-between mb-1.5">
                   <span className="font-mono text-xs font-bold text-slate-400">
-                    Step {item.step}
+                    ধাপ {item.step}
                   </span>
                   <Icon className={`w-4 h-4 ${isCurrent ? item.color : 'text-slate-400'}`} />
                 </div>
                 <div className={`text-xs font-bold truncate ${isCurrent ? 'text-slate-900' : 'text-slate-700'}`}>
-                  {item.title.split('&')[0]}
+                  {item.title}
                 </div>
               </button>
             );
@@ -166,7 +166,7 @@ export const RoadmapSection: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                      Phase {steps[selectedStep].step} of 06
+                      পর্ব {steps[selectedStep].step} / ০৬
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
                       {steps[selectedStep].title}
@@ -180,7 +180,7 @@ export const RoadmapSection: React.FC = () => {
 
                 <div className="pt-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
-                    Key Milestones & Deliverables:
+                    মূল লক্ষ্য ও মাইলফলকসমূহ:
                   </span>
                   <div className="space-y-2">
                     {steps[selectedStep].keyMilestones.map((ms, idx) => (
@@ -196,12 +196,12 @@ export const RoadmapSection: React.FC = () => {
               {/* Progress Summary / Next Phase Button */}
               <div className="w-full lg:w-72 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 shrink-0">
                 <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                  Roadmap Navigation
+                  অলিম্পিয়াড নেভিগেশন
                 </div>
                 <div className="text-xs text-slate-700 space-y-1">
-                  <div>Next Target: <span className="font-semibold text-blue-600">17th BdPhO 2026</span></div>
-                  <div>Selection Pool: <span className="font-semibold text-slate-900">64 Districts</span></div>
-                  <div>Final Squad: <span className="font-semibold text-amber-700">5 IPhO + 8 APhO</span></div>
+                  <div>আসন্ন লক্ষ্য: <span className="font-semibold text-blue-600">১৭তম বিডিএফও ২০২৬</span></div>
+                  <div>নির্বাচন পরিধি: <span className="font-semibold text-slate-900">৬৪ জেলা</span></div>
+                  <div>চূড়ান্ত দল: <span className="font-semibold text-amber-700">৫ জন IPhO + ৮ জন APhO</span></div>
                 </div>
 
                 {selectedStep < steps.length - 1 ? (
@@ -209,14 +209,14 @@ export const RoadmapSection: React.FC = () => {
                     onClick={() => setSelectedStep(selectedStep + 1)}
                     className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm"
                   >
-                    View Next Step <ChevronRight className="w-4 h-4" />
+                    পরবর্তী ধাপ দেখুন <ChevronRight className="w-4 h-4" />
                   </button>
                 ) : (
                   <Link
                     href="/categories"
                     className="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition text-center block shadow-sm"
                   >
-                    Choose Your Category
+                    আপনার ক্যাটাগরি বেছে নিন
                   </Link>
                 )}
               </div>

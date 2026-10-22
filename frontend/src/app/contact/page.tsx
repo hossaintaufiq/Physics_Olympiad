@@ -5,7 +5,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ContactSection } from '@/components/ContactSection';
 import { FaqSection } from '@/components/FaqSection';
-import { Mail, HelpCircle } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export default function ContactPage() {
   return (
@@ -18,13 +18,13 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200">
               <Mail className="w-3.5 h-3.5 text-blue-700" />
-              <span>National Secretariat & Assistance</span>
+              <span>জাতীয় সচিবালয় ও হেল্পডেস্ক</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Contact Secretariat & FAQs
+              যোগাযোগ ও সচরাচর জিজ্ঞাসা
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Reach out to the Bangladesh Physics Olympiad organizing committee or find rapid answers to common questions about participation, admit cards, and rules.
+              বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড কেন্দ্রীয় পরিচালনা পর্ষদের সাথে সরাসরি যোগাযোগ করুন অথবা সচরাচর জিজ্ঞাসায় দ্রুত প্রশ্নের সমাধান খুঁজে নিন।
             </p>
           </div>
         </section>

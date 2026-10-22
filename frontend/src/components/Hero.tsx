@@ -39,76 +39,69 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-10 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
-      {/* Clearly Visible Panoramic Hero Background Image */}
+      {/* Panoramic Hero Background Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <img
           src="/images/hero_bg.jpg"
-          alt="Physics Quantum and Optics Research Laboratory"
+          alt="পদার্থবিজ্ঞান কোয়ান্টাম ও আলোকবিজ্ঞান ল্যাবরেটরি"
           className="w-full h-full object-cover object-center opacity-85"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
       </div>
 
-      {/* Atmospheric Soft Radials */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] radial-glow-cyan pointer-events-none opacity-60 blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] radial-glow-gold pointer-events-none opacity-40 blur-3xl" />
-
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         {/* Eyebrow Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-blue-200 text-blue-900 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-sm backdrop-blur-xs">
           <span className="w-2 h-2 rounded-full bg-emerald-600" />
-          <span>17th National Edition • Affiliated with IPhO & APhO</span>
+          <span>১৭তম জাতীয় আসর • IPhO ও APhO অনুমোদিত</span>
           <span className="hidden sm:inline text-slate-300">•</span>
-          <span className="hidden sm:inline text-amber-600 font-bold">2026 Season Active</span>
+          <span className="hidden sm:inline text-amber-600 font-bold">২০২৬ শিক্ষাবর্ষের কার্যক্রম চলমান</span>
         </div>
 
         {/* Main Hero Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-950 tracking-tight leading-[1.12] mb-6">
-          Discover the Laws That <br className="hidden sm:inline" />
+          প্রকৃতির নিয়মকে জানা ও <br className="hidden sm:inline" />
           <span className="text-blue-900">
-            Shape the Universe.
+            মহাবিশ্বকে উন্মোচনের যাত্রা।
           </span>
         </h1>
 
         {/* Hero Narrative Subtitle */}
         <p className="max-w-3xl mx-auto text-base sm:text-xl text-slate-600 font-normal leading-relaxed mb-10">
-          The official national platform of the{' '}
-          <strong className="text-slate-900 font-semibold">Bangladesh Physics Olympiad</strong>.
-          We identify, nurture, and train talented minds from Class 5 to Class 12, forging the next generation of researchers, innovators, and international medalists for the{' '}
-          <span className="text-blue-600 font-medium">International Physics Olympiad (IPhO)</span>.
+          <strong className="text-slate-900 font-semibold">বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (বিডিএফও)</strong>-এর অফিসিয়াল জাতীয় প্ল্যাটফর্মে স্বাগতম। ৫ম থেকে ১২শ শ্রেণির শিক্ষার্থীদের যৌক্তিক চিন্তা, পর্যবেক্ষণ ক্ষমতা ও তাত্ত্বিক বোঝাপড়া শাণিত করে আমরা তৈরি করছি ভবিষ্যতের আন্তর্জাতিক পদকজয়ী ও উদ্ভাবক গবেষক।
         </p>
 
         {/* Live Countdown Timer Card */}
         <div className="inline-block mb-10 p-5 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/60">
           <div className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3 flex items-center justify-center gap-2">
             <Compass className="w-4 h-4 text-blue-600" />
-            <span>Countdown to 17th National Round Examination</span>
+            <span>১৭তম জাতীয় ফাইনাল পরীক্ষার কাউন্টডাউন</span>
           </div>
           <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center">
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-blue-600 font-mono">
                 {String(timeLeft.days).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">Days</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">দিন</span>
             </div>
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-blue-600 font-mono">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">Hours</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">ঘণ্টা</span>
             </div>
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-blue-600 font-mono">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">Mins</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">মিনিট</span>
             </div>
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-amber-600 font-mono">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">Secs</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">সেকেন্ড</span>
             </div>
           </div>
         </div>
@@ -119,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
             onClick={onOpenRegisterModal}
             className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md flex items-center justify-center gap-2 group text-base"
           >
-            <span>Register for 17th BdPhO</span>
+            <span>১৭তম বিডিএফও নিবন্ধন</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -128,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
             className="w-full sm:w-auto px-7 py-4 rounded-xl font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 hover:border-blue-400 transition-all shadow-sm flex items-center justify-center gap-2 text-base"
           >
             <BookOpen className="w-5 h-5 text-blue-600" />
-            <span>Explore Past Papers Archive</span>
+            <span>বিগত প্রশ্নপত্র ও সমাধান</span>
           </Link>
 
           <Link
@@ -136,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
             className="w-full sm:w-auto px-6 py-4 rounded-xl font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all flex items-center justify-center gap-2 text-base"
           >
             <Download className="w-5 h-5 text-blue-600" />
-            <span>Admit Card ↗</span>
+            <span>প্রবেশপত্র ডাউনলোড ↗</span>
           </Link>
         </div>
 
@@ -144,30 +137,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 pt-6 border-t border-slate-200 max-w-4xl mx-auto">
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">
-              64
+              ৬৪
             </span>
-            <span className="text-xs text-slate-500 font-medium">Districts Covered</span>
+            <span className="text-xs text-slate-500 font-medium">জেলায় সমন্বিত উপস্থিতি</span>
           </div>
 
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600 font-mono">
-              100,000+
+              ১,০০,০০০+
             </span>
-            <span className="text-xs text-slate-500 font-medium">Participants Trained</span>
+            <span className="text-xs text-slate-500 font-medium">অংশগ্রহণকারী শিক্ষার্থী</span>
           </div>
 
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-amber-600 font-mono">
-              4 Categories
+              ৪টি ক্যাটাগরি
             </span>
-            <span className="text-xs text-slate-500 font-medium">Class 5 to Class 12</span>
+            <span className="text-xs text-slate-500 font-medium">৫ম থেকে ১২শ শ্রেণি</span>
           </div>
 
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-emerald-600 font-mono">
-              48+
+              ৪৮+
             </span>
-            <span className="text-xs text-slate-500 font-medium">IPhO & APhO Honors</span>
+            <span className="text-xs text-slate-500 font-medium">আন্তর্জাতিক পদক ও সম্মাননা</span>
           </div>
         </div>
       </div>

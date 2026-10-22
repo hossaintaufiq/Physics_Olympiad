@@ -22,16 +22,16 @@ export const CategoriesSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
             <Layers className="w-3.5 h-3.5" />
-            <span>Academic Competition Tracks</span>
+            <span>একাডেমিক প্রতিযোগিতা স্তর</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-            Four Levels of Rigor. <br />
+            চারটি প্রতিযোগিতা স্তর। <br />
             <span className="text-blue-900">
-              One Unified Love for Physics.
+              একটি সমন্বিত পদার্থবিজ্ঞান চেতনা।
             </span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            From the observational wonder of primary school to elite calculus-based university physics, BdPhO structures competitions that align with your intellectual journey.
+            প্রাথমিক স্কুলের পর্যবেক্ষণমূলক বিস্ময় থেকে শুরু করে বিশ্ববিদ্যালয় স্তরের ক্যালকুলাস নির্ভর গতিবিদ্যা—বিডিএফও সাজিয়েছে আপনার বয়সের উপযোগী অ্যাকাডেমিক ধাপ।
           </p>
         </div>
 
@@ -51,14 +51,14 @@ export const CategoriesSection: React.FC = () => {
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className={`text-xl font-extrabold font-mono ${isActive ? 'text-blue-600' : 'text-slate-800'}`}>
-                    Category {cat.id}
+                    ক্যাটাগরি {cat.id}
                   </span>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                    {cat.id === 'A' ? 'Classes 5-6' : cat.id === 'B' ? 'Classes 7-8' : cat.id === 'C' ? 'Classes 9-10' : 'Classes 11-12'}
+                    {cat.id === 'A' ? '৫ম–৬ষ্ঠ' : cat.id === 'B' ? '৭ম–৮ম' : cat.id === 'C' ? '৯ম–১০ম' : '১১শ–১২শ'}
                   </span>
                 </div>
                 <p className="text-xs text-slate-500 line-clamp-1 font-medium">
-                  {cat.id === 'A' ? 'Primary' : cat.id === 'B' ? 'Junior' : cat.id === 'C' ? 'Secondary (SSC/O)' : 'Higher Secondary (HSC/A)'}
+                  {cat.id === 'A' ? 'প্রাইমারি' : cat.id === 'B' ? 'জুনিয়র' : cat.id === 'C' ? 'সেকেন্ডারি (এসএসসি/ও)' : 'উচ্চ মাধ্যমিক (এইচএসসি/এ)'}
                 </p>
               </button>
             );
@@ -86,7 +86,7 @@ export const CategoriesSection: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                   <div className="flex items-center gap-2 text-blue-600 text-xs font-semibold mb-1">
-                    <Clock className="w-4 h-4" /> Exam Duration
+                    <Clock className="w-4 h-4" /> পরীক্ষার সময়কাল
                   </div>
                   <div className="text-base font-bold text-slate-900">
                     {selectedSpec.examDuration}
@@ -95,7 +95,7 @@ export const CategoriesSection: React.FC = () => {
 
                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                   <div className="flex items-center gap-2 text-amber-600 text-xs font-semibold mb-1">
-                    <HelpCircle className="w-4 h-4" /> Question Structure
+                    <HelpCircle className="w-4 h-4" /> প্রশ্নকাঠামো ও প্রশ্নের ধরন
                   </div>
                   <div className="text-base font-bold text-slate-900">
                     {selectedSpec.questionPattern}
@@ -106,7 +106,7 @@ export const CategoriesSection: React.FC = () => {
               {/* Core Syllabus Pillars */}
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
-                  Core Scientific Pillars
+                  মূল বৈজ্ঞানিক স্তম্ভসমূহ
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedSpec.keySubjects.map((subject, idx) => (
@@ -128,7 +128,7 @@ export const CategoriesSection: React.FC = () => {
                   className="px-5 py-2.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1.5 transition shadow-sm"
                 >
                   <FileText className="w-4 h-4" />
-                  View Category {selectedSpec.id} Past Papers
+                  ক্যাটাগরি {selectedSpec.id} এর বিগত প্রশ্নপত্র
                 </Link>
                 <a
                   href={selectedSpec.syllabusUrl}
@@ -136,7 +136,7 @@ export const CategoriesSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center gap-1.5 transition border border-slate-200"
                 >
-                  Download Syllabus PDF ↗
+                  সিলেবাস PDF ডাউনলোড ↗
                 </a>
               </div>
             </div>
@@ -146,9 +146,9 @@ export const CategoriesSection: React.FC = () => {
               <div className="flex items-center justify-between pb-3 border-b border-slate-200">
                 <div className="flex items-center gap-2 text-amber-600 text-xs font-bold uppercase tracking-wider">
                   <Lightbulb className="w-4 h-4" />
-                  Sample Olympiad Problem
+                  নমুনা অলিম্পিয়াড সমস্যা
                 </div>
-                <span className="text-[11px] font-mono text-slate-400">Tier {selectedSpec.id}</span>
+                <span className="text-[11px] font-mono text-slate-400">স্তর {selectedSpec.id}</span>
               </div>
 
               <p className="text-sm text-slate-800 leading-relaxed font-sans">
@@ -162,7 +162,7 @@ export const CategoriesSection: React.FC = () => {
                   className="w-full py-2.5 px-3.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-xs font-semibold text-blue-700 flex items-center justify-between transition shadow-2xs"
                 >
                   <span>
-                    {revealedHints[selectedSpec.id] ? 'Hide Solution Hint' : 'Reveal Solution Hint'}
+                    {revealedHints[selectedSpec.id] ? 'সমাধানের সূত্র লুকান' : 'সমাধানের সূত্র ও পদ্ধতি দেখুন'}
                   </span>
                   <ChevronRight
                     className={`w-4 h-4 transition-transform ${
@@ -173,7 +173,7 @@ export const CategoriesSection: React.FC = () => {
 
                 {revealedHints[selectedSpec.id] && (
                   <div className="mt-2.5 p-3.5 rounded-xl bg-blue-50/90 border border-blue-200 text-xs text-blue-900 leading-relaxed animate-fadeIn">
-                    <strong className="block text-blue-800 mb-1">Analytical Approach:</strong>
+                    <strong className="block text-blue-800 mb-1">বিশ্লেষণাত্মক পদ্ধতি:</strong>
                     {selectedSpec.sampleQuestion.answerHint}
                   </div>
                 )}

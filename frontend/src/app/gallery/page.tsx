@@ -17,13 +17,13 @@ export default function GalleryPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-200">
               <Camera className="w-3.5 h-3.5 text-emerald-700" />
-              <span>Visual History & Milestones</span>
+              <span>ঐতিহাসিক মুহূর্ত ও স্মৃতিচারণ</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Official Olympiad Photo Gallery
+              অফিসিয়াল অলিম্পিয়াড ফটো গ্যালারি
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Memories from nationwide regional festivals, laboratory investigations at BUET, national award ceremonies at Curzon Hall, and international IPhO expeditions.
+              দেশব্যাপী আঞ্চলিক বিজ্ঞান উৎসব, বুয়েট ও ঢাকা বিশ্ববিদ্যালয়ের পরীক্ষাগার অনুসন্ধান, কার্জন হলের সমাপনী এবং আন্তর্জাতিক IPhO অভিযানের স্মরণীয় মুহূর্তসমূহ।
             </p>
           </div>
         </section>

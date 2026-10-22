@@ -34,16 +34,16 @@ export const SyllabusSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
             <BookOpen className="w-3.5 h-3.5 text-blue-700" />
-            <span>Curriculum & Recommended Reading</span>
+            <span>পাঠ্যক্রম ও প্রামাণ্য পুস্তক তালিকা</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-            The Physics Knowledge Base. <br />
+            পদার্থবিজ্ঞানের জ্ঞানের ভিত্তি। <br />
             <span className="text-blue-900">
-              Built on International Standards.
+              আন্তর্জাতিক মানের সাথে সম্পূর্ণ সঙ্গতিপূর্ণ।
             </span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Aligned with the official International Physics Olympiad (IPhO) syllabus. Explore subtopics, key mathematical formulations, and master reading recommendations.
+            আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াড (IPhO) এর প্রমিত সিলেবাসের আলোকে প্রস্তুতকৃত। উপ-বিষয়াবলী, মূল গাণিতিক সমীকরণ ও উচ্চতর রেফারেন্স বইসমূহ পর্যালোচনা করুন।
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export const SyllabusSection: React.FC = () => {
                 }`}
               >
                 {getDomainIcon(domain.icon)}
-                <span>{domain.title.split('&')[0]}</span>
+                <span>{domain.title}</span>
               </button>
             );
           })}
@@ -90,7 +90,7 @@ export const SyllabusSection: React.FC = () => {
             {/* Subtopics Listing */}
             <div className="lg:col-span-8 space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                Detailed Topic Breakdown & Governing Equations
+                বিস্তারিত বিষয় বিভাজন ও মৌলিক সমীকরণসমূহ
               </h4>
 
               {activeDomain.subtopics.map((sub, idx) => (
@@ -108,7 +108,7 @@ export const SyllabusSection: React.FC = () => {
                           key={c}
                           className="px-2 py-0.5 rounded text-[10px] font-bold bg-white text-slate-700 border border-slate-200"
                         >
-                          Cat {c}
+                          ক্যাট {c}
                         </span>
                       ))}
                     </div>
@@ -137,7 +137,7 @@ export const SyllabusSection: React.FC = () => {
             {/* Recommended International Books Column */}
             <div className="lg:col-span-4 space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                Recommended Textbooks
+                প্রামাণ্য সহায়ক গ্রন্থাবলী
               </h4>
 
               <div className="space-y-3">
@@ -150,11 +150,11 @@ export const SyllabusSection: React.FC = () => {
                       <Bookmark className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                       <div>
                         <div className="text-xs font-bold text-slate-900">{book.title}</div>
-                        <div className="text-[11px] text-slate-500">By {book.author}</div>
+                        <div className="text-[11px] text-slate-500">লেখক: {book.author}</div>
                       </div>
                     </div>
                     <div className="text-[10px] font-semibold px-2 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200 inline-block">
-                      Level: {book.level}
+                      উপযোগিতা: {book.level}
                     </div>
                   </div>
                 ))}
@@ -163,10 +163,10 @@ export const SyllabusSection: React.FC = () => {
               {/* Official Syllabus CTA Card */}
               <div className="p-5 rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 text-center space-y-3">
                 <span className="text-xs font-bold text-slate-900 block">
-                  Looking for the Official 2026 PDF?
+                  অফিসিয়াল ২০২৬ সিলেবাস PDF খুঁজছেন?
                 </span>
                 <p className="text-[11px] text-slate-600">
-                  Download the formal Bangladesh Physics Olympiad Academic Syllabus issued by the National Committee.
+                  জাতীয় কমিটি কর্তৃক অনুমোদিত বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াডের বিস্তারিত সিলেবাস ডাউনলোড করুন।
                 </p>
                 <a
                   href="https://www.bdpho.org/syllabus"
@@ -174,7 +174,7 @@ export const SyllabusSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full py-2.5 px-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs inline-flex items-center justify-center gap-1.5 transition shadow-sm"
                 >
-                  Download Full PDF ↗
+                  পূর্ণাঙ্গ সিলেবাস PDF ↗
                 </a>
               </div>
             </div>

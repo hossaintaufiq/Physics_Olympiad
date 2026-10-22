@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         {/* Strategic Institutional Partners */}
         <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
           <div className="text-center text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-6">
-            Supported by Academic, Government & Media Partners
+            একাডেমিক, সরকারি ও মিডিয়া সহযোগী প্রতিষ্ঠানসমূহ
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center items-center">
             {PARTNERS.map((p, idx) => (
@@ -36,43 +36,43 @@ export const Footer: React.FC = () => {
               <BdphoLogo size="md" />
             </Link>
             <p className="text-xs text-slate-600 leading-relaxed max-w-sm">
-              The Bangladesh Physics Olympiad (BdPhO) is the premier national platform dedicated to nurturing scientific curiosity, rigorous mathematical deduction, and training young scholars to represent Bangladesh at the International Physics Olympiad (IPhO) and Asian Physics Olympiad (APhO).
+              বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (বিডিএফও) দেশের শিক্ষার্থীদের মধ্যে বৈজ্ঞানিক জিজ্ঞাসা, গাণিতিক যুক্তি ও উদ্ভাবনী চিন্তা বিকাশের জন্য নিবেদিত জাতীয় একাডেমি। আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াড (IPhO) এবং এশিয়ান পদার্থবিজ্ঞান অলিম্পিয়াড (APhO)-এ বাংলাদেশের মেধার পতাকা সমুন্নত রাখতে আমরা নিরলসভাবে কাজ করে যাচ্ছি।
             </p>
             <div className="flex items-center gap-2 pt-1 text-slate-500">
-              <span className="text-xs">Affiliation:</span>
-              <span className="font-bold text-slate-800">IPhO & APhO Official Member</span>
+              <span className="text-xs">অনুমোদন:</span>
+              <span className="font-bold text-slate-800">IPhO ও APhO-এর অফিসিয়াল সদস্য</span>
             </div>
           </div>
 
           {/* Column 2: Explore */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
-              Olympiad Tracks
+              অলিম্পিয়াড তথ্য
             </h4>
             <ul className="space-y-2 font-medium">
               <li>
                 <Link href="/about" className="hover:text-blue-700 transition">
-                  About BdPhO
+                  বিডিএফও পরিচিতি
                 </Link>
               </li>
               <li>
                 <Link href="/categories" className="hover:text-blue-700 transition">
-                  Category A, B, C, D Details
+                  ক্যাটাগরি A, B, C, D বিবরণ
                 </Link>
               </li>
               <li>
                 <Link href="/past-papers" className="hover:text-blue-700 transition">
-                  Past Question Papers Archive
+                  বিগত প্রশ্নপত্র ও সমাধান
                 </Link>
               </li>
               <li>
                 <Link href="/syllabus" className="hover:text-blue-700 transition">
-                  IPhO-Aligned Syllabus
+                  আইপিএইচও মানসম্পন্ন সিলেবাস
                 </Link>
               </li>
               <li>
                 <Link href="/results" className="hover:text-blue-700 transition">
-                  International Hall of Fame
+                  আন্তর্জাতিক হল অব ফেম
                 </Link>
               </li>
             </ul>
@@ -81,32 +81,32 @@ export const Footer: React.FC = () => {
           {/* Column 3: Portals & Activities */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
-              Student Portals
+              শিক্ষার্থী সেবা
             </h4>
             <ul className="space-y-2 font-medium">
               <li>
                 <Link href="/admit-card" className="hover:text-blue-700 transition">
-                  Download Admit Card
+                  প্রবেশপত্র ডাউনলোড
                 </Link>
               </li>
               <li>
                 <Link href="/login" className="hover:text-blue-700 transition">
-                  Student Portal Login
+                  শিক্ষার্থী পোর্টাল লগইন
                 </Link>
               </li>
               <li>
                 <Link href="/tech-fair" className="hover:text-blue-700 transition">
-                  Technology & Invention Fair
+                  বিজ্ঞান ও প্রযুক্তি মেলা
                 </Link>
               </li>
               <li>
                 <Link href="/gallery" className="hover:text-blue-700 transition">
-                  Event Photo Gallery
+                  আলোকচিত্র গ্যালারি
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-blue-700 transition">
-                  Help Desk & FAQs
+                  হেল্প ডেস্ক ও সাধারণ জিজ্ঞাসা (FAQ)
                 </Link>
               </li>
             </ul>
@@ -115,12 +115,12 @@ export const Footer: React.FC = () => {
           {/* Column 4: National Secretariat */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
-              National Secretariat
+              কেন্দ্রীয় সচিবালয়
             </h4>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Bangladesh Physics Olympiad<br />
-              House No. 4/9, Ground Floor<br />
-              Block # F, Lalmatia, Dhaka-1207
+              বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড<br />
+              বাড়ি নং ৪/৯, নিচতলা<br />
+              ব্লক # এফ, লালমাটিয়া, ঢাকা-১২০৭
             </p>
             <div className="pt-1">
               <a
@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
             <div className="text-[11px] text-slate-500">
-              Hours: Sun – Thu, 10 AM – 5 PM (BST)
+              সময়সূচি: রবি – বৃহস্পতি, সকাল ১০টা – বিকাল ৫টা
             </div>
           </div>
         </div>
@@ -139,15 +139,15 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal Bar */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            © 2011–2026 Bangladesh Physics Olympiad (BdPhO). All official rights reserved.
+            © ২০১১–২০২৬ বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (বিডিএফও)। সর্বস্বত্ব সংরক্ষিত।
           </div>
           <div className="flex items-center gap-4">
-            <span>Bilingual Examination System</span>
+            <span>দ্বিভাষিক প্রশ্নপদ্ধতি</span>
             <span>•</span>
-            <span>Bengali Version Authoritative</span>
+            <span>বাংলা সংস্করণ অগ্রাধিকারযোগ্য</span>
             <span>•</span>
             <Link href="/" className="hover:text-slate-900 font-semibold transition">
-              Back to Top ↑
+              উপরে যান ↑
             </Link>
           </div>
         </div>

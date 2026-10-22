@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Users, Building2, ExternalLink } from 'lucide-react';
+import { Users, Building2 } from 'lucide-react';
 import { COMMITTEE_MEMBERS } from '@/data/bdphoData';
 
 export const CommitteeSection: React.FC = () => {
@@ -12,6 +12,23 @@ export const CommitteeSection: React.FC = () => {
     return m.tier.toLowerCase() === activeTier.toLowerCase();
   });
 
+  const getTierLabel = (tier: string) => {
+    switch (tier) {
+      case 'Patron':
+        return 'পৃষ্ঠপোষক';
+      case 'Academic':
+        return 'একাডেমিক কাউন্সিল';
+      case 'Advisory':
+        return 'উপদেষ্টা পরিষদ';
+      case 'Executive':
+        return 'নির্বাহী পর্ষদ';
+      case 'Regional':
+        return 'আঞ্চলিক সমন্বয়ক';
+      default:
+        return tier;
+    }
+  };
+
   return (
     <section id="committee" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto">
@@ -19,27 +36,27 @@ export const CommitteeSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
             <Users className="w-3.5 h-3.5 text-blue-600" />
-            <span>Academic Leadership & Governance</span>
+            <span>একাডেমিক নেতৃত্ব ও পরিচালনা পর্ষদ</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-            Guided by Bangladesh’s <br />
+            দেশের শীর্ষ পদার্থবিজ্ঞানী ও <br />
             <span className="text-blue-900">
-              Foremost Physicists & Mentors.
+              শিক্ষাবিদদের সার্বিক দিকনির্দেশনা।
             </span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Under the patronage of the Bangladesh Physical Society, eminent university professors from DU, BUET, and SUST oversee problem formulation, training camps, and national jury deliberations.
+            বাংলাদেশ ফিজিক্যাল সোসাইটির পৃষ্ঠপোষকতায় ঢাকা বিশ্ববিদ্যালয়, বুয়েট, শাবিপ্রবি ও রাজশাহী বিশ্ববিদ্যালয়ের বিশিষ্ট অধ্যাপকদের তত্ত্বাবধানে অলিম্পিয়াডের প্রশ্ন প্রণয়ন, প্রশিক্ষণ ক্যাম্প ও জুরিবোর্ড পরিচালিত হয়।
           </p>
         </div>
 
         {/* Tier Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {[
-            { label: 'Full Committee', value: 'all' },
-            { label: 'Patrons & Founders', value: 'Patron' },
-            { label: 'Academic Council', value: 'Academic' },
-            { label: 'Advisory Panel', value: 'Advisory' },
-            { label: 'Executive Team', value: 'Executive' },
+            { label: 'পূর্ণাঙ্গ কমিটি', value: 'all' },
+            { label: 'পৃষ্ঠপোষক ও প্রতিষ্ঠাতা', value: 'Patron' },
+            { label: 'একাডেমিক কাউন্সিল', value: 'Academic' },
+            { label: 'উপদেষ্টা পরিষদ', value: 'Advisory' },
+            { label: 'নির্বাহী পর্ষদ', value: 'Executive' },
           ].map((tab) => (
             <button
               key={tab.value}
@@ -72,16 +89,14 @@ export const CommitteeSection: React.FC = () => {
                   />
                   <div>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider block w-max mb-1">
-                      {member.tier}
+                      {getTierLabel(member.tier)}
                     </span>
                     <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition">
-                      {member.name}
+                      {member.banglaName || member.name}
                     </h3>
-                    {member.banglaName && (
-                      <p className="text-xs text-slate-500 font-sans">
-                        {member.banglaName}
-                      </p>
-                    )}
+                    <p className="text-xs text-slate-500 font-sans">
+                      {member.name}
+                    </p>
                   </div>
                 </div>
 
@@ -96,26 +111,13 @@ export const CommitteeSection: React.FC = () => {
                 </div>
 
                 {member.bio && (
-                  <p className="text-xs text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+                  <p className="text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
                     {member.bio}
                   </p>
                 )}
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Committee Link Footer */}
-        <div className="text-center">
-          <a
-            href="https://www.bdpho.org/central-committee"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-500 text-slate-700 hover:text-blue-700 text-xs font-semibold transition shadow-2xs"
-          >
-            <span>View Full 40+ Member Central Directory on Official Portal</span>
-            <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
-          </a>
         </div>
       </div>
     </section>

@@ -7,32 +7,32 @@ import { BDPHO_METRICS } from '@/data/bdphoData';
 export const TechFairSection: React.FC = () => {
   const tracks = [
     {
-      title: 'Physics Demonstration Apparatus',
-      desc: 'Working hardware explaining fundamental physics phenomena: magnetic levitation, optical interferometry, acoustic resonance, or fluid dynamics.',
-      tag: 'Hardware Track',
+      title: 'পদার্থবিজ্ঞান প্রদর্শক যন্ত্রপাতি',
+      desc: 'মৌলিক বৈজ্ঞানিক ঘটনা ব্যাখ্যাদানকারী হার্ডওয়্যার: চৌম্বকীয় লেভিটেশন, অপটিক্যাল ইন্টারফেরোমেট্রি, অ্যাকোস্টিক রেজোন্যান্স বা প্রবাহী গতিবিদ্যা।',
+      tag: 'হার্ডওয়্যার ট্র্যাক',
     },
     {
-      title: 'Renewable Energy & Thermodynamics',
-      desc: 'Inventions involving thermoelectric harvesting, solar concentration, wind vortices, and high-efficiency thermodynamic cycles.',
-      tag: 'Green Tech Track',
+      title: 'নবায়নযোগ্য শক্তি ও তাপগতিবিদ্যা',
+      desc: 'থার্মোইলেক্ট্রিক শক্তি সংগ্রহ, সোলার কনসেন্ট্রেশন সিস্টেম, উইন্ড ভর্টেক্স এবং উচ্চ-দক্ষ তাপগতীয় রূপান্তর চক্র।',
+      tag: 'গ্রিন টেক ট্র্যাক',
     },
     {
-      title: 'Electronic Sensor Instrumentation',
-      desc: 'Automated data logging systems, low-cost spectrophotometers, astronomical trackers, and micro-controller sensor arrays.',
-      tag: 'Instrumentation',
+      title: 'ইলেকট্রনিক সেন্সর ও পরিমাপক',
+      desc: 'স্বয়ংক্রিয় ডাটা লগার, স্বল্পমূল্যের স্পেকট্রোফটোমিটার, জ্যোতির্বৈজ্ঞানিক ট্র্যাকার এবং মাইক্রো-কন্ট্রোলার সেন্সর অ্যারে।',
+      tag: 'ইন্সট্রুমেন্টেশন',
     },
     {
-      title: 'Computational Physics & Simulations',
-      desc: 'Original numerical simulations of planetary orbits, relativistic trajectories, and quantum potential well wave-packets.',
-      tag: 'Software / Algorithmic',
+      title: 'কম্পিউটেশনাল পদার্থবিজ্ঞান ও সিমুলেশন',
+      desc: 'গ্রহীয় কক্ষপথ, আপেক্ষিকীয় গতিপথ এবং কোয়ান্টাম ওয়েভ-প্যাকেটের নিজস্ব কোডিং নির্ভর নির্ভুল সিমুলেশন মডেল।',
+      tag: 'সফটওয়্যার / অ্যালগরিদমিক',
     },
   ];
 
   const criteria = [
-    { name: 'Scientific Validity & Accuracy', weight: '30%' },
-    { name: 'Originality & Technical Innovation', weight: '30%' },
-    { name: 'Hardware Functionality & Working Proof', weight: '20%' },
-    { name: 'Defense, Clarity & Project Poster', weight: '20%' },
+    { name: 'তাত্ত্বিক যথার্থতা ও বৈজ্ঞানিক নির্ভুলতা', weight: '৩০%' },
+    { name: 'মৌলিকত্ব ও প্রযুক্তিগত উদ্ভাবন', weight: '৩০%' },
+    { name: 'কার্যকর প্রোটোটাইপ ও বাস্তব প্রমাণ', weight: '২০%' },
+    { name: 'উপস্থাপন, পোস্টার ও মৌখিক ডিফেন্স', weight: '২০%' },
   ];
 
   return (
@@ -42,16 +42,16 @@ export const TechFairSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
             <Cpu className="w-3.5 h-3.5 text-cyan-600" />
-            <span>Applied Innovation & Hardware Exhibition</span>
+            <span>ফলিত উদ্ভাবন ও হার্ডওয়্যার প্রদর্শনী</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-            BdPhO Technology & <br />
+            বিডিএফও প্রযুক্তি মেলা ও <br />
             <span className="text-blue-900">
-              Scientific Invention Fair.
+              বৈজ্ঞানিক উদ্ভাবন প্রদর্শনী।
             </span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Where theoretical physics transforms into tangible prototypes. Open to all registered students showcasing physical inventions and experimental demonstrators.
+            যেখানে তাত্ত্বিক পদার্থবিজ্ঞান রূপ নেয় বাস্তব প্রোটোটাইপে। নিবন্ধিত সকল শিক্ষার্থী তাদের নিজস্ব উদ্ভাবন ও পরীক্ষণ প্রদর্শন করতে পারবে।
           </p>
         </div>
 
@@ -82,13 +82,13 @@ export const TechFairSection: React.FC = () => {
           {/* Judging Criteria */}
           <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 space-y-4">
             <div className="flex items-center gap-2 text-amber-600 text-xs font-bold uppercase tracking-wider">
-              <Award className="w-4 h-4" /> Official Evaluation Criteria
+              <Award className="w-4 h-4" /> অফিশিয়াল মূল্যায়ন মাপকাঠি
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-              How Projects Are Judged
+              প্রজেক্ট মূল্যায়নের নিয়মাবলী
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Judged by university faculty from DU, BUET, and Bangladesh Academy of Sciences during the National Round exhibition.
+              ঢাকা বিশ্ববিদ্যালয়, বুয়েট এবং বিজ্ঞান একাডেমির প্রথিতযশা গবেষক ও অধ্যাপকদের সমন্বয়ে গঠিত বিচারকমণ্ডলী দ্বারা মূল্যায়িত হবে।
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -108,23 +108,23 @@ export const TechFairSection: React.FC = () => {
           <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-slate-100 border border-slate-200 flex flex-col justify-between space-y-4">
             <div>
               <div className="flex items-center gap-2 text-rose-600 text-xs font-bold uppercase tracking-wider mb-2">
-                <ShieldAlert className="w-4 h-4" /> Safety & Submission Protocol
+                <ShieldAlert className="w-4 h-4" /> নিরাপত্তা ও আবেদন নীতিমালা
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Fair Regulations
+                মেলার বিধিবিধান
               </h3>
               <ul className="text-xs text-slate-600 space-y-2 mb-4">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Individual or maximum 2-member teams.</span>
+                  <span>একক বা সর্বোচ্চ ২ সদস্যের দল হিসেবে অংশগ্রহণযোগ্য।</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>No open hazardous chemicals or unregulated high voltages (above 50V AC).</span>
+                  <span>কোনো ক্ষতিকর রাসায়নিক বা অনিরাপদ উচ্চ ভোল্টেজ (৫০ ভোল্ট এসির বেশি) নিষিদ্ধ।</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Must include a printed A1 technical poster and brief report.</span>
+                  <span>একটি মুদ্রিত A1 সাইজ টেকনিক্যাল পোস্টার ও সংক্ষিপ্ত প্রতিবেদন সাথে থাকতে হবে।</span>
                 </li>
               </ul>
             </div>
@@ -135,7 +135,7 @@ export const TechFairSection: React.FC = () => {
               rel="noopener noreferrer"
               className="py-3 px-4 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm"
             >
-              Submit Project Application ↗
+              প্রজেক্ট আবেদনপত্র জমা দিন ↗
             </a>
           </div>
         </div>
