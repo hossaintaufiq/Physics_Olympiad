@@ -39,7 +39,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-10 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white via-slate-50/40 to-white">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-10 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
+      {/* Clearly Visible Panoramic Hero Background Image */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          src="/images/hero_bg.jpg"
+          alt="Physics Quantum and Optics Research Laboratory"
+          className="w-full h-full object-cover object-center opacity-80"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
+      </div>
+
       {/* Light Physics Orbit Canvas */}
       <PhysicsSimulation />
 
@@ -49,17 +60,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50/90 border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-sm animate-float">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-blue-200 text-blue-900 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-sm backdrop-blur-xs">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>17th National Edition • Affiliated with IPhO & APhO</span>
           <span className="hidden sm:inline text-slate-300">•</span>
           <span className="hidden sm:inline text-amber-600 font-bold">2026 Season Active</span>
         </div>
 
         {/* Main Hero Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.12] mb-6">
           Discover the Laws That <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-sky-600 bg-clip-text text-transparent">
+          <span className="vibrant-gradient-text">
             Shape the Universe.
           </span>
         </h1>

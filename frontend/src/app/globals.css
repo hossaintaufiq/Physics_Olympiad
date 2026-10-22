@@ -70,3 +70,10 @@ body {
 .animate-ticker:hover {
   animation-play-state: paused;
 }
+
+/* Stable Clean Visual Tokens */
+.vibrant-gradient-text {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 40%, #0284c7 70%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -15,14 +15,24 @@ export default function CategoriesPage() {
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="bg-slate-50 border-b border-slate-200 py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200">
-              <Layers className="w-3.5 h-3.5 text-blue-700" />
+        <section className="relative bg-white border-b border-slate-200 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img
+              src="/images/hero_bg.jpg"
+              alt="Physics Categories Background"
+              className="w-full h-full object-cover object-center animate-breath-zoom opacity-25"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white" />
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 hover-vibrate cursor-pointer backdrop-blur-xs">
+              <Layers className="w-3.5 h-3.5 text-blue-700 animate-pulse" />
               <span>Academic Competition Tracks</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Categories & Eligibility Guidelines
+            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
+              Categories & <span className="vibrant-gradient-text">Eligibility Guidelines</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
               BdPhO organizes competitions across four distinct academic tiers, ensuring every student faces rigorous challenges calibrated to their grade level.

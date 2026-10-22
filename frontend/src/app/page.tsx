@@ -45,24 +45,39 @@ export default function Home() {
 
       <main className="flex-1">
         {/* 1. Official Institutional Hero Header */}
-        <section className="relative bg-gradient-to-b from-white via-slate-50/60 to-white pt-8 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
-          {/* Subtle Physics Background Simulation */}
+        <section className="relative bg-white pt-10 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
+          {/* Clearly Visible Panoramic Physics Hero Background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img
+              src="/images/hero_bg.jpg"
+              alt="Physics Quantum and Optics Research Laboratory"
+              className="w-full h-full object-cover object-center opacity-80"
+            />
+            {/* Smooth directional white wash ensuring text on left is super sharp while lab lasers and blackboard are clearly visible */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
+          </div>
+
+          {/* Subtle Physics Particle & Orbit Background Simulation */}
           <PhysicsSimulation />
 
           <div className="relative z-10 max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column: Official Declaration */}
               <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold uppercase tracking-wider shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-blue-200 text-blue-900 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-xs">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                   <span>17th National Edition • Official Academic Portal</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                  Bangladesh Physics Olympiad
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]">
+                  Bangladesh{' '}
+                  <span className="vibrant-gradient-text block sm:inline">
+                    Physics Olympiad
+                  </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+                <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
                   The official national competition selecting and training Bangladesh delegates for the{' '}
                   <strong className="text-slate-900 font-semibold">International Physics Olympiad (IPhO)</strong> and{' '}
                   <strong className="text-slate-900 font-semibold">Asian Physics Olympiad (APhO)</strong>. Empowering young scientists from Class 5 to Class 12 across all 64 districts.
@@ -74,16 +89,16 @@ export default function Home() {
                     href={BDPHO_METRICS.officialPortal}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-md shadow-blue-600/20"
+                    className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-md shadow-blue-600/20 group"
                   >
-                    <Sparkles className="w-4 h-4 text-amber-300" />
+                    <Sparkles className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
                     <span>Register for 17th BdPhO</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
 
                   <Link
                     href="/admit-card"
-                    className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-200"
+                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-xs"
                   >
                     <Download className="w-4 h-4 text-blue-700" />
                     <span>Download Admit Card</span>
@@ -91,7 +106,7 @@ export default function Home() {
 
                   <Link
                     href="/past-papers"
-                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-200"
+                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-xs"
                   >
                     <BookOpen className="w-4 h-4 text-slate-500" />
                     <span>Past Papers Archive</span>
@@ -102,28 +117,28 @@ export default function Home() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-200">
                   <div>
                     <span className="block text-xl sm:text-2xl font-extrabold text-slate-900 font-mono">64</span>
-                    <span className="text-[11px] text-slate-500 font-medium">Districts Covered</span>
+                    <span className="text-[11px] text-slate-600 font-medium">Districts Covered</span>
                   </div>
                   <div>
                     <span className="block text-xl sm:text-2xl font-extrabold text-blue-700 font-mono">100k+</span>
-                    <span className="text-[11px] text-slate-500 font-medium">Annual Students</span>
+                    <span className="text-[11px] text-slate-600 font-medium">Annual Students</span>
                   </div>
                   <div>
                     <span className="block text-xl sm:text-2xl font-extrabold text-amber-700 font-mono">4 Tiers</span>
-                    <span className="text-[11px] text-slate-500 font-medium">Class 5 to 12</span>
+                    <span className="text-[11px] text-slate-600 font-medium">Class 5 to 12</span>
                   </div>
                   <div>
                     <span className="block text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono">48+</span>
-                    <span className="text-[11px] text-slate-500 font-medium">IPhO/APhO Honors</span>
+                    <span className="text-[11px] text-slate-600 font-medium">IPhO/APhO Honors</span>
                   </div>
                 </div>
               </div>
 
               {/* Right Column: Countdown Card & Handcrafted Seal */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/50 space-y-5">
+                <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200 hover:border-blue-400 shadow-xl shadow-slate-200/50 space-y-5 transition-all">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
                       <Compass className="w-4 h-4 text-blue-700" />
                       17th National Finals Schedule
                     </span>
@@ -132,7 +147,7 @@ export default function Home() {
                     </span>
                   </div>
 
-                  {/* Countdown Timer */}
+                  {/* Countdown Timer with Stable Accents */}
                   <div className="grid grid-cols-4 gap-2 text-center">
                     <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="block text-xl sm:text-3xl font-extrabold text-blue-700 font-mono">
@@ -152,11 +167,11 @@ export default function Home() {
                       </span>
                       <span className="text-[10px] font-bold text-slate-500 uppercase">Mins</span>
                     </div>
-                    <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                      <span className="block text-xl sm:text-3xl font-extrabold text-amber-700 font-mono">
+                    <div className="p-3 rounded-2xl bg-amber-50 border border-amber-300 shadow-xs">
+                      <span className="block text-xl sm:text-3xl font-extrabold text-amber-600 font-mono">
                         {String(timeLeft.seconds).padStart(2, '0')}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-500 uppercase">Secs</span>
+                      <span className="text-[10px] font-bold text-amber-700 uppercase">Secs</span>
                     </div>
                   </div>
 
@@ -183,6 +198,101 @@ export default function Home() {
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                     </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Moments of Academic & National Pride Gallery Preview */}
+            <div className="mt-14 pt-10 border-t border-slate-200/80">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-700 font-mono">
+                    National Excellence In Action
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
+                    From Classrooms to the World Stage
+                  </h2>
+                </div>
+                <Link
+                  href="/gallery"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 transition group"
+                >
+                  <span>Browse Full Photo Wall</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+                {/* Card 1: Large Featured - Optics Lab */}
+                <div className="md:col-span-7 group relative rounded-3xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md">
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img
+                      src="/images/lab_optics.jpg"
+                      alt="University of Dhaka and BUET Physics Lab Training"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                  </div>
+                  <div className="absolute bottom-0 inset-x-0 p-6 text-white">
+                    <span className="inline-block px-2.5 py-1 rounded-full bg-blue-600/90 text-white text-[10px] font-bold uppercase tracking-wider mb-2 backdrop-blur-xs">
+                      National Physics Training Camp
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold leading-snug mb-1 text-white">
+                      Experimental Optics & Laser Refraction at University Laboratories
+                    </h3>
+                    <p className="text-xs text-slate-200 line-clamp-2">
+                      Top national qualifiers undergo rigorous experimental training on precision optical benches and advanced electronic interferometers under university faculty supervision.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right Column: 2 Stacked Cards */}
+                <div className="md:col-span-5 flex flex-col gap-5">
+                  {/* Card 2: Team Bangladesh at IPhO */}
+                  <div className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md flex-1">
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <img
+                        src="/images/ipho_delegation.jpg"
+                        alt="Team Bangladesh at International Physics Olympiad"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                    </div>
+                    <div className="absolute bottom-0 inset-x-0 p-5 text-white">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-amber-500/90 text-white text-[10px] font-bold uppercase tracking-wider mb-1.5 backdrop-blur-xs">
+                        Global Representation
+                      </span>
+                      <h3 className="text-sm sm:text-base font-bold leading-tight text-white mb-0.5">
+                        Team Bangladesh at the International Physics Olympiad (IPhO)
+                      </h3>
+                      <p className="text-[11px] text-slate-300 line-clamp-1">
+                        Representing 170 million citizens on international Olympic podiums worldwide.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card 3: Award Ceremony */}
+                  <div className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-slate-900 shadow-md flex-1">
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <img
+                        src="/images/award_ceremony.jpg"
+                        alt="National Physics Olympiad Award Ceremony"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                    </div>
+                    <div className="absolute bottom-0 inset-x-0 p-5 text-white">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-emerald-600/90 text-white text-[10px] font-bold uppercase tracking-wider mb-1.5 backdrop-blur-xs">
+                        National Recognition
+                      </span>
+                      <h3 className="text-sm sm:text-base font-bold leading-tight text-white mb-0.5">
+                        Annual National Finals & Gold Medal Conferment
+                      </h3>
+                      <p className="text-[11px] text-slate-300 line-clamp-1">
+                        Prof. Dr. Muhammed Zafar Iqbal and academic leaders honoring national champions.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -353,6 +463,43 @@ export default function Home() {
                   <div className="text-[11px] text-slate-500 leading-tight">{s.desc}</div>
                 </div>
               ))}
+            </div>
+
+            {/* National Exam Hall Feature Banner */}
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-md bg-slate-900 mt-6">
+              <div className="relative aspect-[21/9] sm:aspect-[24/8] overflow-hidden">
+                <img
+                  src="/images/national_exam_hall.jpg"
+                  alt="National Examination Hall at Curzon Hall"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/65 to-transparent" />
+              </div>
+              <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-center max-w-2xl text-white">
+                <span className="inline-block px-3 py-1 rounded-full bg-blue-600/90 text-white text-[11px] font-bold uppercase tracking-wider mb-2 backdrop-blur-xs w-max">
+                  Stage 03 • National Finals Atmosphere
+                </span>
+                <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight mb-2">
+                  Where 1,200 of the Nation's Best Young Physicists Meet
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-200 mb-4 max-w-xl">
+                  Every year, regional qualifiers from 64 districts gather in Dhaka for the official 3-hour theoretical competition, testing problem-solving elegance, physical insight, and calculus rigor.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/past-papers"
+                    className="px-4 py-2 rounded-xl bg-white text-slate-900 font-bold text-xs hover:bg-slate-100 transition shadow-sm"
+                  >
+                    View National Question Papers ↗
+                  </Link>
+                  <Link
+                    href="/gallery"
+                    className="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs backdrop-blur-xs transition"
+                  >
+                    See Event Photo Gallery
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
