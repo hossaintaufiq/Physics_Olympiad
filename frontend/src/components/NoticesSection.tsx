@@ -22,9 +22,9 @@ export const NoticesSection: React.FC = () => {
               <Bell className="w-3.5 h-3.5 text-amber-600" />
               <span>Official Circulars & Directives</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
               Latest Notices & <br />
-              <span className="bg-gradient-to-r from-amber-600 via-blue-700 to-emerald-700 bg-clip-text text-transparent">
+              <span className="text-blue-900">
                 Administrative Circulars.
               </span>
             </h2>

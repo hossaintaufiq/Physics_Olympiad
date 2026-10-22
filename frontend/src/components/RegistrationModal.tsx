@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, UserPlus, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
+import { X, UserPlus, CheckCircle2, ExternalLink } from 'lucide-react';
 import { BDPHO_METRICS } from '@/data/bdphoData';
 
 interface RegistrationModalProps {
@@ -36,12 +36,12 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
         </button>
 
         <div className="flex items-center gap-3 mb-4">
-          <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-amber-600">
+          <div className="p-3 rounded-2xl bg-blue-50 border border-blue-200 text-blue-700">
             <UserPlus className="w-6 h-6" />
           </div>
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold uppercase tracking-wider mb-1">
-              <Sparkles className="w-3 h-3 text-amber-600" /> Registration Open • 17th BdPhO
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-800 text-[11px] font-semibold uppercase tracking-wider mb-1">
+              Registration Open • 17th BdPhO
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
               National Registration Guide

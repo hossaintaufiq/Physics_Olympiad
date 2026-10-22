@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BookOpen, Sparkles, Atom, Zap, Flame, Radio, Bookmark } from 'lucide-react';
+import { BookOpen, Atom, Zap, Flame, Radio, Bookmark, Cpu } from 'lucide-react';
 import { SYLLABUS_DOMAINS } from '@/data/bdphoData';
 
 export const SyllabusSection: React.FC = () => {
@@ -20,9 +20,10 @@ export const SyllabusSection: React.FC = () => {
         return <Flame className="w-5 h-5" />;
       case 'Radio':
         return <Radio className="w-5 h-5" />;
-      case 'Sparkles':
+      case 'Cpu':
+        return <Cpu className="w-5 h-5" />;
       default:
-        return <Sparkles className="w-5 h-5" />;
+        return <Atom className="w-5 h-5" />;
     }
   };
 
@@ -31,13 +32,13 @@ export const SyllabusSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
-            <BookOpen className="w-3.5 h-3.5 text-purple-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
+            <BookOpen className="w-3.5 h-3.5 text-blue-700" />
             <span>Curriculum & Recommended Reading</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
             The Physics Knowledge Base. <br />
-            <span className="bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+            <span className="text-blue-900">
               Built on International Standards.
             </span>
           </h2>

@@ -34,7 +34,7 @@ export default function AboutPage() {
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
               Inspiring Scientific Curiosity <br className="hidden sm:inline" />
-              <span className="vibrant-gradient-text">Across Bangladesh.</span>
+              <span className="text-blue-900">Across Bangladesh.</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
               Founded in 2011, the Bangladesh Physics Olympiad (BdPhO) is the premier national body entrusted with discovering, nurturing, and mentoring young talent from Class 5 to Class 12 to represent our nation on the global stage.

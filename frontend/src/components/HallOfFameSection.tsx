@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Trophy, Sparkles, MapPin, School, ExternalLink } from 'lucide-react';
+import { Trophy, Award, MapPin, School, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { HALL_OF_FAME } from '@/data/bdphoData';
 import { Medalist } from '@/types';
@@ -47,10 +47,10 @@ export const HallOfFameSection: React.FC = () => {
               <Trophy className="w-3.5 h-3.5 text-amber-600" />
               <span>International Recognition</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
               International Hall of Fame. <br />
-              <span className="bg-gradient-to-r from-amber-600 via-yellow-600 to-blue-700 bg-clip-text text-transparent">
-                Honoring Bangladesh's Pride.
+              <span className="text-blue-900">
+                Honoring Bangladesh&apos;s National Delegations.
               </span>
             </h2>
             <p className="text-slate-600 text-base">
@@ -62,10 +62,10 @@ export const HallOfFameSection: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2.5">
             <button
               onClick={triggerConfetti}
-              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-2 transition shadow-sm"
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-blue-700 hover:bg-blue-800 text-white flex items-center gap-2 transition shadow-sm"
             >
-              <Sparkles className="w-4 h-4 text-white" />
-              Celebrate Team BD ✦
+              <Award className="w-4 h-4 text-blue-200" />
+              <span>Celebrate Team BD</span>
             </button>
 
             <div className="flex gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200">

@@ -24,9 +24,9 @@ export const GallerySection: React.FC = () => {
               <Camera className="w-3.5 h-3.5 text-emerald-600" />
               <span>Memories & Milestones</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
               Moments That Inspire. <br />
-              <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+              <span className="text-blue-900">
                 From the Olympiad Archives.
               </span>
             </h2>

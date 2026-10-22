@@ -81,9 +81,9 @@ export const PastPapersArchive: React.FC = () => {
             <BookOpen className="w-3.5 h-3.5" />
             <span>National Physics Problem Archive</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
             Past Question Papers & <br />
-            <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-amber-600 bg-clip-text text-transparent">
+            <span className="text-blue-900">
               Model Solution Guides.
             </span>
           </h2>

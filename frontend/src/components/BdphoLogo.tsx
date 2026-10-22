@@ -31,7 +31,6 @@ export const BdphoLogo: React.FC<BdphoLogoProps> = ({
           viewBox="0 0 100 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="transition-transform duration-500 hover:rotate-12"
         >
           {/* Subtle Outer Academic Seal Ring */}
           <circle cx="50" cy="50" r="47" stroke="#1e3a8a" strokeWidth="2.5" />
@@ -94,11 +93,11 @@ export const BdphoLogo: React.FC<BdphoLogoProps> = ({
               17th
             </span>
           </div>
-          <span className={`font-semibold text-slate-700 tracking-tight ${sub}`}>
-            Bangladesh Physics Olympiad
+          <span className={`font-semibold text-slate-800 tracking-tight ${sub}`}>
+            বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড
           </span>
-          <span className="text-[9px] text-slate-600 font-medium hidden sm:inline">
-            Affiliated with IPhO & APhO
+          <span className="text-[10px] text-slate-500 font-medium hidden sm:inline">
+            IPhO ও APhO অনুমোদিত জাতীয় প্ল্যাটফর্ম
           </span>
         </div>
       )}

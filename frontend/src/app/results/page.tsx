@@ -32,7 +32,7 @@ export default function ResultsPage() {
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
               Results &{' '}
-              <span className="vibrant-gradient-text">International Hall of Fame</span>
+              <span className="text-blue-900">International Hall of Fame</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
               Celebrating the academic triumphs of Bangladesh’s students at the International Physics Olympiad (IPhO), Asian Physics Olympiad (APhO), and National Rounds.

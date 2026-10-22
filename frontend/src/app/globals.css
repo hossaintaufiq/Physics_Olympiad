@@ -13,7 +13,7 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Hind Siliguri', 'SolaimanLipi', 'Noto Sans Bengali', 'Kalpurush', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
   selection-background-color: #dbeafe;
@@ -73,7 +73,6 @@ body {
 
 /* Stable Clean Visual Tokens */
 .vibrant-gradient-text {
-  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 40%, #0284c7 70%, #059669 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1e3a8a;
 }
+

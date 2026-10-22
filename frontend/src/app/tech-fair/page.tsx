@@ -19,20 +19,20 @@ export default function TechFairPage() {
             <img
               src="/images/hero_bg.jpg"
               alt="Applied Physics Innovation Background"
-              className="w-full h-full object-cover object-center animate-breath-zoom opacity-25"
+              className="w-full h-full object-cover object-center opacity-75"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white/60" />
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-4 border border-cyan-200 hover-vibrate cursor-pointer backdrop-blur-xs">
-              <Cpu className="w-3.5 h-3.5 text-cyan-700 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 text-cyan-900 text-xs font-bold uppercase tracking-wider mb-4 border border-cyan-200 shadow-xs backdrop-blur-xs">
+              <Cpu className="w-3.5 h-3.5 text-cyan-700" />
               <span>Applied Innovation & Hardware Exhibition</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
               BdPhO Technology & <br className="hidden sm:inline" />
-              <span className="vibrant-gradient-text">Invention Fair</span>
+              <span className="text-blue-900">Invention Fair</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
               Showcase working scientific demonstrators, renewable energy prototypes, and hardware instruments before university judges at the National Round.

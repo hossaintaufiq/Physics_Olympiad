@@ -594,7 +594,7 @@ export const SYLLABUS_DOMAINS: SyllabusDomain[] = [
   {
     id: 'modern-physics',
     title: 'Relativity & Quantum Foundations',
-    icon: 'Sparkles',
+    icon: 'Atom',
     weightage: '15% of Olympiad Core',
     summary: 'Special relativity, photoelectric effect, de Broglie matter waves, Compton scattering, and atomic spectra.',
     subtopics: [

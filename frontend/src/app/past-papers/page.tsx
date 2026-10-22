@@ -19,19 +19,19 @@ export default function PastPapersPage() {
             <img
               src="/images/hero_bg.jpg"
               alt="Physics Papers Archive Background"
-              className="w-full h-full object-cover object-center animate-breath-zoom opacity-25"
+              className="w-full h-full object-cover object-center opacity-75"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white/60" />
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 hover-vibrate cursor-pointer backdrop-blur-xs">
-              <BookOpen className="w-3.5 h-3.5 text-blue-700 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 text-blue-900 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 shadow-xs backdrop-blur-xs">
+              <BookOpen className="w-3.5 h-3.5 text-blue-700" />
               <span>Question Papers & Solutions Repository</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
-              Past Question Papers <span className="vibrant-gradient-text">Archive</span>
+              Past Question Papers <span className="text-blue-900">Archive</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
               Explore official past questions from the 1st through the 16th Bangladesh Physics Olympiad editions. Filter by category, round, region, and language to refine your practice.

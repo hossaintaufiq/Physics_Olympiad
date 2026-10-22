@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Sparkles, Check, Eye, ChevronDown, Lightbulb } from 'lucide-react';
+import { Check, Eye, ChevronDown, Lightbulb, HelpCircle } from 'lucide-react';
 import { PROBLEM_OF_THE_WEEK } from '@/data/bdphoData';
 
 export const ProblemOfTheWeek: React.FC = () => {
@@ -25,13 +25,13 @@ export const ProblemOfTheWeek: React.FC = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-white border-t border-slate-200/80">
       <div className="max-w-5xl mx-auto">
-        <div className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 relative overflow-hidden shadow-xl shadow-slate-200/50">
+        <div className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 relative overflow-hidden shadow-lg shadow-slate-200/50">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 mb-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider mb-2 shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                Problem of the Week • Interactive Challenge
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-semibold uppercase tracking-wider mb-2">
+                <HelpCircle className="w-3.5 h-3.5 text-blue-700" />
+                Problem of the Week • Olympiad Theoretical Challenge
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                 {PROBLEM_OF_THE_WEEK.title}

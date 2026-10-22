@@ -11,9 +11,9 @@ export const AnnouncementTicker: React.FC = () => {
     <div className="w-full bg-slate-50/90 border-y border-slate-200 py-3 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
         {/* Label Badge */}
-        <div className="flex items-center gap-2 bg-blue-100 text-blue-800 border border-blue-200 px-3 py-1 rounded-lg text-xs font-bold shrink-0 z-10 mr-4 shadow-xs">
-          <Bell className="w-3.5 h-3.5 text-blue-600 animate-bounce" />
-          <span className="uppercase tracking-wider">Live Updates</span>
+        <div className="flex items-center gap-2 bg-slate-900 text-white px-3 py-1 rounded-md text-xs font-bold shrink-0 z-10 mr-4">
+          <Bell className="w-3.5 h-3.5 text-amber-400" />
+          <span className="uppercase tracking-wider">জরুরি সার্কুলার</span>
         </div>
 
         {/* Scrolling Ticker Line */}

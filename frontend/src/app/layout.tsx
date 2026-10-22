@@ -19,20 +19,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Bangladesh Physics Olympiad (BdPhO) · Official National Platform',
+  title: 'বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (BdPhO) · অফিসিয়াল প্ল্যাটফর্ম',
   description:
-    'Official national platform of the Bangladesh Physics Olympiad (BdPhO). Selecting and training Bangladesh delegates for the International Physics Olympiad (IPhO) and Asian Physics Olympiad (APhO). Explore past question papers, syllabus, categories, results, and admit cards.',
+    'বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (BdPhO)-এর অফিসিয়াল জাতীয় প্ল্যাটফর্ম। আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াড (IPhO) ও এশিয়ান পদার্থবিজ্ঞান অলিম্পিয়াড (APhO)-এর বাংলাদেশ দল নির্বাচন ও প্রশিক্ষণ। বিগত প্রশ্নপত্র, সিলেবাস, ক্যাটাগরি, ফলাফল ও প্রবেশপত্র ডাউনলোড।',
   keywords: [
+    'বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড',
+    'বিডিএফও',
     'Bangladesh Physics Olympiad',
     'BdPhO',
     'IPhO Bangladesh',
     'APhO Bangladesh',
-    'Physics Olympiad Past Papers',
-    'BdPhO Admit Card',
-    'BdPhO Syllabus',
-    'Physics Olympiad Registration',
+    'পদার্থবিজ্ঞান অলিম্পিয়াড প্রশ্নপত্র',
+    'বিডিএফও প্রবেশপত্র',
   ],
-  authors: [{ name: 'Bangladesh Physics Olympiad National Committee' }],
+  authors: [{ name: 'বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড কেন্দ্রীয় কমিটি' }],
 };
 
 export default function RootLayout({
@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="bn"
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >

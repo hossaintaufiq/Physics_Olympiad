@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Download, Sparkles, BookOpen, Compass } from 'lucide-react';
-import { PhysicsSimulation } from './PhysicsSimulation';
+import { ArrowRight, Download, BookOpen, Compass } from 'lucide-react';
 
 interface HeroProps {
   onOpenAdmitModal: () => void;
@@ -45,14 +44,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
         <img
           src="/images/hero_bg.jpg"
           alt="Physics Quantum and Optics Research Laboratory"
-          className="w-full h-full object-cover object-center opacity-80"
+          className="w-full h-full object-cover object-center opacity-85"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
       </div>
-
-      {/* Light Physics Orbit Canvas */}
-      <PhysicsSimulation />
 
       {/* Atmospheric Soft Radials */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] radial-glow-cyan pointer-events-none opacity-60 blur-3xl" />
@@ -61,16 +57,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         {/* Eyebrow Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-blue-200 text-blue-900 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-sm backdrop-blur-xs">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-600" />
           <span>17th National Edition • Affiliated with IPhO & APhO</span>
           <span className="hidden sm:inline text-slate-300">•</span>
           <span className="hidden sm:inline text-amber-600 font-bold">2026 Season Active</span>
         </div>
 
         {/* Main Hero Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.12] mb-6">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-950 tracking-tight leading-[1.12] mb-6">
           Discover the Laws That <br className="hidden sm:inline" />
-          <span className="vibrant-gradient-text">
+          <span className="text-blue-900">
             Shape the Universe.
           </span>
         </h1>
@@ -121,9 +117,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <button
             onClick={onOpenRegisterModal}
-            className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 group text-base"
+            className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md flex items-center justify-center gap-2 group text-base"
           >
-            <Sparkles className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
             <span>Register for 17th BdPhO</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>

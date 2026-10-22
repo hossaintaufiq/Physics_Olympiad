@@ -24,9 +24,9 @@ export const CategoriesSection: React.FC = () => {
             <Layers className="w-3.5 h-3.5" />
             <span>Academic Competition Tracks</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
             Four Levels of Rigor. <br />
-            <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-amber-600 bg-clip-text text-transparent">
+            <span className="text-blue-900">
               One Unified Love for Physics.
             </span>
           </h2>

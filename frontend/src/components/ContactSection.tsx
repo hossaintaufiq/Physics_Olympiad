@@ -35,9 +35,9 @@ export const ContactSection: React.FC = () => {
                 <Mail className="w-3.5 h-3.5 text-blue-600" />
                 <span>Get in Touch</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight mb-4">
                 National Secretariat & <br />
-                <span className="bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent">
+                <span className="text-blue-900">
                   Regional Inquiries.
                 </span>
               </h2>

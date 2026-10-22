@@ -7,9 +7,8 @@ import { Footer } from '@/components/Footer';
 import { AnnouncementTicker } from '@/components/AnnouncementTicker';
 import { ProblemOfTheWeek } from '@/components/ProblemOfTheWeek';
 import { BdphoLogo } from '@/components/BdphoLogo';
-import { PhysicsSimulation } from '@/components/PhysicsSimulation';
 import { 
-  ArrowRight, Download, BookOpen, Trophy, Sparkles, FileText, 
+  ArrowRight, Download, BookOpen, Trophy, FileText, 
   ExternalLink, Compass, ShieldCheck, CheckCircle2, School, 
   Calendar, Layers, Cpu, Award 
 } from 'lucide-react';
@@ -30,7 +29,7 @@ export default function Home() {
       const diff = Math.max(0, targetDate - now);
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const minutes = Math.floor((diff % (1000 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
       setTimeLeft({ days, hours, minutes, seconds });
     };
@@ -45,42 +44,36 @@ export default function Home() {
 
       <main className="flex-1">
         {/* 1. Official Institutional Hero Header */}
-        <section className="relative bg-white pt-10 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
-          {/* Clearly Visible Panoramic Physics Hero Background */}
+        <section className="relative bg-white pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200 overflow-hidden">
+          {/* Panoramic Physics Laboratory Background */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img
               src="/images/hero_bg.jpg"
               alt="Physics Quantum and Optics Research Laboratory"
-              className="w-full h-full object-cover object-center opacity-80"
+              className="w-full h-full object-cover object-center opacity-85"
             />
             {/* Smooth directional white wash ensuring text on left is super sharp while lab lasers and blackboard are clearly visible */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/70" />
           </div>
-
-          {/* Subtle Physics Particle & Orbit Background Simulation */}
-          <PhysicsSimulation />
 
           <div className="relative z-10 max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column: Official Declaration */}
               <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-blue-200 text-blue-900 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-xs">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>17th National Edition • Official Academic Portal</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                  <span>Official National Academic Platform • 17th Edition 2026</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]">
-                  Bangladesh{' '}
-                  <span className="vibrant-gradient-text block sm:inline">
-                    Physics Olympiad
-                  </span>
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.14]">
+                  Bangladesh Physics Olympiad
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
                   The official national competition selecting and training Bangladesh delegates for the{' '}
-                  <strong className="text-slate-900 font-semibold">International Physics Olympiad (IPhO)</strong> and{' '}
-                  <strong className="text-slate-900 font-semibold">Asian Physics Olympiad (APhO)</strong>. Empowering young scientists from Class 5 to Class 12 across all 64 districts.
+                  <strong className="text-slate-950 font-semibold">International Physics Olympiad (IPhO)</strong> and{' '}
+                  <strong className="text-slate-950 font-semibold">Asian Physics Olympiad (APhO)</strong>. Empowering young scientists from Class 5 to Class 12 across all 64 districts.
                 </p>
 
                 {/* Primary Action Buttons */}
@@ -89,16 +82,15 @@ export default function Home() {
                     href={BDPHO_METRICS.officialPortal}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-md shadow-blue-600/20 group"
+                    className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-sm"
                   >
-                    <Sparkles className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
-                    <span>Register for 17th BdPhO</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>Online Registration 2026</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-blue-200" />
                   </a>
 
                   <Link
                     href="/admit-card"
-                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-xs"
+                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-2xs"
                   >
                     <Download className="w-4 h-4 text-blue-700" />
                     <span>Download Admit Card</span>
@@ -106,7 +98,7 @@ export default function Home() {
 
                   <Link
                     href="/past-papers"
-                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-xs"
+                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-2xs"
                   >
                     <BookOpen className="w-4 h-4 text-slate-500" />
                     <span>Past Papers Archive</span>
@@ -116,7 +108,7 @@ export default function Home() {
                 {/* Key Statistics Bar */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-200">
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-900 font-mono">64</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">64</span>
                     <span className="text-[11px] text-slate-600 font-medium">Districts Covered</span>
                   </div>
                   <div>
@@ -124,7 +116,7 @@ export default function Home() {
                     <span className="text-[11px] text-slate-600 font-medium">Annual Students</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-amber-700 font-mono">4 Tiers</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">4 Tiers</span>
                     <span className="text-[11px] text-slate-600 font-medium">Class 5 to 12</span>
                   </div>
                   <div>
@@ -136,18 +128,17 @@ export default function Home() {
 
               {/* Right Column: Countdown Card & Handcrafted Seal */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200 hover:border-blue-400 shadow-xl shadow-slate-200/50 space-y-5 transition-all">
+                <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-xs border border-slate-200 hover:border-slate-300 shadow-lg shadow-slate-200/50 space-y-5 transition-all">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
-                      <Compass className="w-4 h-4 text-blue-700" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
                       17th National Finals Schedule
                     </span>
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200">
                       March 15, 2026
                     </span>
                   </div>
 
-                  {/* Countdown Timer with Stable Accents */}
+                  {/* Countdown Timer */}
                   <div className="grid grid-cols-4 gap-2 text-center">
                     <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="block text-xl sm:text-3xl font-extrabold text-blue-700 font-mono">
@@ -167,11 +158,11 @@ export default function Home() {
                       </span>
                       <span className="text-[10px] font-bold text-slate-500 uppercase">Mins</span>
                     </div>
-                    <div className="p-3 rounded-2xl bg-amber-50 border border-amber-300 shadow-xs">
-                      <span className="block text-xl sm:text-3xl font-extrabold text-amber-600 font-mono">
+                    <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 shadow-2xs">
+                      <span className="block text-xl sm:text-3xl font-extrabold text-amber-700 font-mono">
                         {String(timeLeft.seconds).padStart(2, '0')}
                       </span>
-                      <span className="text-[10px] font-bold text-amber-700 uppercase">Secs</span>
+                      <span className="text-[10px] font-bold text-amber-800 uppercase">Secs</span>
                     </div>
                   </div>
 
@@ -480,7 +471,7 @@ export default function Home() {
                   Stage 03 • National Finals Atmosphere
                 </span>
                 <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight mb-2">
-                  Where 1,200 of the Nation's Best Young Physicists Meet
+                  Where 1,200 of the Nation&apos;s Best Young Physicists Meet
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-200 mb-4 max-w-xl">
                   Every year, regional qualifiers from 64 districts gather in Dhaka for the official 3-hour theoretical competition, testing problem-solving elegance, physical insight, and calculus rigor.

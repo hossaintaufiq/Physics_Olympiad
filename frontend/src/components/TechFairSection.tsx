@@ -44,9 +44,9 @@ export const TechFairSection: React.FC = () => {
             <Cpu className="w-3.5 h-3.5 text-cyan-600" />
             <span>Applied Innovation & Hardware Exhibition</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
             BdPhO Technology & <br />
-            <span className="bg-gradient-to-r from-cyan-700 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+            <span className="text-blue-900">
               Scientific Invention Fair.
             </span>
           </h2>
