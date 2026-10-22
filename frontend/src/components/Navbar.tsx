@@ -1,72 +1,69 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Atom, Menu, X, Download, LogIn, Sparkles, Bell, ExternalLink, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, X, Download, LogIn, Sparkles, ExternalLink, ChevronDown } from 'lucide-react';
+import { BdphoLogo } from './BdphoLogo';
 import { BDPHO_METRICS } from '@/data/bdphoData';
 
-interface NavbarProps {
-  onOpenAdmitModal: () => void;
-  onOpenLoginModal: () => void;
-  onOpenRegisterModal: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({
-  onOpenAdmitModal,
-  onOpenLoginModal,
-  onOpenRegisterModal,
-}) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+export const Navbar: React.FC = () => {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
 
+  // Close mobile menu upon route change
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    setMobileMenuOpen(false);
+    setMoreDropdownOpen(false);
+  }, [pathname]);
 
-  const navLinks = [
-    { name: 'Categories', href: '#categories' },
-    { name: 'Past Papers', href: '#papers' },
-    { name: 'Syllabus', href: '#syllabus' },
-    { name: 'Hall of Fame', href: '#hall-of-fame' },
-    { name: 'Roadmap', href: '#roadmap' },
-    { name: 'Tech Fair', href: '#tech-fair' },
-    { name: 'Committee', href: '#committee' },
-    { name: 'Notices', href: '#notices' },
-    { name: 'FAQ', href: '#faq' },
+  const primaryNavLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Categories', href: '/categories' },
+    { name: 'Past Papers', href: '/past-papers' },
+    { name: 'Syllabus', href: '/syllabus' },
+    { name: 'Results & Honors', href: '/results' },
+    { name: 'Notices', href: '/notices' },
   ];
 
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const secondaryNavLinks = [
+    { name: 'Central Committee', href: '/committee' },
+    { name: 'Technology Fair', href: '/tech-fair' },
+    { name: 'Photo Gallery', href: '/gallery' },
+    { name: 'Contact & FAQ', href: '/contact' },
+  ];
+
+  const allNavLinks = [...primaryNavLinks, ...secondaryNavLinks];
 
   return (
     <>
-      {/* Top Advisory Ticker Strip */}
-      <div className="bg-gradient-to-r from-sky-950/90 via-slate-900 to-indigo-950/90 border-b border-white/5 text-slate-300 text-xs py-1.5 px-4 hidden md:block">
+      {/* Top Advisory Strip */}
+      <div className="bg-slate-900 text-slate-200 text-xs py-1.5 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-semibold text-[10px] tracking-wide uppercase">
-              <Sparkles className="w-3 h-3" /> Official Notice
+          <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold text-[10px] tracking-wider uppercase border border-blue-400/30">
+              <Sparkles className="w-3 h-3 text-amber-400" /> Official
             </span>
-            <span className="truncate">
-              17th BdPhO National & Regional Rounds 2026 • Question papers bilingual (Bengali & English)
+            <span className="text-slate-300 text-[11px] sm:text-xs truncate">
+              17th Bangladesh Physics Olympiad • Affiliated with IPhO & APhO
             </span>
           </div>
-          <div className="flex items-center gap-4 text-slate-400">
-            <span className="hover:text-slate-200 transition">Email: {BDPHO_METRICS.contactEmail}</span>
-            <span className="text-slate-600">|</span>
+
+          <div className="flex items-center gap-4 text-[11px] text-slate-400 shrink-0">
+            <a
+              href="mailto:managerbdpho@gmail.com"
+              className="hover:text-white transition hidden md:inline"
+            >
+              managerbdpho@gmail.com
+            </a>
+            <span className="text-slate-700 hidden md:inline">|</span>
             <a
               href={BDPHO_METRICS.officialPortal}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-400 hover:text-sky-300 flex items-center gap-1 font-medium transition"
+              className="text-blue-400 hover:text-blue-300 flex items-center gap-1 font-medium transition"
             >
               Official Server <ExternalLink className="w-3 h-3" />
             </a>
@@ -75,127 +72,157 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Navbar */}
-      <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
-          isScrolled
-            ? 'glass-panel bg-slate-950/85 shadow-lg shadow-black/40 border-b border-white/10'
-            : 'bg-transparent border-b border-white/5'
-        }`}
-      >
+      <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200/90 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          {/* Brand Logo */}
-          <a
-            href="#home"
-            className="flex items-center gap-3 group text-left"
-            aria-label="Bangladesh Physics Olympiad Home"
-          >
-            <div className="relative flex items-center justify-center w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-500/20 via-indigo-500/20 to-purple-500/20 border border-sky-400/30 group-hover:border-sky-400 transition-colors shadow-lg shadow-sky-500/10">
-              <Atom className="w-6 h-6 text-sky-400 group-hover:rotate-45 transition-transform duration-700" />
-              <div className="absolute inset-0 rounded-2xl bg-sky-400/10 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-xl font-extrabold tracking-tight text-white group-hover:text-sky-300 transition-colors font-mono">
-                  BdPhO
-                </span>
-                <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">
-                  17th
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-400 font-medium leading-none tracking-tight">
-                Bangladesh Physics Olympiad
-              </p>
-            </div>
-          </a>
+          {/* Handcrafted BdPhO Logo */}
+          <Link href="/" className="hover:opacity-95 transition-opacity">
+            <BdphoLogo size="md" />
+          </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-300">
-            {navLinks.map((link) => (
+          <nav className="hidden xl:flex items-center gap-1 text-[13px] font-semibold text-slate-600">
+            {primaryNavLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-3 py-2 rounded-lg transition ${
+                    isActive
+                      ? 'text-blue-700 bg-blue-50 font-bold'
+                      : 'hover:text-slate-900 hover:bg-slate-50'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+
+            {/* More Dropdown */}
+            <div className="relative">
               <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.06] transition cursor-pointer"
+                type="button"
+                onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+                className={`px-3 py-2 rounded-lg transition flex items-center gap-1 ${
+                  secondaryNavLinks.some((l) => l.href === pathname)
+                    ? 'text-blue-700 bg-blue-50 font-bold'
+                    : 'hover:text-slate-900 hover:bg-slate-50'
+                }`}
               >
-                {link.name}
+                <span>More</span>
+                <ChevronDown className="w-3.5 h-3.5" />
               </button>
-            ))}
+
+              {moreDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-52 py-2 bg-white rounded-xl border border-slate-200 shadow-xl shadow-slate-200/50 z-50 animate-fadeIn">
+                  {secondaryNavLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setMoreDropdownOpen(false)}
+                      className={`block px-4 py-2 text-xs font-semibold ${
+                        pathname === link.href
+                          ? 'text-blue-700 bg-blue-50'
+                          : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-2.5">
-            <button
-              onClick={onOpenAdmitModal}
-              className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 transition flex items-center gap-1.5"
+          <div className="hidden sm:flex items-center gap-2">
+            <Link
+              href="/admit-card"
+              className="px-3 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200/80 transition flex items-center gap-1.5"
             >
-              <Download className="w-3.5 h-3.5 text-sky-400" />
+              <Download className="w-3.5 h-3.5 text-blue-600" />
               <span>Admit Card</span>
-            </button>
+            </Link>
 
-            <button
-              onClick={onOpenLoginModal}
-              className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 transition flex items-center gap-1.5"
+            <Link
+              href="/login"
+              className="px-3 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200/80 transition flex items-center gap-1.5"
             >
-              <LogIn className="w-3.5 h-3.5 text-indigo-400" />
+              <LogIn className="w-3.5 h-3.5 text-indigo-600" />
               <span>Student Portal</span>
-            </button>
+            </Link>
 
-            <button
-              onClick={onOpenRegisterModal}
-              className="px-4 py-2 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 transition shadow-md shadow-amber-500/20 flex items-center gap-1.5"
+            <a
+              href={BDPHO_METRICS.officialPortal}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 transition shadow-sm flex items-center gap-1.5"
             >
-              <Sparkles className="w-3.5 h-3.5 text-slate-950" />
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
               <span>Register 2026</span>
-            </button>
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition"
-            aria-label="Toggle menu"
+            className="xl:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 border border-slate-200 transition"
+            aria-label="Toggle navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Dropdown Drawer */}
+        {/* Mobile Fullscreen Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden px-4 pt-2 pb-6 glass-panel bg-slate-950/95 border-b border-white/10 animate-fadeIn">
-            <div className="flex flex-col gap-1 mb-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleNavClick(link.href)}
-                  className="px-3 py-2 text-left rounded-lg text-slate-300 hover:text-white hover:bg-white/10 text-sm font-medium transition"
-                >
-                  {link.name}
-                </button>
-              ))}
+          <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 shadow-xl animate-fadeIn">
+            <div className="grid grid-cols-2 gap-1 mb-4">
+              {allNavLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3 py-2.5 rounded-lg text-xs font-bold transition ${
+                      isActive
+                        ? 'text-blue-700 bg-blue-50'
+                        : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
 
-            <div className="flex flex-col gap-2 pt-2 border-t border-slate-800">
-              <button
-                onClick={() => { setMobileMenuOpen(false); onOpenRegisterModal(); }}
-                className="w-full py-2.5 rounded-xl font-bold text-xs text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-400 flex items-center justify-center gap-2 shadow-md"
+            <div className="flex flex-col gap-2 pt-3 border-t border-slate-100">
+              <a
+                href={BDPHO_METRICS.officialPortal}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 rounded-xl font-bold text-xs text-white bg-blue-700 flex items-center justify-center gap-2 shadow-sm"
               >
-                <Sparkles className="w-4 h-4 text-slate-950" />
+                <Sparkles className="w-4 h-4 text-amber-300" />
                 Register for 17th BdPhO
-              </button>
+              </a>
               <div className="grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => { setMobileMenuOpen(false); onOpenAdmitModal(); }}
-                  className="py-2.5 rounded-xl font-semibold text-xs text-slate-200 bg-slate-900 border border-slate-700 flex items-center justify-center gap-1.5"
+                <Link
+                  href="/admit-card"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-2.5 rounded-xl font-bold text-xs text-slate-700 bg-slate-100 border border-slate-200 flex items-center justify-center gap-1.5"
                 >
-                  <Download className="w-3.5 h-3.5 text-sky-400" />
+                  <Download className="w-3.5 h-3.5 text-blue-600" />
                   Admit Card
-                </button>
-                <button
-                  onClick={() => { setMobileMenuOpen(false); onOpenLoginModal(); }}
-                  className="py-2.5 rounded-xl font-semibold text-xs text-slate-200 bg-slate-900 border border-slate-700 flex items-center justify-center gap-1.5"
+                </Link>
+                <Link
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-2.5 rounded-xl font-bold text-xs text-slate-700 bg-slate-100 border border-slate-200 flex items-center justify-center gap-1.5"
                 >
-                  <LogIn className="w-3.5 h-3.5 text-indigo-400" />
-                  Student Login
-                </button>
+                  <LogIn className="w-3.5 h-3.5 text-indigo-600" />
+                  Student Portal
+                </Link>
               </div>
             </div>
           </div>

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050816;
-  --foreground: #f8fafc;
-  --card-bg: rgba(13, 19, 41, 0.7);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --accent-cyan: #38bdf8;
-  --accent-gold: #f59e0b;
-  --accent-purple: #a855f7;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --brand-blue: #1e3a8a;
+  --brand-accent: #2563eb;
+  --brand-amber: #d97706;
 }
 
 body {
@@ -16,140 +16,56 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  selection-background-color: #38bdf8;
-  selection-color: #050816;
+  selection-background-color: #dbeafe;
+  selection-color: #1e3a8a;
+}
+
+/* Institutional Clean Cards */
+.inst-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.inst-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+.inst-card-interactive:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08);
+  transform: translateY(-2px);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #070b1e;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf8;
+  background: #94a3b8;
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.glass-panel-hover:hover {
-  background: rgba(24, 35, 68, 0.75);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
-  transform: translateY(-2px);
-}
-
-.glass-card-amber:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.18);
-  transform: translateY(-2px);
-}
-
-/* Radial Glows */
-.radial-glow-cyan {
-  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
-}
-
-.radial-glow-purple {
-  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
-}
-
-.radial-glow-gold {
-  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-}
-
-/* Quantum Grid */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-}
-
-/* Animations */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-glow 6s ease-in-out infinite;
-}
-
-@keyframes float-gentle {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
-}
-
-.animate-float {
-  animation: float-gentle 5s ease-in-out infinite;
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 24s linear infinite;
-}
-
-@keyframes spin-reverse-slow {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse-slow 30s linear infinite;
-}
-
-/* Ticker Marquee */
+/* Marquee Ticker */
 @keyframes ticker {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-ticker {
   display: flex;
   width: max-content;
-  animation: ticker 35s linear infinite;
+  animation: ticker 40s linear infinite;
 }
 .animate-ticker:hover {
   animation-play-state: paused;

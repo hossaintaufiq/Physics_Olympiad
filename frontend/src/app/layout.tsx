@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#050816',
+  themeColor: '#ffffff',
 };
 
 export const metadata: Metadata = {
@@ -41,8 +41,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#050816] text-[#f8fafc] font-sans antialiased selection:bg-sky-500 selection:text-slate-950">
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
         {children}
       </body>
     </html>

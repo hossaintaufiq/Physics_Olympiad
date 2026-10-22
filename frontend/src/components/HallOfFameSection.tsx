@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Trophy, Award, Sparkles, MapPin, School, Star, ExternalLink } from 'lucide-react';
+import { Trophy, Sparkles, MapPin, School, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { HALL_OF_FAME } from '@/data/bdphoData';
 import { Medalist } from '@/types';
@@ -14,7 +14,7 @@ export const HallOfFameSection: React.FC = () => {
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#38bdf8', '#f59e0b', '#34d399', '#a855f7', '#fbbf24'],
+      colors: ['#2563eb', '#d97706', '#059669', '#7c3aed', '#0284c7'],
     });
   };
 
@@ -26,34 +26,34 @@ export const HallOfFameSection: React.FC = () => {
   const getAwardBadge = (award: Medalist['award']) => {
     switch (award) {
       case 'Bronze':
-        return 'bg-amber-600/20 text-amber-300 border-amber-500/40';
+        return 'bg-amber-50 text-amber-800 border-amber-300 font-bold';
       case 'Silver':
-        return 'bg-slate-300/20 text-slate-200 border-slate-300/40';
+        return 'bg-slate-100 text-slate-800 border-slate-300 font-bold';
       case 'Gold':
-        return 'bg-yellow-400/20 text-yellow-300 border-yellow-400/40';
+        return 'bg-yellow-50 text-yellow-800 border-yellow-300 font-bold';
       case 'Honorable Mention':
       default:
-        return 'bg-sky-500/20 text-sky-300 border-sky-400/40';
+        return 'bg-blue-50 text-blue-800 border-blue-200 font-bold';
     }
   };
 
   return (
-    <section id="hall-of-fame" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-900/40">
+    <section id="hall-of-fame" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
-              <Trophy className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
+              <Trophy className="w-3.5 h-3.5 text-amber-600" />
               <span>International Recognition</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
               International Hall of Fame. <br />
-              <span className="bg-gradient-to-r from-amber-400 via-yellow-200 to-sky-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-600 via-yellow-600 to-blue-700 bg-clip-text text-transparent">
                 Honoring Bangladesh's Pride.
               </span>
             </h2>
-            <p className="text-slate-400 text-base">
+            <p className="text-slate-600 text-base">
               Meet the high school prodigies who carried the national flag onto international physics podiums across Asia and Europe.
             </p>
           </div>
@@ -62,19 +62,19 @@ export const HallOfFameSection: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2.5">
             <button
               onClick={triggerConfetti}
-              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 flex items-center gap-2 transition shadow-lg shadow-amber-500/20"
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white flex items-center gap-2 transition shadow-sm"
             >
-              <Sparkles className="w-4 h-4 text-slate-950" />
+              <Sparkles className="w-4 h-4 text-white" />
               Celebrate Team BD ✦
             </button>
 
-            <div className="flex gap-1 p-1 rounded-xl bg-slate-950 border border-slate-800">
+            <div className="flex gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200">
               <button
                 onClick={() => setFilterCompetition('all')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                   filterCompetition === 'all'
-                    ? 'bg-slate-800 text-white shadow-sm'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-white text-slate-900 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 All Events
@@ -83,8 +83,8 @@ export const HallOfFameSection: React.FC = () => {
                 onClick={() => setFilterCompetition('IPhO')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                   filterCompetition === 'IPhO'
-                    ? 'bg-slate-800 text-white shadow-sm'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-white text-slate-900 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 IPhO
@@ -93,8 +93,8 @@ export const HallOfFameSection: React.FC = () => {
                 onClick={() => setFilterCompetition('APhO')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                   filterCompetition === 'APhO'
-                    ? 'bg-slate-800 text-white shadow-sm'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-white text-slate-900 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 APhO
@@ -108,58 +108,58 @@ export const HallOfFameSection: React.FC = () => {
           {filteredMedalists.map((m) => (
             <div
               key={m.id}
-              className="glass-panel p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all flex flex-col justify-between group shadow-lg"
+              className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between group shadow-xs"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono font-bold text-slate-400">
                     {m.edition} • {m.year}
                   </span>
-                  <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${getAwardBadge(m.award)}`}>
+                  <span className={`text-[10px] px-2.5 py-0.5 rounded-full border ${getAwardBadge(m.award)}`}>
                     {m.award}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition mb-1">
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-amber-700 transition mb-1">
                   {m.studentName}
                 </h3>
 
-                <div className="text-xs text-slate-300 space-y-1 mb-4">
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <School className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                <div className="text-xs text-slate-600 space-y-1 mb-4">
+                  <div className="flex items-center gap-1.5 text-slate-500">
+                    <School className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                     <span className="truncate">{m.school}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <div className="flex items-center gap-1.5 text-slate-500">
+                    <MapPin className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                     <span>Host: {m.hostLocation}</span>
                   </div>
                 </div>
 
                 {m.quote && (
-                  <p className="text-xs text-slate-300/90 italic p-3 rounded-xl bg-slate-950/60 border border-slate-800 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-700 italic p-3 rounded-xl bg-slate-50 border border-slate-200 leading-relaxed mb-4">
                     "{m.quote}"
                   </p>
                 )}
               </div>
 
-              <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
                 <span>Represented Bangladesh</span>
-                <span className="font-semibold text-emerald-400">Honored</span>
+                <span className="font-semibold text-emerald-700">Honored</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Official Results & Rankings Banner */}
-        <div className="p-8 rounded-3xl glass-panel bg-gradient-to-r from-sky-950/40 via-slate-900 to-indigo-950/40 border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-blue-50 via-sky-50 to-indigo-50 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-sky-400 mb-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-1">
               National & Regional Round Rankings
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">
               Looking for 16th and 17th BdPhO National Merit Lists?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
               Official scorecards, district merit rankings, certificate downloads, and national training camp call-up notices are authenticated on the official results server.
             </p>
           </div>
@@ -167,7 +167,7 @@ export const HallOfFameSection: React.FC = () => {
             href="https://www.bdpho.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs shrink-0 flex items-center gap-2 transition shadow-lg shadow-sky-500/20"
+            className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shrink-0 flex items-center gap-2 transition shadow-sm"
           >
             Check Official Results & News <ExternalLink className="w-4 h-4" />
           </a>

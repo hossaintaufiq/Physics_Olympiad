@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Compass, CheckCircle2, Award, Flag, ChevronRight, School, Globe, Microscope, BookOpen } from 'lucide-react';
 
 export const RoadmapSection: React.FC = () => {
@@ -12,9 +13,9 @@ export const RoadmapSection: React.FC = () => {
       title: 'School Registration & Category Selection',
       subtitle: 'Open to Class 5 through Class 12 nationwide',
       icon: School,
-      color: 'text-sky-400',
-      borderColor: 'border-sky-500/30',
-      bgColor: 'bg-sky-500/10',
+      color: 'text-blue-600',
+      borderColor: 'border-blue-200',
+      bgColor: 'bg-blue-50',
       description:
         'Students register independently or via their educational institutions. Choose your category (A, B, C, or D) based on your current school class. Access official past papers and study the syllabus guidelines.',
       keyMilestones: [
@@ -28,9 +29,9 @@ export const RoadmapSection: React.FC = () => {
       title: 'Regional Round Festivals',
       subtitle: '16 Regional Hubs across 64 Districts',
       icon: Compass,
-      color: 'text-cyan-400',
-      borderColor: 'border-cyan-500/30',
-      bgColor: 'bg-cyan-500/10',
+      color: 'text-cyan-600',
+      borderColor: 'border-cyan-200',
+      bgColor: 'bg-cyan-50',
       description:
         'Conducted simultaneously at leading universities across Bangladesh (Dhaka, Chittagong, Rajshahi, Khulna, Sylhet, Barisal, Rangpur, Mymensingh, etc.). Includes physics problem solving, science shows, and Q&A sessions with professors.',
       keyMilestones: [
@@ -44,9 +45,9 @@ export const RoadmapSection: React.FC = () => {
       title: 'National Finals in Dhaka',
       subtitle: 'Curzon Hall, University of Dhaka & BUET',
       icon: BookOpen,
-      color: 'text-amber-400',
-      borderColor: 'border-amber-500/30',
-      bgColor: 'bg-amber-500/10',
+      color: 'text-amber-600',
+      borderColor: 'border-amber-200',
+      bgColor: 'bg-amber-50',
       description:
         'Over 1,200 of the nation’s sharpest young problem solvers assemble for the high-stakes National Examination. The problems test profound conceptual depth, mathematical creativity, and dimensional analysis.',
       keyMilestones: [
@@ -60,9 +61,9 @@ export const RoadmapSection: React.FC = () => {
       title: 'National Physics Training Camp',
       subtitle: 'Residential intensive theory & laboratory experiments',
       icon: Microscope,
-      color: 'text-purple-400',
-      borderColor: 'border-purple-500/30',
-      bgColor: 'bg-purple-500/10',
+      color: 'text-purple-600',
+      borderColor: 'border-purple-200',
+      bgColor: 'bg-purple-50',
       description:
         'The top 30 to 40 national finalists from Category C and D are invited to an intensive 2-to-3 week residential training camp hosted at BUET and Dhaka University. Focuses heavily on experimental apparatus, error analysis, and university-level mechanics and electrodynamics.',
       keyMilestones: [
@@ -76,9 +77,9 @@ export const RoadmapSection: React.FC = () => {
       title: 'Team Selection Tests (TST)',
       subtitle: 'Selecting the Final National Delegates',
       icon: Award,
-      color: 'text-emerald-400',
-      borderColor: 'border-emerald-500/30',
-      bgColor: 'bg-emerald-500/10',
+      color: 'text-emerald-600',
+      borderColor: 'border-emerald-200',
+      bgColor: 'bg-emerald-50',
       description:
         'Camp participants undergo multiple 5-hour theoretical and 5-hour experimental examinations adhering strictly to the International Physics Olympiad regulations. The scores determine the national squad.',
       keyMilestones: [
@@ -92,9 +93,9 @@ export const RoadmapSection: React.FC = () => {
       title: 'The World Stage: IPhO & APhO',
       subtitle: 'Competing with 85+ Nations Globally',
       icon: Globe,
-      color: 'text-amber-300',
-      borderColor: 'border-amber-400/40',
-      bgColor: 'bg-amber-500/20',
+      color: 'text-amber-600',
+      borderColor: 'border-amber-300',
+      bgColor: 'bg-amber-50',
       description:
         'Representing the red and green flag on the global stage. Bangladesh delegates test their skills against the best young physicists worldwide in historic university cities across Europe, Asia, and the Americas.',
       keyMilestones: [
@@ -106,21 +107,21 @@ export const RoadmapSection: React.FC = () => {
   ];
 
   return (
-    <section id="roadmap" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-950/70">
+    <section id="roadmap" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-50/70 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Flag className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
+            <Flag className="w-3.5 h-3.5 text-emerald-600" />
             <span>The Olympic Pathway</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             From the Classroom <br />
-            <span className="bg-gradient-to-r from-emerald-400 via-sky-300 to-amber-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
               to the Global Podium.
             </span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg">
             Understand how each phase of the Bangladesh Physics Olympiad systematically trains and elevates students to international excellence.
           </p>
         </div>
@@ -136,17 +137,17 @@ export const RoadmapSection: React.FC = () => {
                 onClick={() => setSelectedStep(idx)}
                 className={`p-3.5 rounded-2xl text-left transition-all border ${
                   isCurrent
-                    ? 'glass-panel bg-slate-900 border-sky-400 shadow-lg shadow-sky-500/10'
-                    : 'bg-slate-900/40 border-slate-800 text-slate-400 hover:bg-slate-900/70 hover:border-slate-700'
+                    ? 'bg-white border-blue-600 shadow-md shadow-blue-500/10'
+                    : 'bg-white/70 border-slate-200 text-slate-600 hover:bg-white hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="font-mono text-xs font-bold text-slate-500">
+                  <span className="font-mono text-xs font-bold text-slate-400">
                     Step {item.step}
                   </span>
-                  <Icon className={`w-4 h-4 ${isCurrent ? item.color : 'text-slate-500'}`} />
+                  <Icon className={`w-4 h-4 ${isCurrent ? item.color : 'text-slate-400'}`} />
                 </div>
-                <div className={`text-xs font-bold truncate ${isCurrent ? 'text-white' : 'text-slate-300'}`}>
+                <div className={`text-xs font-bold truncate ${isCurrent ? 'text-slate-900' : 'text-slate-700'}`}>
                   {item.title.split('&')[0]}
                 </div>
               </button>
@@ -156,7 +157,7 @@ export const RoadmapSection: React.FC = () => {
 
         {/* Active Step Spotlight Card */}
         {steps[selectedStep] && (
-          <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/10 relative overflow-hidden shadow-2xl animate-fadeIn">
+          <div className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 relative overflow-hidden animate-fadeIn">
             <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
               <div className="flex-1 space-y-4">
                 <div className="flex items-center gap-3">
@@ -164,27 +165,27 @@ export const RoadmapSection: React.FC = () => {
                     {React.createElement(steps[selectedStep].icon, { className: 'w-7 h-7' })}
                   </div>
                   <div>
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
                       Phase {steps[selectedStep].step} of 06
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
                       {steps[selectedStep].title}
                     </h3>
                   </div>
                 </div>
 
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   {steps[selectedStep].description}
                 </p>
 
                 <div className="pt-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
                     Key Milestones & Deliverables:
                   </span>
                   <div className="space-y-2">
                     {steps[selectedStep].keyMilestones.map((ms, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-200">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                         <span>{ms}</span>
                       </div>
                     ))}
@@ -193,30 +194,30 @@ export const RoadmapSection: React.FC = () => {
               </div>
 
               {/* Progress Summary / Next Phase Button */}
-              <div className="w-full lg:w-72 p-5 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-4 shrink-0">
-                <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+              <div className="w-full lg:w-72 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 shrink-0">
+                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
                   Roadmap Navigation
                 </div>
-                <div className="text-xs text-slate-300 space-y-1">
-                  <div>Next Target: <span className="font-semibold text-sky-400">17th BdPhO 2026</span></div>
-                  <div>Selection Pool: <span className="font-semibold text-white">64 Districts</span></div>
-                  <div>Final Squad: <span className="font-semibold text-amber-300">5 IPhO + 8 APhO</span></div>
+                <div className="text-xs text-slate-700 space-y-1">
+                  <div>Next Target: <span className="font-semibold text-blue-600">17th BdPhO 2026</span></div>
+                  <div>Selection Pool: <span className="font-semibold text-slate-900">64 Districts</span></div>
+                  <div>Final Squad: <span className="font-semibold text-amber-700">5 IPhO + 8 APhO</span></div>
                 </div>
 
                 {selectedStep < steps.length - 1 ? (
                   <button
                     onClick={() => setSelectedStep(selectedStep + 1)}
-                    className="w-full py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 transition"
+                    className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm"
                   >
                     View Next Step <ChevronRight className="w-4 h-4" />
                   </button>
                 ) : (
-                  <a
-                    href="#categories"
-                    className="w-full py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 transition text-center block"
+                  <Link
+                    href="/categories"
+                    className="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition text-center block shadow-sm"
                   >
                     Choose Your Category
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>

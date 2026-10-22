@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, Search, MessageCircleQuestion } from 'lucide-react';
+import { HelpCircle, ChevronDown, Search } from 'lucide-react';
 import { FAQS } from '@/data/bdphoData';
-import { FAQItem } from '@/types';
 
 export const FaqSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>('faq-1');
@@ -26,18 +25,18 @@ export const FaqSection: React.FC = () => {
   });
 
   return (
-    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-900/50">
+    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-50/70 border-t border-slate-200/80">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
+            <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Frequently Asked Questions.
           </h2>
-          <p className="text-slate-400 text-base">
+          <p className="text-slate-600 text-base">
             Everything you need to know about eligibility, bilingual question rules, calculators, syllabus limits, and international pathways.
           </p>
         </div>
@@ -45,13 +44,13 @@ export const FaqSection: React.FC = () => {
         {/* Filter Controls */}
         <div className="space-y-4 mb-8">
           <div className="relative">
-            <Search className="absolute left-4 top-3.5 w-4 h-4 text-slate-500" />
+            <Search className="absolute left-4 top-3.5 w-4 h-4 text-slate-400" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions (e.g. calculator, language, admit card, eligibility)..."
-              className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 focus:border-sky-400 text-white placeholder-slate-500 text-xs sm:text-sm outline-none transition"
+              className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-blue-500 text-slate-900 placeholder-slate-400 text-xs sm:text-sm outline-none transition shadow-2xs"
             />
           </div>
 
@@ -62,8 +61,8 @@ export const FaqSection: React.FC = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                   selectedCategory === cat
-                    ? 'bg-sky-500 text-slate-950 font-bold'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-blue-600 text-white font-bold'
+                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-2xs'
                 }`}
               >
                 {cat}
@@ -80,16 +79,16 @@ export const FaqSection: React.FC = () => {
               return (
                 <div
                   key={faq.id}
-                  className="glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-200"
+                  className="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200 shadow-xs"
                 >
                   <button
                     onClick={() => toggleAccordion(faq.id)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition"
                   >
-                    <span className="text-sm sm:text-base font-bold text-white">
+                    <span className="text-sm sm:text-base font-bold text-slate-900">
                       {faq.question}
                     </span>
-                    <span className="p-1.5 rounded-lg bg-slate-800 text-sky-400 shrink-0">
+                    <span className="p-1.5 rounded-lg bg-slate-100 text-blue-600 shrink-0">
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ${
                           isOpen ? 'rotate-180' : ''
@@ -99,7 +98,7 @@ export const FaqSection: React.FC = () => {
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 animate-fadeIn">
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-fadeIn">
                       {faq.answer}
                     </div>
                   )}
@@ -107,7 +106,7 @@ export const FaqSection: React.FC = () => {
               );
             })
           ) : (
-            <div className="p-8 text-center text-slate-400 glass-panel rounded-2xl">
+            <div className="p-8 text-center text-slate-500 bg-white border border-slate-200 rounded-2xl">
               No matching questions found for "{searchQuery}".
             </div>
           )}
