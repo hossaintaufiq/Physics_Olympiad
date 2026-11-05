@@ -7,6 +7,7 @@ import React, {
   useEffect,
   useMemo,
   useState,
+  useTransition,
 } from 'react';
 import {
   DEFAULT_LOCALE,
@@ -20,6 +21,9 @@ type Ctx = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: Messages;
+  /** Pick Bangla or English string for the active locale. */
+  L: (bn: string, en: string) => string;
+  isSwitching: boolean;
 };
 
 const LanguageContext = createContext<Ctx | null>(null);
@@ -39,7 +43,8 @@ function persistLocale(locale: Locale) {
   try {
     window.localStorage.setItem(LOCALE_COOKIE, locale);
     document.cookie = `${LOCALE_COOKIE}=${locale};path=/;max-age=31536000;samesite=lax`;
-    document.documentElement.lang = locale;
+    document.documentElement.lang = locale === 'bn' ? 'bn' : 'en';
+    document.documentElement.dataset.locale = locale;
   } catch {
     /* ignore */
   }
@@ -47,6 +52,8 @@ function persistLocale(locale: Locale) {
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
+  const [isSwitching, setIsSwitching] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const stored = readStoredLocale();
@@ -54,18 +61,52 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     persistLocale(stored);
   }, []);
 
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-    persistLocale(next);
-  }, []);
+  const setLocale = useCallback(
+    (next: Locale) => {
+      if (next === locale) return;
+      setIsSwitching(true);
+      document.documentElement.classList.add('locale-switching');
+      window.setTimeout(() => {
+        startTransition(() => {
+          setLocaleState(next);
+          persistLocale(next);
+        });
+        window.setTimeout(() => {
+          document.documentElement.classList.remove('locale-switching');
+          setIsSwitching(false);
+        }, 180);
+      }, 90);
+    },
+    [locale],
+  );
+
+  const L = useCallback(
+    (bn: string, en: string) => (locale === 'bn' ? bn : en),
+    [locale],
+  );
 
   const value = useMemo(
-    () => ({ locale, setLocale, t: messages[locale] }),
-    [locale, setLocale],
+    () => ({
+      locale,
+      setLocale,
+      t: messages[locale],
+      L,
+      isSwitching: isSwitching || isPending,
+    }),
+    [locale, setLocale, L, isSwitching, isPending],
   );
 
   return (
-    <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
+    <LanguageContext.Provider value={value}>
+      <div
+        className={`locale-root transition-opacity duration-200 ease-out ${
+          isSwitching || isPending ? 'opacity-60' : 'opacity-100'
+        }`}
+        data-locale={locale}
+      >
+        {children}
+      </div>
+    </LanguageContext.Provider>
   );
 }
 

@@ -5,8 +5,11 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { NoticesSection } from '@/components/NoticesSection';
 import { Bell } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 export default function NoticesPage() {
+  const { L } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
@@ -17,13 +20,16 @@ export default function NoticesPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-200">
               <Bell className="w-3.5 h-3.5 text-amber-700" />
-              <span>দাপ্তরিক বিজ্ঞপ্তি ও সার্কুলার</span>
+              <span>{L('দাপ্তরিক বিজ্ঞপ্তি ও সার্কুলার', 'Official notices & circulars')}</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              নোটিশ ও প্রশাসনিক নির্দেশিকা
+              {L('নোটিশ ও প্রশাসনিক নির্দেশিকা', 'Notices & administrative guidance')}
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              পরীক্ষার সময়সূচি, প্রবেশপত্র সংক্রান্ত তথ্য, ক্যালকুলেটর ব্যবহারের নিয়ম এবং আঞ্চলিক কেন্দ্রের বরাদ্দ সংক্রান্ত সকল অফিসিয়াল নোটিশ।
+              {L(
+                'পরীক্ষার সময়সূচি, প্রবেশপত্র সংক্রান্ত তথ্য, ক্যালকুলেটর ব্যবহারের নিয়ম এবং আঞ্চলিক কেন্দ্রের বরাদ্দ সংক্রান্ত সকল অফিসিয়াল নোটিশ।',
+                'All official notices on exam schedules, admit-card information, calculator rules, and regional centre assignments.',
+              )}
             </p>
           </div>
         </section>

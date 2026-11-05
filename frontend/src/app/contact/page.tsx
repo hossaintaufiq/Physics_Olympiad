@@ -6,8 +6,11 @@ import { Footer } from '@/components/Footer';
 import { ContactSection } from '@/components/ContactSection';
 import { FaqSection } from '@/components/FaqSection';
 import { Mail } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 export default function ContactPage() {
+  const { L } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
@@ -18,13 +21,16 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200">
               <Mail className="w-3.5 h-3.5 text-blue-700" />
-              <span>জাতীয় সচিবালয় ও হেল্পডেস্ক</span>
+              <span>{L('জাতীয় সচিবালয় ও হেল্পডেস্ক', 'National secretariat & helpdesk')}</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              যোগাযোগ ও সচরাচর জিজ্ঞাসা
+              {L('যোগাযোগ ও সচরাচর জিজ্ঞাসা', 'Contact & frequently asked questions')}
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড কেন্দ্রীয় পরিচালনা পর্ষদের সাথে সরাসরি যোগাযোগ করুন অথবা সচরাচর জিজ্ঞাসায় দ্রুত প্রশ্নের সমাধান খুঁজে নিন।
+              {L(
+                'বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড কেন্দ্রীয় পরিচালনা পর্ষদের সাথে সরাসরি যোগাযোগ করুন অথবা সচরাচর জিজ্ঞাসায় দ্রুত প্রশ্নের সমাধান খুঁজে নিন।',
+                'Reach the Bangladesh Physics Olympiad central board directly, or find quick answers in the FAQ.',
+              )}
             </p>
           </div>
         </section>

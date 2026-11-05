@@ -3,8 +3,11 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
 import { BDPHO_METRICS } from '@/data/bdphoData';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 export const ContactSection: React.FC = () => {
+  const { L } = useLanguage();
+  const text = (bn: string, en: string) => L(bn, en);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,16 +36,19 @@ export const ContactSection: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-4 shadow-2xs">
                 <Mail className="w-3.5 h-3.5 text-blue-600" />
-                <span>যোগাযোগ করুন</span>
+                <span>{text('যোগাযোগ করুন', 'Contact us')}</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight mb-4">
-                জাতীয় সচিবালয় ও <br />
+                {text('জাতীয় সচিবালয় ও', 'National secretariat &')} <br />
                 <span className="text-blue-900">
-                  আঞ্চলিক যোগাযোগ কেন্দ্র।
+                  {text('আঞ্চলিক যোগাযোগ কেন্দ্র।', 'regional liaison centres.')}
                 </span>
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                আঞ্চলিক কেন্দ্র বণ্টন, প্রাতিষ্ঠানিক নিবন্ধন, প্রবেশপত্র সংক্রান্ত কোনো জিজ্ঞাসা কিংবা সার্বিক সহযোগিতার জন্য জাতীয় অলিম্পিয়াড সচিবালয়ের সাথে যোগাযোগ করুন।
+                {text(
+                  'আঞ্চলিক কেন্দ্র বণ্টন, প্রাতিষ্ঠানিক নিবন্ধন, প্রবেশপত্র সংক্রান্ত কোনো জিজ্ঞাসা কিংবা সার্বিক সহযোগিতার জন্য জাতীয় অলিম্পিয়াড সচিবালয়ের সাথে যোগাযোগ করুন।',
+                  'Contact the national olympiad secretariat for regional centre allocation, institutional registration, admit-card queries or general support.',
+                )}
               </p>
             </div>
 
@@ -53,10 +59,13 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">
-                    কেন্দ্রীয় সচিবালয়ের ঠিকানা
+                    {text('কেন্দ্রীয় সচিবালয়ের ঠিকানা', 'Central secretariat address')}
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    {BDPHO_METRICS.officeAddress}
+                    {text(
+                      BDPHO_METRICS.officeAddress,
+                      'House No. 4/9, Ground Floor, Block # F, Lalmatia, Dhaka-1207, Bangladesh',
+                    )}
                   </p>
                 </div>
               </div>
@@ -67,7 +76,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">
-                    অফিসিয়াল ইমেইল সাপোর্ট
+                    {text('অফিসিয়াল ইমেইল সাপোর্ট', 'Official email support')}
                   </div>
                   <a
                     href={`mailto:${BDPHO_METRICS.contactEmail}`}
@@ -84,10 +93,13 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">
-                    সচিবালয়ের সময়সূচি
+                    {text('সচিবালয়ের সময়সূচি', 'Secretariat hours')}
                   </div>
                   <p className="text-xs text-slate-600">
-                    রবিবার – বৃহস্পতিবার: সকাল ১০:০০ – বিকাল ০৫:০০ (বাংলাদেশ সময়)
+                    {text(
+                      'রবিবার – বৃহস্পতিবার: সকাল ১০:০০ – বিকাল ০৫:০০ (বাংলাদেশ সময়)',
+                      'Sunday – Thursday: 10:00 AM – 5:00 PM (Bangladesh Time)',
+                    )}
                   </p>
                 </div>
               </div>
@@ -97,18 +109,26 @@ export const ContactSection: React.FC = () => {
           {/* Right Column: Direct Inquiry Form */}
           <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 relative">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
-              একাডেমিক টিমের নিকট বার্তা পাঠান
+              {text('একাডেমিক টিমের নিকট বার্তা পাঠান', 'Message the academic team')}
             </h3>
             <p className="text-xs text-slate-500 mb-6">
-              একাডেমিক কোনো জিজ্ঞাসা, প্রাতিষ্ঠানিক নিবন্ধন কিংবা স্বেচ্ছাসেবক হিসেবে অংশগ্রহণের জন্য ফরমটি পূরণ করুন।
+              {text(
+                'একাডেমিক কোনো জিজ্ঞাসা, প্রাতিষ্ঠানিক নিবন্ধন কিংবা স্বেচ্ছাসেবক হিসেবে অংশগ্রহণের জন্য ফরমটি পূরণ করুন।',
+                'Fill in the form for academic questions, institutional registration or volunteer participation.',
+              )}
             </p>
 
             {isSent ? (
               <div className="p-8 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3 animate-fadeIn">
                 <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-                <h4 className="text-lg font-bold text-slate-900">বার্তা প্রেরিত হয়েছে!</h4>
+                <h4 className="text-lg font-bold text-slate-900">
+                  {text('বার্তা প্রেরিত হয়েছে!', 'Message sent!')}
+                </h4>
                 <p className="text-xs text-slate-600 max-w-md mx-auto">
-                  যোগাযোগের জন্য ধন্যবাদ। বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড টিম আপনার বার্তা পর্যালোচনা করে দ্রুত ইমেইলে উত্তর প্রদান করবে।
+                  {text(
+                    'যোগাযোগের জন্য ধন্যবাদ। বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড টিম আপনার বার্তা পর্যালোচনা করে দ্রুত ইমেইলে উত্তর প্রদান করবে।',
+                    'Thank you for reaching out. The Bangladesh Physics Olympiad team will review your message and reply by email soon.',
+                  )}
                 </p>
               </div>
             ) : (
@@ -116,7 +136,7 @@ export const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contactFullNameLight" className="block text-xs font-medium text-slate-700 mb-1">
-                      আপনার পূর্ণ নাম *
+                      {text('আপনার পূর্ণ নাম *', 'Your full name *')}
                     </label>
                     <input
                       id="contactFullNameLight"
@@ -124,14 +144,14 @@ export const ContactSection: React.FC = () => {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="যেমন: আবরার ফাহাদ"
+                      placeholder={text('যেমন: আবরার ফাহাদ', 'e.g. Abrar Fahad')}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm outline-none focus:border-blue-500 transition shadow-2xs"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="contactEmailAddressLight" className="block text-xs font-medium text-slate-700 mb-1">
-                      ইমেইল ঠিকানা *
+                      {text('ইমেইল ঠিকানা *', 'Email address *')}
                     </label>
                     <input
                       id="contactEmailAddressLight"
@@ -139,7 +159,7 @@ export const ContactSection: React.FC = () => {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="যেমন: student@school.edu.bd"
+                      placeholder={text('যেমন: student@school.edu.bd', 'e.g. student@school.edu.bd')}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm outline-none focus:border-blue-500 transition shadow-2xs"
                     />
                   </div>
@@ -148,7 +168,7 @@ export const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contactCategorySelectLight" className="block text-xs font-medium text-slate-700 mb-1">
-                      ক্যাটাগরি বা ভূমিকা
+                      {text('ক্যাটাগরি বা ভূমিকা', 'Category or role')}
                     </label>
                     <select
                       id="contactCategorySelectLight"
@@ -156,25 +176,25 @@ export const ContactSection: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                       className="w-full px-3 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 text-xs sm:text-sm outline-none focus:border-blue-500 transition shadow-2xs"
                     >
-                      <option value="Category A">ক্যাটাগরি এ (৫ম-৬ষ্ঠ শ্রেণি)</option>
-                      <option value="Category B">ক্যাটাগরি বি (৭ম-৮ম শ্রেণি)</option>
-                      <option value="Category C">ক্যাটাগরি সি (৯ম-১০ম শ্রেণি)</option>
-                      <option value="Category D">ক্যাটাগরি ডি (১১শ-১২শ শ্রেণি)</option>
-                      <option value="Teacher/Mentor">শিক্ষক / মেন্টর</option>
-                      <option value="Media/Sponsor">গণমাধ্যম / পার্টনারশিপ</option>
+                      <option value="Category A">{text('ক্যাটাগরি এ (৫ম-৬ষ্ঠ শ্রেণি)', 'Category A (Classes 5–6)')}</option>
+                      <option value="Category B">{text('ক্যাটাগরি বি (৭ম-৮ম শ্রেণি)', 'Category B (Classes 7–8)')}</option>
+                      <option value="Category C">{text('ক্যাটাগরি সি (৯ম-১০ম শ্রেণি)', 'Category C (Classes 9–10)')}</option>
+                      <option value="Category D">{text('ক্যাটাগরি ডি (১১শ-১২শ শ্রেণি)', 'Category D (Classes 11–12)')}</option>
+                      <option value="Teacher/Mentor">{text('শিক্ষক / মেন্টর', 'Teacher / Mentor')}</option>
+                      <option value="Media/Sponsor">{text('গণমাধ্যম / পার্টনারশিপ', 'Media / Partnership')}</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="contactSubjectLineLight" className="block text-xs font-medium text-slate-700 mb-1">
-                      বিষয়
+                      {text('বিষয়', 'Subject')}
                     </label>
                     <input
                       id="contactSubjectLineLight"
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="যেমন: আঞ্চলিক কেন্দ্র সম্পর্কে তথ্য"
+                      placeholder={text('যেমন: আঞ্চলিক কেন্দ্র সম্পর্কে তথ্য', 'e.g. Info about regional centres')}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm outline-none focus:border-blue-500 transition shadow-2xs"
                     />
                   </div>
@@ -182,7 +202,7 @@ export const ContactSection: React.FC = () => {
 
                 <div>
                   <label htmlFor="contactMessageAreaLight" className="block text-xs font-medium text-slate-700 mb-1">
-                    আপনার বার্তা / জিজ্ঞাসা *
+                    {text('আপনার বার্তা / জিজ্ঞাসা *', 'Your message / question *')}
                   </label>
                   <textarea
                     id="contactMessageAreaLight"
@@ -190,7 +210,10 @@ export const ContactSection: React.FC = () => {
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="আপনার জিজ্ঞাসা বা বিস্তারিত তথ্য এখানে লিখুন..."
+                    placeholder={text(
+                      'আপনার জিজ্ঞাসা বা বিস্তারিত তথ্য এখানে লিখুন...',
+                      'Write your question or details here...',
+                    )}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm outline-none focus:border-blue-500 transition resize-none shadow-2xs"
                   />
                 </div>
@@ -200,7 +223,7 @@ export const ContactSection: React.FC = () => {
                   className="w-full py-3 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-md shadow-blue-500/20"
                 >
                   <Send className="w-4 h-4 text-white" />
-                  বার্তা প্রেরণ করুন
+                  {text('বার্তা প্রেরণ করুন', 'Send message')}
                 </button>
               </form>
             )}

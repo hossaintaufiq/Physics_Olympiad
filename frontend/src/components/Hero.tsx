@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Download, BookOpen, Compass } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 interface HeroProps {
   onOpenAdmitModal: () => void;
@@ -10,6 +11,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModal }) => {
+  const { L } = useLanguage();
+  const text = (bn: string, en: string) => L(bn, en);
   const [timeLeft, setTimeLeft] = useState({
     days: 42,
     hours: 14,
@@ -43,7 +46,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <img
           src="/images/hero_bg.jpg"
-          alt="পদার্থবিজ্ঞান কোয়ান্টাম ও আলোকবিজ্ঞান ল্যাবরেটরি"
+          alt={text(
+            'পদার্থবিজ্ঞান কোয়ান্টাম ও আলোকবিজ্ঞান ল্যাবরেটরি',
+            'Physics quantum and optics laboratory',
+          )}
           className="w-full h-full object-cover object-center opacity-85"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
@@ -54,54 +60,84 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
         {/* Eyebrow Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-blue-200 text-blue-900 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-sm backdrop-blur-xs">
           <span className="w-2 h-2 rounded-full bg-emerald-600" />
-          <span>১৭তম জাতীয় আসর • IPhO ও APhO অনুমোদিত</span>
+          <span>
+            {text(
+              '১৭তম জাতীয় আসর • IPhO ও APhO অনুমোদিত',
+              '17th national edition • IPhO & APhO approved',
+            )}
+          </span>
           <span className="hidden sm:inline text-slate-300">•</span>
-          <span className="hidden sm:inline text-amber-600 font-bold">২০২৬ শিক্ষাবর্ষের কার্যক্রম চলমান</span>
+          <span className="hidden sm:inline text-amber-600 font-bold">
+            {text('২০২৬ শিক্ষাবর্ষের কার্যক্রম চলমান', '2026 academic year activities ongoing')}
+          </span>
         </div>
 
         {/* Main Hero Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-950 tracking-tight leading-[1.12] mb-6">
-          প্রকৃতির নিয়মকে জানা ও <br className="hidden sm:inline" />
+          {text('প্রকৃতির নিয়মকে জানা ও', 'Know the laws of nature and')}{' '}
+          <br className="hidden sm:inline" />
           <span className="text-blue-900">
-            মহাবিশ্বকে উন্মোচনের যাত্রা।
+            {text('মহাবিশ্বকে উন্মোচনের যাত্রা।', 'embark on unveiling the universe.')}
           </span>
         </h1>
 
         {/* Hero Narrative Subtitle */}
         <p className="max-w-3xl mx-auto text-base sm:text-xl text-slate-600 font-normal leading-relaxed mb-10">
-          <strong className="text-slate-900 font-semibold">বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (বিডিএফও)</strong>-এর অফিসিয়াল জাতীয় প্ল্যাটফর্মে স্বাগতম। ৫ম থেকে ১২শ শ্রেণির শিক্ষার্থীদের যৌক্তিক চিন্তা, পর্যবেক্ষণ ক্ষমতা ও তাত্ত্বিক বোঝাপড়া শাণিত করে আমরা তৈরি করছি ভবিষ্যতের আন্তর্জাতিক পদকজয়ী ও উদ্ভাবক গবেষক।
+          <strong className="text-slate-900 font-semibold">
+            {text(
+              'বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড (বিডিএফও)',
+              'Bangladesh Physics Olympiad (BdPhO)',
+            )}
+          </strong>
+          {text(
+            '-এর অফিসিয়াল জাতীয় প্ল্যাটফর্মে স্বাগতম। ৫ম থেকে ১২শ শ্রেণির শিক্ষার্থীদের যৌক্তিক চিন্তা, পর্যবেক্ষণ ক্ষমতা ও তাত্ত্বিক বোঝাপড়া শাণিত করে আমরা তৈরি করছি ভবিষ্যতের আন্তর্জাতিক পদকজয়ী ও উদ্ভাবক গবেষক।',
+            ' — welcome to the official national platform. We sharpen logical thinking, observation and theoretical understanding for students in classes 5–12, building future international medalists and innovative researchers.',
+          )}
         </p>
 
         {/* Live Countdown Timer Card */}
         <div className="inline-block mb-10 p-5 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/60">
           <div className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3 flex items-center justify-center gap-2">
             <Compass className="w-4 h-4 text-blue-600" />
-            <span>১৭তম জাতীয় ফাইনাল পরীক্ষার কাউন্টডাউন</span>
+            <span>
+              {text(
+                '১৭তম জাতীয় ফাইনাল পরীক্ষার কাউন্টডাউন',
+                'Countdown to the 17th national final exam',
+              )}
+            </span>
           </div>
           <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center">
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-blue-600 font-mono">
                 {String(timeLeft.days).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">দিন</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">
+                {text('দিন', 'Days')}
+              </span>
             </div>
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-blue-600 font-mono">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">ঘণ্টা</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">
+                {text('ঘণ্টা', 'Hours')}
+              </span>
             </div>
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-blue-600 font-mono">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">মিনিট</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">
+                {text('মিনিট', 'Minutes')}
+              </span>
             </div>
             <div className="px-3 sm:px-5 py-2 sm:py-3 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="block text-2xl sm:text-4xl font-extrabold text-amber-600 font-mono">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">সেকেন্ড</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 uppercase font-semibold">
+                {text('সেকেন্ড', 'Seconds')}
+              </span>
             </div>
           </div>
         </div>
@@ -112,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
             onClick={onOpenRegisterModal}
             className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md flex items-center justify-center gap-2 group text-base"
           >
-            <span>১৭তম বিডিএফও নিবন্ধন</span>
+            <span>{text('১৭তম বিডিএফও নিবন্ধন', '17th BdPhO registration')}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -121,7 +157,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
             className="w-full sm:w-auto px-7 py-4 rounded-xl font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 hover:border-blue-400 transition-all shadow-sm flex items-center justify-center gap-2 text-base"
           >
             <BookOpen className="w-5 h-5 text-blue-600" />
-            <span>বিগত প্রশ্নপত্র ও সমাধান</span>
+            <span>{text('বিগত প্রশ্নপত্র ও সমাধান', 'Past papers & solutions')}</span>
           </Link>
 
           <Link
@@ -129,7 +165,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
             className="w-full sm:w-auto px-6 py-4 rounded-xl font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all flex items-center justify-center gap-2 text-base"
           >
             <Download className="w-5 h-5 text-blue-600" />
-            <span>প্রবেশপত্র ডাউনলোড ↗</span>
+            <span>{text('প্রবেশপত্র ডাউনলোড ↗', 'Download admit card ↗')}</span>
           </Link>
         </div>
 
@@ -137,30 +173,38 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmitModal, onOpenRegisterModa
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 pt-6 border-t border-slate-200 max-w-4xl mx-auto">
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">
-              ৬৪
+              {text('৬৪', '64')}
             </span>
-            <span className="text-xs text-slate-500 font-medium">জেলায় সমন্বিত উপস্থিতি</span>
+            <span className="text-xs text-slate-500 font-medium">
+              {text('জেলায় সমন্বিত উপস্থিতি', 'Districts with coordinated presence')}
+            </span>
           </div>
 
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600 font-mono">
-              ১,০০,০০০+
+              {text('১,০০,০০০+', '100,000+')}
             </span>
-            <span className="text-xs text-slate-500 font-medium">অংশগ্রহণকারী শিক্ষার্থী</span>
+            <span className="text-xs text-slate-500 font-medium">
+              {text('অংশগ্রহণকারী শিক্ষার্থী', 'Participating students')}
+            </span>
           </div>
 
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-amber-600 font-mono">
-              ৪টি ক্যাটাগরি
+              {text('৪টি ক্যাটাগরি', '4 categories')}
             </span>
-            <span className="text-xs text-slate-500 font-medium">৫ম থেকে ১২শ শ্রেণি</span>
+            <span className="text-xs text-slate-500 font-medium">
+              {text('৫ম থেকে ১২শ শ্রেণি', 'Classes 5 to 12')}
+            </span>
           </div>
 
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
             <span className="block text-2xl sm:text-3xl font-extrabold text-emerald-600 font-mono">
-              ৪৮+
+              {text('৪৮+', '48+')}
             </span>
-            <span className="text-xs text-slate-500 font-medium">আন্তর্জাতিক পদক ও সম্মাননা</span>
+            <span className="text-xs text-slate-500 font-medium">
+              {text('আন্তর্জাতিক পদক ও সম্মাননা', 'International medals & honours')}
+            </span>
           </div>
         </div>
       </div>

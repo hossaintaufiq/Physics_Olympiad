@@ -6,8 +6,11 @@ import { Footer } from '@/components/Footer';
 import { PastPapersArchive } from '@/components/PastPapersArchive';
 import { BookOpen, Download, HelpCircle, CheckCircle2 } from 'lucide-react';
 import { BDPHO_METRICS } from '@/data/bdphoData';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 export default function PastPapersPage() {
+  const { L } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
@@ -18,7 +21,7 @@ export default function PastPapersPage() {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img
               src="/images/hero_bg.jpg"
-              alt="Physics Papers Archive Background"
+              alt={L('পদার্থবিজ্ঞান প্রশ্ন আর্কাইভ পটভূমি', 'Physics papers archive background')}
               className="w-full h-full object-cover object-center opacity-75"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/40" />
@@ -28,13 +31,17 @@ export default function PastPapersPage() {
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 text-blue-900 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200 shadow-xs backdrop-blur-xs">
               <BookOpen className="w-3.5 h-3.5 text-blue-700" />
-              <span>প্রশ্নপত্র ও সমাধান ভাণ্ডার</span>
+              <span>{L('প্রশ্নপত্র ও সমাধান ভাণ্ডার', 'Question papers & solutions library')}</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
-              বিগত প্রশ্নপত্র ও <span className="text-blue-900">মডেল সমাধান আর্কাইভ</span>
+              {L('বিগত প্রশ্নপত্র ও', 'Past papers &')}{' '}
+              <span className="text-blue-900">{L('মডেল সমাধান আর্কাইভ', 'model solutions archive')}</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              ১ম থেকে ১৬তম বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াডের সকল অফিসিয়াল প্রশ্নপত্র। ক্যাটাগরি, রাউন্ড, অঞ্চল ও ভাষা অনুসারে ফিল্টার করে অনুশীলন করুন।
+              {L(
+                '১ম থেকে ১৬তম বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াডের সকল অফিসিয়াল প্রশ্নপত্র। ক্যাটাগরি, রাউন্ড, অঞ্চল ও ভাষা অনুসারে ফিল্টার করে অনুশীলন করুন।',
+                'All official papers from the 1st to 16th Bangladesh Physics Olympiad. Filter by category, round, region, and language to practise.',
+              )}
             </p>
           </div>
         </section>
@@ -47,30 +54,49 @@ export default function PastPapersPage() {
           <div className="max-w-5xl mx-auto">
             <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
               <div className="flex items-center gap-2 text-blue-700 text-xs font-bold uppercase tracking-wider">
-                <HelpCircle className="w-4 h-4" /> অলিম্পিয়াড অনুশীলনের কার্যকর কৌশল
+                <HelpCircle className="w-4 h-4" />{' '}
+                {L('অলিম্পিয়াড অনুশীলনের কার্যকর কৌশল', 'Effective Olympiad practice strategies')}
               </div>
               <h2 className="text-2xl font-bold text-slate-900">
-                বিগত প্রশ্নপত্র কীভাবে সঠিকভাবে সমাধান করবেন
+                {L(
+                  'বিগত প্রশ্নপত্র কীভাবে সঠিকভাবে সমাধান করবেন',
+                  'How to solve past papers the right way',
+                )}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs text-slate-700">
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="font-bold text-slate-900 mb-1">১. মৌলিক নীতির প্রয়োগ</div>
+                  <div className="font-bold text-slate-900 mb-1">
+                    {L('১. মৌলিক নীতির প্রয়োগ', '1. Apply first principles')}
+                  </div>
                   <p className="text-slate-600">
-                    সূত্র মুখস্থ না করে সমস্যার পেছনের সংরক্ষণশীল নীতিগুলো (শক্তি, রৈখিক ও কৌণিক ভরবেগ, চার্জ) শনাক্ত করুন।
+                    {L(
+                      'সূত্র মুখস্থ না করে সমস্যার পেছনের সংরক্ষণশীল নীতিগুলো (শক্তি, রৈখিক ও কৌণিক ভরবেগ, চার্জ) শনাক্ত করুন।',
+                      'Instead of memorising formulas, identify the conservation principles behind the problem (energy, linear and angular momentum, charge).',
+                    )}
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="font-bold text-slate-900 mb-1">২. মাত্রা ও প্রান্তীয় সীমা পরীক্ষা</div>
+                  <div className="font-bold text-slate-900 mb-1">
+                    {L('২. মাত্রা ও প্রান্তীয় সীমা পরীক্ষা', '2. Check dimensions & limiting cases')}
+                  </div>
                   <p className="text-slate-600">
-                    সমীকরণের উভয় পাশের মাত্রা এবং চরম সীমা (যেমন ভর শূন্য হলে বা কোণ ৯০° হলে কী ঘটে) যাচাই করুন।
+                    {L(
+                      'সমীকরণের উভয় পাশের মাত্রা এবং চরম সীমা (যেমন ভর শূন্য হলে বা কোণ ৯০° হলে কী ঘটে) যাচাই করুন।',
+                      'Verify dimensions on both sides of an equation and check extreme limits (e.g. what happens if mass is zero or the angle is 90°).',
+                    )}
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="font-bold text-slate-900 mb-1">৩. সময় মেপে বাস্তব মক টেস্ট</div>
+                  <div className="font-bold text-slate-900 mb-1">
+                    {L('৩. সময় মেপে বাস্তব মক টেস্ট', '3. Timed full mock tests')}
+                  </div>
                   <p className="text-slate-600">
-                    সমাধান না দেখে নির্ধারিত ৯০ বা ১২০ মিনিটের মধ্যে সম্পূর্ণ প্রশ্ন সেট সমাধানের অনুশীলন করুন।
+                    {L(
+                      'সমাধান না দেখে নির্ধারিত ৯০ বা ১২০ মিনিটের মধ্যে সম্পূর্ণ প্রশ্ন সেট সমাধানের অনুশীলন করুন।',
+                      'Practise completing full paper sets within the allotted 90 or 120 minutes without looking at solutions.',
+                    )}
                   </p>
                 </div>
               </div>

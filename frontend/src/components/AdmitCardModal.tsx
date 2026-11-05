@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { X, ExternalLink, CheckCircle, Search, AlertCircle, FileText, Printer } from 'lucide-react';
 import { BDPHO_METRICS } from '@/data/bdphoData';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 interface AdmitCardModalProps {
   isOpen: boolean;
@@ -10,6 +11,8 @@ interface AdmitCardModalProps {
 }
 
 export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose }) => {
+  const { L } = useLanguage();
+  const text = (bn: string, en: string) => L(bn, en);
   const [round, setRound] = useState<'regional' | 'national'>('regional');
   const [regId, setRegId] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
@@ -36,7 +39,7 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
-          aria-label="মডাল বন্ধ করুন"
+          aria-label={text('মডাল বন্ধ করুন', 'Close modal')}
         >
           <X className="w-5 h-5" />
         </button>
@@ -47,10 +50,13 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
           </div>
           <div>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-              প্রবেশপত্র যাচাইকরণ পোর্টাল
+              {text('প্রবেশপত্র যাচাইকরণ পোর্টাল', 'Admit card verification portal')}
             </h2>
             <p className="text-xs sm:text-sm text-slate-500">
-              ১৭তম বিডিএফও এর অফিশিয়াল প্রবেশপত্র যাচাই ও ডাউনলোড করুন
+              {text(
+                '১৭তম বিডিএফও এর অফিশিয়াল প্রবেশপত্র যাচাই ও ডাউনলোড করুন',
+                'Verify and download the official 17th BdPhO admit card',
+              )}
             </p>
           </div>
         </div>
@@ -66,7 +72,7 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
                   : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
               }`}
             >
-              আঞ্চলিক পর্ব
+              {text('আঞ্চলিক পর্ব', 'Regional round')}
             </button>
             <button
               type="button"
@@ -77,13 +83,13 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
                   : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
               }`}
             >
-              জাতীয় পর্ব
+              {text('জাতীয় পর্ব', 'National round')}
             </button>
           </div>
 
           <div>
             <label htmlFor="admitModalIdInput" className="block text-xs font-semibold text-slate-600 mb-1">
-              রেজিস্ট্রেশন আইডি / রোল নম্বর
+              {text('রেজিস্ট্রেশন আইডি / রোল নম্বর', 'Registration ID / roll number')}
             </label>
             <div className="relative">
               <input
@@ -92,7 +98,10 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
                 required
                 value={regId}
                 onChange={(e) => setRegId(e.target.value)}
-                placeholder="যেমন: BDPHO-2026-4821 অথবা 17BDPHO-9201"
+                placeholder={text(
+                  'যেমন: BDPHO-2026-4821 অথবা 17BDPHO-9201',
+                  'e.g. BDPHO-2026-4821 or 17BDPHO-9201',
+                )}
                 className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 placeholder-slate-400 text-sm outline-none transition"
               />
               <button
@@ -105,7 +114,7 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
                 ) : (
                   <>
                     <Search className="w-3.5 h-3.5" />
-                    অনুসন্ধান
+                    {text('অনুসন্ধান', 'Search')}
                   </>
                 )}
               </button>
@@ -118,29 +127,37 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
             <div className="flex items-center justify-between pb-2 border-b border-slate-200">
               <div className="flex items-center gap-2 text-xs font-bold text-emerald-700">
                 <CheckCircle className="w-4 h-4 text-emerald-600" />
-                পরীক্ষার্থী নিশ্চিতকরণ সম্পন্ন
+                {text('পরীক্ষার্থী নিশ্চিতকরণ সম্পন্ন', 'Candidate verification complete')}
               </div>
               <span className="text-[11px] font-mono text-slate-500">
-                {round === 'regional' ? 'আঞ্চলিক পর্ব' : 'জাতীয় পর্ব'}
+                {round === 'regional'
+                  ? text('আঞ্চলিক পর্ব', 'Regional round')
+                  : text('জাতীয় পর্ব', 'National round')}
               </span>
             </div>
 
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div>
-                <span className="text-slate-500 block">ক্যান্ডিডেট আইডি:</span>
+                <span className="text-slate-500 block">{text('ক্যান্ডিডেট আইডি:', 'Candidate ID:')}</span>
                 <span className="font-bold text-slate-900 font-mono">{regId.toUpperCase()}</span>
               </div>
               <div>
-                <span className="text-slate-500 block">পরীক্ষার ক্লাস্টার:</span>
-                <span className="font-bold text-slate-900">ঢাকা আঞ্চলিক ক্লাস্টার ০১</span>
+                <span className="text-slate-500 block">{text('পরীক্ষার ক্লাস্টার:', 'Exam cluster:')}</span>
+                <span className="font-bold text-slate-900">
+                  {text('ঢাকা আঞ্চলিক ক্লাস্টার ০১', 'Dhaka regional cluster 01')}
+                </span>
               </div>
               <div>
-                <span className="text-slate-500 block">পরীক্ষা কেন্দ্র ও ভেন্যু:</span>
-                <span className="font-bold text-slate-900">কার্জন হল, ঢাকা বিশ্ববিদ্যালয়</span>
+                <span className="text-slate-500 block">{text('পরীক্ষা কেন্দ্র ও ভেন্যু:', 'Exam centre & venue:')}</span>
+                <span className="font-bold text-slate-900">
+                  {text('কার্জন হল, ঢাকা বিশ্ববিদ্যালয়', 'Curzon Hall, University of Dhaka')}
+                </span>
               </div>
               <div>
-                <span className="text-slate-500 block">রিপোর্টিং সময়:</span>
-                <span className="font-bold text-amber-700">সকাল ০৮:৩০ (পরীক্ষা: ০৯:৩০)</span>
+                <span className="text-slate-500 block">{text('রিপোর্টিং সময়:', 'Reporting time:')}</span>
+                <span className="font-bold text-amber-700">
+                  {text('সকাল ০৮:৩০ (পরীক্ষা: ০৯:৩০)', '08:30 AM (exam: 09:30)')}
+                </span>
               </div>
             </div>
 
@@ -152,7 +169,7 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
                 className="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-sm text-center"
               >
                 <Printer className="w-4 h-4" />
-                প্রবেশপত্র PDF ডাউনলোড
+                {text('প্রবেশপত্র PDF ডাউনলোড', 'Download admit card PDF')}
               </a>
               <a
                 href={BDPHO_METRICS.admitCardPortal}
@@ -160,7 +177,7 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
                 rel="noopener noreferrer"
                 className="py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs flex items-center justify-center gap-1.5 transition border border-slate-200"
               >
-                এডমিন সার্ভার <ExternalLink className="w-3.5 h-3.5" />
+                {text('এডমিন সার্ভার', 'Admin server')} <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
@@ -169,7 +186,10 @@ export const AdmitCardModal: React.FC<AdmitCardModalProps> = ({ isOpen, onClose 
         <div className="mt-4 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-2">
           <AlertCircle className="w-4 h-4 shrink-0 text-amber-700 mt-0.5" />
           <p>
-            পরীক্ষা কক্ষে অবশ্যই প্রবেশপত্রের প্রিন্ট করা কপি এবং শিক্ষাপ্রতিষ্ঠানের মূল আইডি কার্ড প্রদর্শন করতে হবে।
+            {text(
+              'পরীক্ষা কক্ষে অবশ্যই প্রবেশপত্রের প্রিন্ট করা কপি এবং শিক্ষাপ্রতিষ্ঠানের মূল আইডি কার্ড প্রদর্শন করতে হবে।',
+              'You must present a printed admit card and your original school ID card in the exam room.',
+            )}
           </p>
         </div>
       </div>

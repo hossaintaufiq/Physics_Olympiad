@@ -6,11 +6,13 @@ import { useLanguage } from '@/i18n/LanguageProvider';
 
 /** EN (default) / বাংলা language switch — matches upstream navbar styling. */
 export function LanguageToggle({ className = '' }: { className?: string }) {
-  const { locale, setLocale, t } = useLanguage();
+  const { locale, setLocale, t, isSwitching } = useLanguage();
 
   return (
     <div
-      className={`inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 p-0.5 ${className}`}
+      className={`inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 p-0.5 transition-opacity duration-200 ${
+        isSwitching ? 'opacity-70' : 'opacity-100'
+      } ${className}`}
       role="group"
       aria-label={t.langLabel}
     >
@@ -21,9 +23,10 @@ export function LanguageToggle({ className = '' }: { className?: string }) {
             key={item.id}
             type="button"
             onClick={() => setLocale(item.id)}
-            className={`min-w-[2.75rem] px-2.5 py-1.5 rounded-md text-[11px] font-bold transition ${
+            disabled={isSwitching}
+            className={`min-w-[2.75rem] px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all duration-200 ease-out ${
               active
-                ? 'bg-blue-700 text-white shadow-xs'
+                ? 'bg-blue-700 text-white shadow-xs scale-[1.02]'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
             aria-pressed={active}
