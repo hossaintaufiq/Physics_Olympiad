@@ -13,8 +13,10 @@ import {
   Calendar, Layers, Cpu, Award 
 } from 'lucide-react';
 import { BDPHO_METRICS, NOTICES, CATEGORIES_DATA } from '@/data/bdphoData';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 export default function Home() {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState({
     days: 42,
     hours: 14,
@@ -63,15 +65,15 @@ export default function Home() {
               <div className="lg:col-span-7 space-y-6 text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-600" />
-                  <span>অফিসিয়াল জাতীয় প্ল্যাটফর্ম • ১৭তম আসর ২০২৬</span>
+                  <span>{t.heroBadge}</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.14]">
-                  বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড
+                  {t.heroTitle}
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
-                  আন্তর্জাতিক পদার্থবিজ্ঞান অলিম্পিয়াড (<strong className="text-slate-950 font-semibold">IPhO</strong>) এবং এশিয়ান পদার্থবিজ্ঞান অলিম্পিয়াড (<strong className="text-slate-950 font-semibold">APhO</strong>)-এ বাংলাদেশের প্রতিনিধি নির্বাচন ও নিবিড় প্রশিক্ষণের জাতীয় একাডেমি। দেশের ৬৪ জেলার ৫ম থেকে ১২শ শ্রেণির তরুণ বিজ্ঞানীদের মেধা বিকাশের উন্মুক্ত মঞ্চ।
+                  {t.heroLead}
                 </p>
 
                 {/* Primary Action Buttons */}
@@ -82,7 +84,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-sm"
                   >
-                    <span>অনলাইন নিবন্ধন ২০২৬</span>
+                    <span>{t.heroRegister}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-blue-200" />
                   </a>
 
@@ -91,7 +93,7 @@ export default function Home() {
                     className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-2xs"
                   >
                     <Download className="w-4 h-4 text-blue-700" />
-                    <span>প্রবেশপত্র ডাউনলোড</span>
+                    <span>{t.heroAdmit}</span>
                   </Link>
 
                   <Link
@@ -99,27 +101,27 @@ export default function Home() {
                     className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition border border-slate-300 shadow-2xs"
                   >
                     <BookOpen className="w-4 h-4 text-slate-500" />
-                    <span>বিগত প্রশ্ন আর্কাইভ</span>
+                    <span>{t.heroArchive}</span>
                   </Link>
                 </div>
 
                 {/* Key Statistics Bar */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-200">
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">৬৪ জেলা</span>
-                    <span className="text-[11px] text-slate-600 font-medium">দেশব্যাপী আঞ্চলিক পর্ব</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">{t.statDistricts}</span>
+                    <span className="text-[11px] text-slate-600 font-medium">{t.statDistrictsSub}</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-blue-700 font-mono">১ লাখ+</span>
-                    <span className="text-[11px] text-slate-600 font-medium">অংশগ্রহণকারী শিক্ষার্থী</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-blue-700 font-mono">{t.statStudents}</span>
+                    <span className="text-[11px] text-slate-600 font-medium">{t.statStudentsSub}</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">৪ ক্যাটাগরি</span>
-                    <span className="text-[11px] text-slate-600 font-medium">৫ম থেকে ১২শ শ্রেণি</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-slate-950 font-mono">{t.statCategories}</span>
+                    <span className="text-[11px] text-slate-600 font-medium">{t.statCategoriesSub}</span>
                   </div>
                   <div>
-                    <span className="block text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono">৪৮+ পদক</span>
-                    <span className="text-[11px] text-slate-600 font-medium">আন্তর্জাতিক সম্মাননা</span>
+                    <span className="block text-xl sm:text-2xl font-extrabold text-emerald-700 font-mono">{t.statMedals}</span>
+                    <span className="text-[11px] text-slate-600 font-medium">{t.statMedalsSub}</span>
                   </div>
                 </div>
               </div>
