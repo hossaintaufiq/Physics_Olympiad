@@ -5,8 +5,11 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { GallerySection } from '@/components/GallerySection';
 import { Camera } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 export default function GalleryPage() {
+  const { L } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
@@ -17,13 +20,16 @@ export default function GalleryPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-200">
               <Camera className="w-3.5 h-3.5 text-emerald-700" />
-              <span>ঐতিহাসিক মুহূর্ত ও স্মৃতিচারণ</span>
+              <span>{L('ঐতিহাসিক মুহূর্ত ও স্মৃতিচারণ', 'Historic moments & memories')}</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              অফিসিয়াল অলিম্পিয়াড ফটো গ্যালারি
+              {L('অফিসিয়াল অলিম্পিয়াড ফটো গ্যালারি', 'Official Olympiad photo gallery')}
             </h1>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              দেশব্যাপী আঞ্চলিক বিজ্ঞান উৎসব, বুয়েট ও ঢাকা বিশ্ববিদ্যালয়ের পরীক্ষাগার অনুসন্ধান, কার্জন হলের সমাপনী এবং আন্তর্জাতিক IPhO অভিযানের স্মরণীয় মুহূর্তসমূহ।
+              {L(
+                'দেশব্যাপী আঞ্চলিক বিজ্ঞান উৎসব, বুয়েট ও ঢাকা বিশ্ববিদ্যালয়ের পরীক্ষাগার অনুসন্ধান, কার্জন হলের সমাপনী এবং আন্তর্জাতিক IPhO অভিযানের স্মরণীয় মুহূর্তসমূহ।',
+                'Memorable moments from nationwide regional science festivals, lab explorations at BUET and Dhaka University, the Curzon Hall closing ceremony, and international IPhO journeys.',
+              )}
             </p>
           </div>
         </section>
