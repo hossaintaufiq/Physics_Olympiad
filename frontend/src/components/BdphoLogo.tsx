@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 interface BdphoLogoProps {
   className?: string;
@@ -13,6 +14,7 @@ export const BdphoLogo: React.FC<BdphoLogoProps> = ({
   size = 'md',
   showText = true,
 }) => {
+  const { t } = useLanguage();
   const sizeMap = {
     sm: { icon: 34, title: 'text-base', sub: 'text-[9px]' },
     md: { icon: 44, title: 'text-lg', sub: 'text-[10px]' },
@@ -90,14 +92,14 @@ export const BdphoLogo: React.FC<BdphoLogoProps> = ({
               BdPhO
             </span>
             <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200">
-              17th
+              {t.edition}
             </span>
           </div>
           <span className={`font-semibold text-slate-800 tracking-tight ${sub}`}>
-            বাংলাদেশ পদার্থবিজ্ঞান অলিম্পিয়াড
+            {t.brandName}
           </span>
           <span className="text-[10px] text-slate-500 font-medium hidden sm:inline">
-            IPhO ও APhO অনুমোদিত জাতীয় প্ল্যাটফর্ম
+            {t.brandSub}
           </span>
         </div>
       )}
